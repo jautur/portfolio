@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio de Jaume Tur</title>
+    <meta name="description" content="Portfolio de Jaume Tur — desarrollador web, automatización y CI/CD. Proyectos, contacto y servicios.">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="icon" href="/favicon.png">
     <style>
+      html { scroll-behavior: smooth; }
       :root {
         --bg: #0f172a;
         --panel: #111827;
@@ -40,6 +44,36 @@
         margin-bottom: 48px;
         flex-wrap: wrap;
       }
+
+      .nav {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 8px;
+        font-weight: 600;
+      }
+
+      .nav a:focus,
+      .nav a:hover {
+        color: var(--accent);
+        outline: none;
+      }
+
+      .avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255,255,255,0.04);
+      }
+
+      :focus-visible { outline: 3px solid rgba(56,189,248,0.18); outline-offset: 2px; }
 
       h1 {
         margin: 0;
@@ -188,8 +222,20 @@
   <body>
     <div class="container">
       <header>
-        <h1>Jaume Tur</h1>
-        <span class="tag">Portfolio</span>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <img class="avatar" src="images/avatar.jpg" alt="Foto de Jaume Tur" onerror="this.style.display='none'">
+          <div>
+            <h1>Jaume Tur</h1>
+            <div style="margin-top:6px;color:var(--muted);font-size:0.9rem">Desarrollador web · Automatización · CI/CD</div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <a href="#sobre">Sobre</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#contacto">Contacto</a>
+          <span class="tag">Portfolio</span>
+        </nav>
       </header>
 
       <section class="intro">
@@ -216,6 +262,22 @@
             Desarrollo frontend
           </div>
         </aside>
+      </section>
+
+      <section id="sobre">
+        <h2 class="section-title">Sobre mí</h2>
+        <div class="intro-card">
+          <p>Soy desarrollador centrado en crear experiencias web limpias y en automatizar procesos de entrega. Trabajo en front-end y en pipelines de CI/CD para garantizar despliegues fiables y repetibles.</p>
+          <ul style="color:var(--muted);margin:12px 0 0 18px;">
+            <li>Principales tecnologías: HTML, CSS, JavaScript, Node.js, GitHub Actions</li>
+            <li>Competencias: Diseño de interfaces, integración continua, automatización de despliegues</li>
+            <li>Intereses: Developer experience, arquitecturas serverless y automatización</li>
+          </ul>
+          <div class="actions" style="margin-top:16px;">
+            <a class="btn primary" href="#proyectos">Ver proyectos destacados</a>
+            <a class="btn secondary" href="mailto:hola@jaumetur.dev">Contactar</a>
+          </div>
+        </div>
       </section>
 
       <section id="proyectos">
@@ -253,9 +315,54 @@
         </div>
       </section>
 
+      <section id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="intro-card">
+          <p>Puedes encontrarme en:</p>
+          <div class="project-meta">
+            <a class="chip" href="https://github.com/jaumetur" target="_blank" rel="noopener">GitHub</a>
+            <a class="chip" href="https://www.linkedin.com/in/jaumetur" target="_blank" rel="noopener">LinkedIn</a>
+            <span class="chip">hola@jaumetur.dev</span>
+          </div>
+
+          <form id="contactForm" style="margin-top:14px;display:grid;gap:10px;" aria-label="Formulario de contacto">
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required style="padding:10px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text)">
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required style="padding:10px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text)">
+            <textarea id="message" name="message" rows="5" placeholder="Mensaje" required style="padding:10px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text)"></textarea>
+            <div style="display:flex;gap:10px;align-items:center;">
+              <button type="submit" class="btn primary">Enviar</button>
+              <button type="reset" class="btn secondary">Limpiar</button>
+            </div>
+            <div id="formMsg" style="color:var(--muted);font-size:0.95rem"></div>
+          </form>
+
+          <p style="margin-top:12px;color:var(--muted)">Si tienes una propuesta o quieres colaborar, escríbeme y te responderé lo antes posible.</p>
+        </div>
+      </section>
+
       <footer>
         © 2026 Jaume Tur · Portfolio personal
       </footer>
     </div>
+    <script>
+      (function(){
+        const form = document.getElementById('contactForm');
+        const msg = document.getElementById('formMsg');
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const message = document.getElementById('message').value.trim();
+          if(!name || !email || !message){
+            msg.textContent = 'Por favor completa todos los campos.'; return;
+          }
+          const subject = encodeURIComponent('Contacto desde portfolio: ' + name);
+          const body = encodeURIComponent('Nombre: '+name+'\nEmail: '+email+'\n\n'+message);
+          const mailto = 'mailto:hola@jaumetur.dev?subject='+subject+'&body='+body;
+          window.location.href = mailto;
+          msg.textContent = 'Abriendo tu cliente de correo...';
+        });
+      })();
+    </script>
   </body>
 </html>
