@@ -4,11 +4,258 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio de Jaume Tur</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --card: #1f2937;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #38bdf8;
+        --accent-strong: #0ea5e9;
+        --border: rgba(148, 163, 184, 0.2);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(180deg, #020817 0%, var(--bg) 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 48px 24px 72px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 48px;
+        flex-wrap: wrap;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid var(--border);
+        color: var(--accent);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr;
+        gap: 28px;
+        align-items: center;
+        margin-bottom: 56px;
+      }
+
+      .intro-card,
+      .project-card {
+        background: rgba(17, 24, 39, 0.8);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.25);
+      }
+
+      .intro-card p {
+        margin: 0 0 20px;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn.primary {
+        background: var(--accent-strong);
+        color: #03151f;
+      }
+
+      .btn.secondary {
+        color: var(--text);
+        background: transparent;
+        border: 1px solid var(--border);
+      }
+
+      .summary {
+        display: grid;
+        gap: 14px;
+      }
+
+      .summary-item {
+        border: 1px solid var(--border);
+        background: rgba(31, 41, 55, 0.9);
+        border-radius: 12px;
+        padding: 16px 18px;
+      }
+
+      .summary-item strong {
+        display: block;
+        font-size: 1.7rem;
+        color: var(--accent);
+      }
+
+      .section-title {
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        margin-bottom: 20px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 22px;
+      }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .project-card h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .project-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .project-meta {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: auto;
+      }
+
+      .chip {
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--text);
+        background: rgba(148, 163, 184, 0.08);
+        font-size: 0.75rem;
+      }
+
+      footer {
+        margin-top: 56px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 760px) {
+        .intro {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Jaume Tur</h1>
-    <p>Documento inicial para verificar la automatización del despliegue continuo.</p>
-    <a href="./README.md">README.md</a>
-    <ahref="./docs/flujo_de_trabajo.pdf">PDF flujo de trabajo</a>
+    <div class="container">
+      <header>
+        <h1>Jaume Tur</h1>
+        <span class="tag">Portfolio</span>
+      </header>
+
+      <section class="intro">
+        <div class="intro-card">
+          <p>Documento inicial para verificar la automatización del despliegue continuo y mostrar mi trabajo en proyectos web y de automatización.</p>
+          <div class="actions">
+            <a class="btn primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn secondary" href="./README.md">README</a>
+            <a class="btn secondary" href="./docs/flujo_de_trabajo.pdf" target="_blank" rel="noopener">PDF de flujo</a>
+          </div>
+        </div>
+
+        <aside class="summary">
+          <div class="summary-item">
+            <strong>3+</strong>
+            Proyectos principales
+          </div>
+          <div class="summary-item">
+            <strong>CI/CD</strong>
+            Automatización
+          </div>
+          <div class="summary-item">
+            <strong>Web</strong>
+            Desarrollo frontend
+          </div>
+        </aside>
+      </section>
+
+      <section id="proyectos">
+        <h2 class="section-title">Proyectos</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Portfolio personal</h3>
+            <p>Landing page para presentar mi perfil, experiencia y enlaces relevantes de forma clara y moderna.</p>
+            <div class="project-meta">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">Deploy</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Automatización de despliegue</h3>
+            <p>Flujo de trabajo para detectar cambios, disparar eventos y ejecutar despliegues de forma automatizada.</p>
+            <div class="project-meta">
+              <span class="chip">GitHub</span>
+              <span class="chip">CI/CD</span>
+              <span class="chip">Webhook</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Arquitectura de integración</h3>
+            <p>Diseño de un sistema basado en disparadores y ejecutores para orquestar tareas tecnológicas de forma reactiva.</p>
+            <div class="project-meta">
+              <span class="chip">Arquitectura</span>
+              <span class="chip">Serverless</span>
+              <span class="chip">JSON</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        © 2026 Jaume Tur · Portfolio personal
+      </footer>
+    </div>
   </body>
 </html>
