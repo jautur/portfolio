@@ -1,237 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio de Jaume Tur</title>
     <meta name="description" content="Portfolio de Jaume Tur — desarrollador web, automatización y CI/CD. Proyectos, contacto y servicios.">
     <meta name="theme-color" content="#0f172a">
+    <title>Portfolio de Jaume Tur</title>
     <link rel="icon" href="/favicon.png">
-    <style>
-      html { scroll-behavior: smooth; }
-      :root {
-        --bg: #0f172a;
-        --panel: #111827;
-        --card: #1f2937;
-        --text: #e5e7eb;
-        --muted: #94a3b8;
-        --accent: #38bdf8;
-        --accent-strong: #0ea5e9;
-        --border: rgba(148, 163, 184, 0.2);
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(180deg, #020817 0%, var(--bg) 100%);
-        color: var(--text);
-        line-height: 1.6;
-      }
-
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 48px 24px 72px;
-      }
-
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
-        margin-bottom: 48px;
-        flex-wrap: wrap;
-      }
-
-      .nav {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-      }
-
-      .nav a {
-        color: var(--muted);
-        text-decoration: none;
-        padding: 8px 10px;
-        border-radius: 8px;
-        font-weight: 600;
-      }
-
-      .nav a:focus,
-      .nav a:hover {
-        color: var(--accent);
-        outline: none;
-      }
-
-      .avatar {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid rgba(255,255,255,0.04);
-      }
-
-      :focus-visible { outline: 3px solid rgba(56,189,248,0.18); outline-offset: 2px; }
-
-      h1 {
-        margin: 0;
-        font-size: clamp(2.2rem, 5vw, 4rem);
-      }
-
-      .tag {
-        display: inline-block;
-        padding: 8px 14px;
-        border-radius: 999px;
-        background: rgba(56, 189, 248, 0.12);
-        border: 1px solid var(--border);
-        color: var(--accent);
-        font-size: 0.8rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .intro {
-        display: grid;
-        grid-template-columns: 1.4fr 0.8fr;
-        gap: 28px;
-        align-items: center;
-        margin-bottom: 56px;
-      }
-
-      .intro-card,
-      .project-card {
-        background: rgba(17, 24, 39, 0.8);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        padding: 28px;
-        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.25);
-      }
-
-      .intro-card p {
-        margin: 0 0 20px;
-        color: var(--muted);
-        font-size: 1.05rem;
-      }
-
-      .actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 12px 18px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 700;
-        transition: transform 0.2s ease;
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
-      }
-
-      .btn.primary {
-        background: var(--accent-strong);
-        color: #03151f;
-      }
-
-      .btn.secondary {
-        color: var(--text);
-        background: transparent;
-        border: 1px solid var(--border);
-      }
-
-      .summary {
-        display: grid;
-        gap: 14px;
-      }
-
-      .summary-item {
-        border: 1px solid var(--border);
-        background: rgba(31, 41, 55, 0.9);
-        border-radius: 12px;
-        padding: 16px 18px;
-      }
-
-      .summary-item strong {
-        display: block;
-        font-size: 1.7rem;
-        color: var(--accent);
-      }
-
-      .section-title {
-        font-size: clamp(1.8rem, 4vw, 2.6rem);
-        margin-bottom: 20px;
-      }
-
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 22px;
-      }
-
-      .project-card {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .project-card h3 {
-        margin: 0;
-        font-size: 1.2rem;
-      }
-
-      .project-card p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .project-meta {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-top: auto;
-      }
-
-      .chip {
-        padding: 6px 10px;
-        border-radius: 999px;
-        border: 1px solid var(--border);
-        color: var(--text);
-        background: rgba(148, 163, 184, 0.08);
-        font-size: 0.75rem;
-      }
-
-      footer {
-        margin-top: 56px;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      @media (max-width: 760px) {
-        .intro {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <div class="container">
       <header>
-        <div style="display:flex;align-items:center;gap:14px;">
-          <img class="avatar" src="images/avatar.jpg" alt="Foto de Jaume Tur" onerror="this.style.display='none'">
+        <div class="brand">
+          <img class="avatar" src="images/avatar.jpg" alt="Foto de Jaume Tur">
           <div>
-            <h1>Jaume Tur</h1>
-            <div style="margin-top:6px;color:var(--muted);font-size:0.9rem">Desarrollador web · Automatización · CI/CD</div>
+            <h1>Jaume Tur</h2>
+            <p class="subtitle">Desarrollador web · Automatización · CI/CD</p>
           </div>
         </div>
 
         <nav class="nav" aria-label="Navegación principal">
-          <meta name="theme-color" content="#0f172a">
-          <link rel="icon" href="/favicon.png">
-          <link rel="stylesheet" href="css/styles.css">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#contacto">Contacto</a>
           <span class="tag">Portfolio</span>
+        </nav>
+      </header>
+
+      <main>
+        <section class="intro" id="sobre-mi">
+          <article class="intro-card">
+            <span class="tag">Disponible para proyectos</span>
+            <h2>Creo soluciones web confiables, rápidas y fáciles de mantener.</h2>
+            <p>
+              Trabajo con desarrollo frontend, automatización de procesos, integración continua y
+              despliegues con foco en calidad, performance y experiencia de usuario.
+            </p>
+            <div class="actions">
+              <a class="btn primary" href="#proyectos">Ver proyectos</a>
+              <a class="btn secondary" href="#contacto">Hablemos</a>
+            </div>
+          </article>
+
+          <aside class="summary" aria-label="Resumen profesional">
+            <div class="summary-item">
+              <strong>+4</strong>
+              años construyendo interfaces y flujos de automatización.
+            </div>
+            <div class="summary-item">
+              <strong>20+</strong>
+              tareas automatizadas y procesos mejorados.
+            </div>
+            <div class="summary-item">
+              <strong>CI/CD</strong>
+              con enfoque en despliegues seguros y repetibles.
+            </div>
+          </aside>
+        </section>
+
+        <section id="proyectos" aria-labelledby="proyectos-title">
+          <h2 class="section-title" id="proyectos-title">Proyectos destacados</h2>
+          <div class="projects-grid">
+            <article class="project-card">
+              <h3>Panel de automatización</h3>
+              <p>Dashboard para monitorizar tareas, flujos y alertas de ejecución en entornos de producción.</p>
+              <div class="project-meta">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JS</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>Portal de clientes</h3>
+              <p>Diseño moderno para presentar servicios, proyectos y soluciones de transformación digital.</p>
+              <div class="project-meta">
+                <span class="chip">UX</span>
+                <span class="chip">UI</span>
+                <span class="chip">SEO</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>Integraciones</h3>
+              <p>Conexiones entre sistemas para acelerar procesos operativos y reducir errores manuales.</p>
+              <div class="project-meta">
+                <span class="chip">API</span>
+                <span class="chip">CI/CD</span>
+                <span class="chip">DevOps</span>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contacto">
+        © 2026 Jaume Tur — Desarrollo web, automatización y entrega continua.
+      </footer>
+    </div>
+  </body>
+</html>
