@@ -9,14 +9,21 @@
     <link rel="icon" href="/favicon.png">
     <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body>
+  <body class="theme-day">
+    <div class="page-glow glow-1" aria-hidden="true"></div>
+    <div class="page-glow glow-2" aria-hidden="true"></div>
+    <div class="floating-shapes" aria-hidden="true">
+      <span class="float-orb orb-1"></span>
+      <span class="float-orb orb-2"></span>
+      <span class="float-orb orb-3"></span>
+    </div>
+
     <div class="container">
       <header>
-        <div class="brand">
-          <img class="avatar" src="images/avatar.jpg" alt="Foto de Jaume Tur">
-          <div>
+        <div class="brand" aria-label="Jaume Tur">
+          <div class="brand-mark" aria-hidden="true">J</div>
+          <div class="brand-copy">
             <h1>Jaume Tur</h1>
-            <p class="subtitle">Desarrollador web · Automatización · CI/CD</p>
           </div>
         </div>
 
@@ -24,12 +31,19 @@
           <a href="#sobre-mi">Sobre mí</a>
           <a href="#proyectos">Proyectos</a>
           <a href="#contacto">Contacto</a>
-          <span class="tag">Portfolio</span>
+          <button class="theme-toggle" type="button" aria-label="Cambiar tema" aria-pressed="false">
+            <span class="toggle-track">
+              <span class="toggle-thumb"></span>
+            </span>
+            <span class="toggle-label">Noche</span>
+          </button>
         </nav>
       </header>
 
+      <p class="subtitle">Desarrollador web · Automatización · CI/CD</p>
+
       <main>
-        <section class="intro" id="sobre-mi">
+        <section class="intro reveal" id="sobre-mi">
           <article class="intro-card">
             <span class="tag">Disponible para proyectos</span>
             <h2>Creo soluciones web confiables, rápidas y fáciles de mantener.</h2>
@@ -43,54 +57,125 @@
             </div>
           </article>
 
-          <aside class="summary" aria-label="Resumen profesional">
-            <div class="summary-item">
-              <strong>+4</strong>
-              años construyendo interfaces y flujos de automatización.
+          <aside class="hero-panel" aria-label="Resumen de capacidades">
+            <div class="panel-top">
+              <span class="eyebrow">Capabilities</span>
             </div>
-            <div class="summary-item">
-              <strong>20+</strong>
-              tareas automatizadas y procesos mejorados.
+            <div class="stat-stack">
+              <div class="metric">
+                <strong>+4</strong>
+                <span>Años</span>
+              </div>
+              <div class="metric">
+                <strong>20+</strong>
+                <span>Automatizaciones</span>
+              </div>
             </div>
-            <div class="summary-item">
-              <strong>CI/CD</strong>
-              con enfoque en despliegues seguros y repetibles.
-            </div>
+            <ul class="capability-list">
+              <li>Frontend</li>
+              <li>Automation</li>
+              <li>CI/CD</li>
+              <li>Performance</li>
+            </ul>
           </aside>
         </section>
 
-        <section class="personal" aria-labelledby="personal-title">
-          <div class="personal-text">
-            <span class="tag">Quién soy</span>
-            <h2 id="personal-title">Soy Jaume Tur y me gusta convertir ideas complejas en experiencias digitales claras.</h2>
-            <p>
-              Me apasiona crear productos web que combinen funcionalidad, estética y estrategia.
-              Disfruto trabajar en proyectos donde la automatización, la organización y la calidad del
-              detalle marcan la diferencia.
-            </p>
-            <p>
-              Mi forma de trabajar se basa en escuchar bien, iterar con criterio y construir soluciones
-              sostenibles que sean útiles tanto para usuarios como para equipos de negocio.
-            </p>
+        <section class="statement reveal" aria-labelledby="statement-title">
+          <span class="tag">Quién soy</span>
+          <h2 id="statement-title">Soy Jaume Tur y me gusta convertir ideas complejas en experiencias digitales claras.</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
+            Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+            Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem.
+          </p>
+        </section>
+
+        <section class="services reveal" aria-label="Servicios">
+          <div class="section-head">
+            <span class="tag">Servicios</span>
+            <h2>Diseño, automatización y entrega continua.</h2>
           </div>
 
-          <div class="personal-panel" aria-labelledby="personal-panel-title">
-            <h3 id="personal-panel-title">Mi enfoque</h3>
-            <ul>
-              <li>Diseñar interfaces claras y centradas en la persona.</li>
-              <li>Automatizar procesos para ganar tiempo y reducir errores.</li>
-              <li>Trabajar con metodologías ágiles y despliegues fiables.</li>
-              <li>Priorizar la calidad, la escalabilidad y la mejora continua.</li>
-            </ul>
+          <div class="services-grid">
+            <article class="service-card">
+              <span class="service-index">01</span>
+              <h3>Product Design</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+            </article>
+
+            <article class="service-card">
+              <span class="service-index">02</span>
+              <h3>Web Development</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+            </article>
+
+            <article class="service-card">
+              <span class="service-index">03</span>
+              <h3>Automation</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+            </article>
           </div>
         </section>
 
-        <section id="proyectos" aria-labelledby="proyectos-title">
-          <h2 class="section-title" id="proyectos-title">Proyectos destacados</h2>
+        <section class="process reveal" aria-labelledby="process-title">
+          <div class="section-head">
+            <span class="tag">Proceso</span>
+            <h2 id="process-title">Un flujo claro, estructurado y enfocado en resultados.</h2>
+          </div>
+
+          <div class="timeline">
+            <div class="step">
+              <span>01</span>
+              <div>
+                <h3>Diagnóstico</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non quam. In vel mi sit amet augue congue elementum.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <span>02</span>
+              <div>
+                <h3>Diseño</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non quam. In vel mi sit amet augue congue elementum.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <span>03</span>
+              <div>
+                <h3>Desarrollo</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non quam. In vel mi sit amet augue congue elementum.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <span>04</span>
+              <div>
+                <h3>Optimización</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non quam. In vel mi sit amet augue congue elementum.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="proyectos" class="projects reveal" aria-labelledby="proyectos-title">
+          <div class="section-head">
+            <span class="tag">Proyectos</span>
+            <h2 id="proyectos-title">Proyectos destacados</h2>
+          </div>
+
           <div class="projects-grid">
             <article class="project-card">
+              <div class="project-topline">
+                <span class="chip">Dashboard</span>
+                <span class="chip muted">2024</span>
+              </div>
+              <div class="project-visual visual-one" aria-hidden="true"></div>
               <h3>Panel de automatización</h3>
-              <p>Dashboard para monitorizar tareas, flujos y alertas de ejecución en entornos de producción.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
               <div class="project-meta">
                 <span class="chip">HTML</span>
                 <span class="chip">CSS</span>
@@ -99,8 +184,13 @@
             </article>
 
             <article class="project-card">
+              <div class="project-topline">
+                <span class="chip">Brand</span>
+                <span class="chip muted">2025</span>
+              </div>
+              <div class="project-visual visual-two" aria-hidden="true"></div>
               <h3>Portal de clientes</h3>
-              <p>Diseño moderno para presentar servicios, proyectos y soluciones de transformación digital.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
               <div class="project-meta">
                 <span class="chip">UX</span>
                 <span class="chip">UI</span>
@@ -109,8 +199,13 @@
             </article>
 
             <article class="project-card">
+              <div class="project-topline">
+                <span class="chip">Integrations</span>
+                <span class="chip muted">2026</span>
+              </div>
+              <div class="project-visual visual-three" aria-hidden="true"></div>
               <h3>Integraciones</h3>
-              <p>Conexiones entre sistemas para acelerar procesos operativos y reducir errores manuales.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
               <div class="project-meta">
                 <span class="chip">API</span>
                 <span class="chip">CI/CD</span>
@@ -119,11 +214,83 @@
             </article>
           </div>
         </section>
+
+        <section class="insights reveal" aria-label="Resumen cuantitativo">
+          <div class="insight-banner">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-large">
+              <strong>98%</strong>
+              <span>De satisfacción</span>
+            </div>
+            <div class="metric-large">
+              <strong>24/7</strong>
+              <span>Monitoreo continuo</span>
+            </div>
+            <div class="metric-large">
+              <strong>3x</strong>
+              <span>Más velocidad</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-panel reveal" id="contacto">
+          <div class="contact-copy">
+            <span class="tag">Contacto</span>
+            <h2>Hablemos de tu próximo proyecto.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn primary" href="mailto:jaume@example.com">Enviar email</a>
+            <a class="btn secondary" href="#sobre-mi">Volver arriba</a>
+          </div>
+        </section>
       </main>
 
-      <footer id="contacto">
+      <footer id="contacto-footer">
         © 2026 Jaume Tur — Desarrollo web, automatización y entrega continua.
       </footer>
     </div>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach((element) => {
+        observer.observe(element);
+      });
+
+      const themeToggle = document.querySelector('.theme-toggle');
+      const body = document.body;
+
+      const applyTheme = (isNight) => {
+        body.classList.toggle('theme-night', isNight);
+        body.classList.toggle('theme-day', !isNight);
+        themeToggle.setAttribute('aria-pressed', String(isNight));
+        themeToggle.querySelector('.toggle-label').textContent = isNight ? 'Día' : 'Noche';
+      };
+
+      themeToggle.addEventListener('click', () => {
+        const isNight = !body.classList.contains('theme-night');
+        applyTheme(isNight);
+      });
+
+      applyTheme(false);
+
+      const root = document.documentElement;
+      window.addEventListener('pointermove', (event) => {
+        const x = (event.clientX / window.innerWidth - 0.5) * 18;
+        const y = (event.clientY / window.innerHeight - 0.5) * 18;
+        root.style.setProperty('--pointer-x', `${x}px`);
+        root.style.setProperty('--pointer-y', `${y}px`);
+      });
+    </script>
   </body>
 </html>
