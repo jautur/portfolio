@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jautur.github.io/portfolio/sitemap.xml
+
