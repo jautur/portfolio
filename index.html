@@ -45,8 +45,8 @@
 
       <main>
         <section class="intro reveal" id="sobre-mi">
-          <article class="intro-card">
-            <span class="tag">Disponible para proyectos</span>
+          <article class="intro-card tech-card">
+            <span class="tag"><span class="tech-radar" aria-hidden="true"></span>Disponible para proyectos</span>
             <h2>Creo soluciones web confiables, rápidas y fáciles de mantener.</h2>
             <p>
               Trabajo con desarrollo frontend, automatización de procesos, integración continua y
@@ -58,18 +58,26 @@
             </div>
           </article>
 
-          <aside class="hero-panel" aria-label="Resumen de capacidades">
+          <aside class="hero-panel tech-card" aria-label="Resumen de capacidades">
             <div class="panel-top">
               <span class="eyebrow">Capabilities</span>
             </div>
             <div class="stat-stack">
-              <div class="metric">
-                <strong>+4</strong>
+              <div class="metric tech-metric" data-counter="4" data-prefix="+" data-suffix="" data-bar="80">
+                <div class="metric-topline">
+                  <strong>+4</strong>
+                  <span class="metric-live-dot" aria-hidden="true"></span>
+                </div>
                 <span>Años</span>
+                <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
               </div>
-              <div class="metric">
-                <strong>20+</strong>
+              <div class="metric tech-metric" data-counter="20" data-prefix="" data-suffix="+" data-bar="90">
+                <div class="metric-topline">
+                  <strong>20+</strong>
+                  <span class="metric-live-dot" aria-hidden="true"></span>
+                </div>
                 <span>Automatizaciones</span>
+                <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
               </div>
             </div>
             <ul class="capability-list">
@@ -184,7 +192,7 @@
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card tech-card">
               <div class="project-topline">
                 <span class="chip">Brand</span>
                 <span class="chip muted">2025</span>
@@ -192,14 +200,24 @@
               <div class="project-visual visual-two" aria-hidden="true"></div>
               <h3>Portal de clientes</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+              <div class="project-action">
+                <a class="project-link-btn" href="https://jautur.github.io/AVISA/" target="_blank" rel="noopener noreferrer" aria-label="Abrir web AVISA en vivo">
+                  <span>Ver web AVISA</span>
+                  <svg class="ext-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
               <div class="project-meta">
                 <span class="chip">UX</span>
                 <span class="chip">UI</span>
                 <span class="chip">SEO</span>
+                <a class="chip project-chip-link" href="https://jautur.github.io/AVISA/" target="_blank" rel="noopener noreferrer">AVISA ↗</a>
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card tech-card">
               <div class="project-topline">
                 <span class="chip">Integrations</span>
                 <span class="chip muted">2026</span>
@@ -217,22 +235,34 @@
         </section>
 
         <section class="insights reveal" aria-label="Resumen cuantitativo">
-          <div class="insight-banner">
+          <div class="insight-banner tech-card">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
           </div>
 
           <div class="metrics-grid">
-            <div class="metric-large">
-              <strong>98%</strong>
+            <div class="metric-large tech-metric" data-counter="98" data-prefix="" data-suffix="%" data-bar="98">
+              <div class="metric-topline">
+                <strong>98%</strong>
+                <span class="metric-live-dot" aria-hidden="true"></span>
+              </div>
               <span>De satisfacción</span>
+              <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
             </div>
-            <div class="metric-large">
-              <strong>24/7</strong>
+            <div class="metric-large tech-metric" data-counter="24" data-prefix="" data-suffix="/7" data-bar="100">
+              <div class="metric-topline">
+                <strong>24/7</strong>
+                <span class="metric-live-dot" aria-hidden="true"></span>
+              </div>
               <span>Monitoreo continuo</span>
+              <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
             </div>
-            <div class="metric-large">
-              <strong>3x</strong>
+            <div class="metric-large tech-metric" data-counter="3" data-prefix="" data-suffix="x" data-bar="85">
+              <div class="metric-topline">
+                <strong>3x</strong>
+                <span class="metric-live-dot" aria-hidden="true"></span>
+              </div>
               <span>Más velocidad</span>
+              <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
             </div>
           </div>
         </section>
@@ -268,6 +298,52 @@
 
       document.querySelectorAll('.reveal').forEach((element) => {
         observer.observe(element);
+      });
+
+      // Animated Data Metric Boxes & Telemetry
+      const animateCounter = (el, target, prefix = '', suffix = '', duration = 1200) => {
+        let startTime = null;
+        const strong = el.querySelector('strong');
+        if (!strong) return;
+        const step = (timestamp) => {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(easeOut * target);
+          strong.textContent = `${prefix}${current}${suffix}`;
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            strong.textContent = `${prefix}${target}${suffix}`;
+          }
+        };
+        requestAnimationFrame(step);
+      };
+
+      const metricObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            if (!el.classList.contains('animated')) {
+              el.classList.add('animated');
+              const target = parseInt(el.getAttribute('data-counter'), 10);
+              const prefix = el.getAttribute('data-prefix') || '';
+              const suffix = el.getAttribute('data-suffix') || '';
+              const barPercent = el.getAttribute('data-bar') || '100';
+              const bar = el.querySelector('.metric-meter-bar');
+              if (bar) {
+                bar.style.width = `${barPercent}%`;
+              }
+              if (!isNaN(target)) {
+                animateCounter(el, target, prefix, suffix);
+              }
+            }
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('.tech-metric').forEach((el) => {
+        metricObserver.observe(el);
       });
 
       const themeToggle = document.querySelector('.theme-toggle');
