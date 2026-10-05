@@ -22,10 +22,10 @@
 
 body.theme-night {
   --bg: #000000;
-  --bg-strong: #050505;
-  --panel: rgba(15, 15, 15, 0.8);
-  --panel-strong: rgba(18, 18, 18, 0.92);
-  --card: rgba(18, 18, 18, 0.94);
+  --bg-strong: #000000;
+  --panel: rgba(0, 0, 0, 0.88);
+  --panel-strong: rgba(0, 0, 0, 0.94);
+  --card: rgba(0, 0, 0, 0.94);
   --text: #e5ff00;
   --muted: #e5ff00;
   --soft: #e5ff00;
@@ -34,10 +34,10 @@ body.theme-night {
   --accent-deep: #e5ff00;
   --border: rgba(229, 255, 0, 0.24);
   --shadow: rgba(229, 255, 0, 0.12);
-  --toggle-bg: rgba(18, 18, 18, 0.74);
+  --toggle-bg: #000000;
   --toggle-border: rgba(229, 255, 0, 0.22);
   --toggle-thumb: #e5ff00;
-  --toggle-thumb-shadow: rgba(229, 255, 0, 0.25);
+  --toggle-thumb-shadow: rgba(229, 255, 0, 0.24);
   color: #e5ff00 !important;
   background-color: #000000 !important;
 }
@@ -45,8 +45,10 @@ body.theme-night {
 body.theme-night,
 body.theme-night * {
   color: #e5ff00 !important;
+  border-color: rgba(229, 255, 0, 0.24) !important;
 }
 
+body.theme-night .theme-toggle,
 body.theme-night .intro-card,
 body.theme-night .hero-panel,
 body.theme-night .service-card,
@@ -54,15 +56,16 @@ body.theme-night .step,
 body.theme-night .project-card,
 body.theme-night .statement,
 body.theme-night .insight-banner,
-body.theme-night .metric-large,
 body.theme-night .contact-panel,
 body.theme-night .metric,
+body.theme-night .metric-large,
 body.theme-night .tag,
 body.theme-night .chip,
-body.theme-night .btn.secondary {
+body.theme-night .btn.secondary,
+body.theme-night .btn.primary,
+body.theme-night .nav a,
+body.theme-night .brand-mark {
   background-color: #000000 !important;
-  border-color: rgba(229, 255, 0, 0.24) !important;
-  box-shadow: 0 0 0 1px rgba(229, 255, 0, 0.12), 0 20px 40px rgba(229, 255, 0, 0.08) !important;
 }
 
 body.theme-night .btn.primary {
@@ -71,9 +74,13 @@ body.theme-night .btn.primary {
   box-shadow: 0 0 28px rgba(229, 255, 0, 0.25) !important;
 }
 
+body.theme-night .btn.secondary {
+  color: #e5ff00 !important;
+}
+
 body.theme-night .brand-mark {
-  background: rgba(229, 255, 0, 0.08) !important;
   border-color: rgba(229, 255, 0, 0.24) !important;
+  background: rgba(229, 255, 0, 0.08) !important;
 }
 
 * { box-sizing: border-box; }
@@ -96,9 +103,9 @@ body {
 
 body.theme-night {
   background:
-    radial-gradient(circle at 12% 10%, rgba(229, 255, 0, 0.12), transparent 18%),
-    radial-gradient(circle at 84% 20%, rgba(229, 255, 0, 0.10), transparent 16%),
-    linear-gradient(180deg, #050505 0%, var(--bg) 100%);
+    radial-gradient(circle at 12% 10%, rgba(229, 255, 0, 0.10), transparent 18%),
+    radial-gradient(circle at 84% 20%, rgba(229, 255, 0, 0.08), transparent 16%),
+    linear-gradient(180deg, #000000 0%, #000000 100%);
 }
 
 .page-glow {
