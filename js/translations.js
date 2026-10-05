@@ -449,6 +449,230 @@ const translations = {
       builtWith: "Built with semantic HTML5, modern CSS3, Vanilla JS & Three.js",
       backToTop: "Back to top"
     }
+  },
+
+  va: {
+    // Document metadata
+    meta: {
+      title: "Jaume Tur — Desenvolupador Web · Arquitectura Frontend · CI/CD",
+      description: "Portfolio professional de Jaume Tur. Desenvolupament web modern, arquitectures reactives, optimització de rendiment i automatització de desplegaments."
+    },
+
+    // Navigation
+    nav: {
+      home: "Inici",
+      about: "Sobre mi",
+      projects: "Projectes",
+      skills: "Habilitats",
+      process: "Metodologia",
+      contact: "Contacte",
+      themeLight: "Mode Dia",
+      themeDark: "Mode Nit",
+      menuOpen: "Obrir menú de navegació",
+      menuClose: "Tancar menú",
+      availableStatus: "Disponible per a projectes"
+    },
+
+    // Hero Section
+    hero: {
+      greeting: "Hola, sóc Jaume Tur",
+      role: "Desenvolupador Web · Automatització · CI/CD",
+      headlinePrefix: "Construïsc experiències web ",
+      headlineHighlight: "ràpides, robustes",
+      headlineSuffix: " i orientades al rendiment.",
+      description: "Especialitzat en enginyeria frontend, interfícies reactives i sistemes d'integració contínua. Combine codi net amb arquitectures escalables que resolen problemes reals.",
+      ctaProjects: "Veure projectes",
+      ctaContact: "Contactar",
+      ctaLinkedIn: "LinkedIn",
+      metrics: {
+        yearsLabel: "Anys d'experiència",
+        automationLabel: "Automatitzacions actives",
+        perfLabel: "Rendiment Lighthouse",
+        uptimeLabel: "Disponibilitat de servicis"
+      }
+    },
+
+    // About Section
+    about: {
+      tag: "Sobre mi",
+      title: "Transformant idees complexes en interfícies netes i arquitectures predictibles.",
+      lead: "Sóc desenvolupador web enfocat en la intersecció entre disseny d'interacció, arquitectura frontend i automatització de processos.",
+      p1: "El meu enfocament de treball es basa en principis d'enginyeria de programari sòlids: codi modular, tipat estricte, accessibilitat (WCAG) i optimització de càrrega sense dependències supèrflues.",
+      p2: "M'apassiona crear productes digitals on cada interacció siga fluida i cada flux de desplegament estiga protegit per proves contínues i validacions rigoroses.",
+      architectureTitle: "Arquitectura de Desplegament: Disparador & Executor",
+      architectureDesc: "Implemente fluxos de treball basats en esdeveniments reactius on disparadors (webhooks, git push, cron) envien payloads a servicis executors idempotents que garantixen entregues segures i sense fallades.",
+      pillars: {
+        cleanCodeTitle: "Codi Net & Semàntic",
+        cleanCodeDesc: "Estructures HTML5 natives, CSS modern sense bloat i JavaScript/TypeScript estructurat.",
+        perfTitle: "Alt Rendiment",
+        perfDesc: "Càrregues instantànies, minimització de layouts forçats i gràfics WebGL lleugers.",
+        automationTitle: "Integració Contínua (CI/CD)",
+        automationDesc: "Pipelines automatitzats de proves, linters i desplegaments automàtics.",
+        uxTitle: "Enfocament en Accessibilitat (a11y)",
+        uxDesc: "Navegació per teclat completa, contrastos verificats i semàntica inclusiva."
+      }
+    },
+
+    // Projects Section
+    projects: {
+      tag: "Projectes",
+      title: "Solucions reals en producció",
+      subtitle: "Una selecció de projectes destacats on disseny, codi i automatització treballen junts.",
+      filters: {
+        all: "Tots",
+        webapps: "Web Apps",
+        automation: "Sistemes & CI/CD",
+        graphics: "3D & Interfícies"
+      },
+      viewLive: "Veure demo en viu",
+      viewCode: "Veure codi en GitHub",
+      roleLabel: "Rol:",
+      impactLabel: "Resultat:",
+      items: [
+        {
+          id: "avisa",
+          category: "webapps",
+          badge: "Web App en Viu",
+          year: "2025",
+          title: "AVISA — Gestió d'Incidències",
+          description: "Plataforma web integral per a la comunicació, seguiment i resolució àgil d'avisos i incidències. Dissenyada amb arquitectura modular, retroalimentació en temps real i accessibilitat.",
+          role: "Desenvolupament Frontend, UX/UI i Desplegament",
+          impact: "Interfície àgil, accessible i completament funcional desplegada en producció.",
+          tags: ["Angular", "TypeScript", "UX/UI", "REST API", "Responsive"],
+          liveUrl: "https://jautur.github.io/AVISA-objectiu/",
+          githubUrl: "https://github.com/jautur/AVISA"
+        },
+        {
+          id: "telemetry",
+          category: "graphics",
+          badge: "Data Visualization",
+          year: "2024",
+          title: "Panell de Mètriques & Telemetria 3D",
+          description: "Sistema visual de monitorització en temps real amb renderitzat accelerat per maquinari mitjançant WebGL/Three.js. Dissenyat específicament per a executar-se de manera fluida fins i tot en dispositius de recursos limitats.",
+          role: "Enginyeria Gràfica i Frontend",
+          impact: "60 FPS estables amb baix consum de memòria i pausat dinàmic de renderitzat.",
+          tags: ["Three.js", "WebGL", "JavaScript ES6+", "Performance", "CSS Grid"],
+          liveUrl: "#",
+          githubUrl: "https://github.com/jautur/portfolio"
+        },
+        {
+          id: "pipeline",
+          category: "automation",
+          badge: "DevOps & CI/CD",
+          year: "2026",
+          title: "Pipeline CI/CD: Disparador & Executor",
+          description: "Arquitectura orientada a esdeveniments per a integració i desplegament continu. Un sistema de tret per webhooks que processa payloads JSON i executa compilacions, proves automatitzades i desplegaments idempotents.",
+          role: "Arquitectura d'Automatització i CI/CD",
+          impact: "Validació automàtica de qualitat (HTML/CSS/JS) i entrega contínua sense interrupcions.",
+          tags: ["GitHub Actions", "CI/CD", "Webhooks", "JSON Payloads", "Linux"],
+          liveUrl: "#proceso",
+          githubUrl: "https://github.com/jautur/portfolio"
+        }
+      ]
+    },
+
+    // Skills Section
+    skills: {
+      tag: "Habilitats",
+      title: "Stack tècnic i competències",
+      subtitle: "Eines i tecnologies que utilitze per a construir solucions duradores i d'alta qualitat.",
+      categories: [
+        {
+          name: "Frontend & UI Engineering",
+          desc: "Desenvolupament d'interfícies reactives, modernes i d'alt rendiment.",
+          skills: ["HTML5 Semàntic", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Three.js / WebGL", "Responsive Web Design"]
+        },
+        {
+          name: "Arquitectura & Backend",
+          desc: "Estructuració de dades, lògica de negoci i comunicació de servicis.",
+          skills: ["Node.js", "RESTful APIs", "JSON Payloads", "Arquitectura Trigger/Executor", "Microservicis", "Clean Architecture"]
+        },
+        {
+          name: "Eines, Git & CI/CD",
+          desc: "Automatització de desplegaments, control de versions i entorns de desenvolupament.",
+          skills: ["Git & GitHub", "GitHub Actions", "Pipelines CI/CD", "Webhooks d'automatització", "Linux Shell / Bash", "npm / Node tooling"]
+        },
+        {
+          name: "Qualitat, SEO & Rendiment",
+          desc: "Garantia d'estàndards, accessibilitat i màxima velocitat de càrrega.",
+          skills: ["Web Performance (Core Web Vitals)", "Accessibilitat WCAG AA", "SEO Tècnic & Metadades", "html-validate / Linters", "Cross-browser Testing"]
+        }
+      ]
+    },
+
+    // Process Section
+    process: {
+      tag: "Metodologia",
+      title: "Un procés estructurat orientat a resultats",
+      subtitle: "Cada etapa està dissenyada per a minimitzar la fricció tècnica i maximitzar el valor del producte.",
+      steps: [
+        {
+          number: "01",
+          title: "Diagnòstic & Requisits",
+          desc: "Anàlisi del problema, definició de l'abast tècnic, selecció de l'stack òptim i establiment d'objectius de rendiment i accessibilitat."
+        },
+        {
+          number: "02",
+          title: "Disseny & Arquitectura",
+          desc: "Creació de l'estructura visual, fluxos d'usuari, disseny de contractes de dades (JSON) i definició de l'arquitectura de components."
+        },
+        {
+          number: "03",
+          title: "Desenvolupament & Proves",
+          desc: "Implementació amb codi net i tipat, proves unitàries i de validació automàtica en cada confirmació de codi."
+        },
+        {
+          number: "04",
+          title: "CI/CD & Optimització",
+          desc: "Desplegament automàtic mitjançant pipelines continus, auditories de Lighthouse, verificació d'accessibilitat i monitorització activa."
+        }
+      ]
+    },
+
+    // Metrics / Insights
+    insights: {
+      title: "Rendiment i fiabilitat mesurables",
+      stat1Number: "98%",
+      stat1Label: "Índex de qualitat i satisfacció",
+      stat2Number: "100%",
+      stat2Label: "Validació de codi en CI",
+      stat3Number: "< 1s",
+      stat3Label: "Temps de càrrega inicial",
+      stat4Number: "24/7",
+      stat4Label: "Disponibilitat en GitHub Pages"
+    },
+
+    // Contact Section
+    contact: {
+      tag: "Contacte",
+      title: "Tens un projecte en ment?",
+      subtitle: "Estic disponible per a col·laborar en projectes desafiadors, arquitectures web i desenvolupament frontend.",
+      emailLabel: "Correu electrònic:",
+      emailCopy: "Copiar correu",
+      emailCopied: "Copiat al porta-retalls!",
+      githubLabel: "Perfil de GitHub:",
+      githubView: "Visitar github.com/jautur",
+      linkedinLabel: "Perfil de LinkedIn:",
+      linkedinView: "Visitar linkedin.com/in/jautur",
+      formTitle: "Envia'm un missatge",
+      nameLabel: "El teu nom",
+      namePlaceholder: "Ex: Marc Pérez",
+      emailInputLabel: "El teu correu electrònic",
+      emailPlaceholder: "nom@exemple.com",
+      messageLabel: "Missatge",
+      messagePlaceholder: "Conta'm els detalls del teu projecte o idea...",
+      submitBtn: "Enviar missatge",
+      submittingBtn: "Enviant...",
+      successMsg: "Gràcies! S'obrirà el teu client de correu per a completar l'enviament.",
+      validationError: "Per favor, completa tots els camps requerits amb dades vàlides."
+    },
+
+    // Footer
+    footer: {
+      copyright: "© 2026 Jaume Tur. Tots els drets reservats.",
+      builtWith: "Construït amb HTML5 semàntic, CSS3 modern, Vanilla JS & Three.js",
+      backToTop: "Tornar a dalt"
+    }
   }
 };
 

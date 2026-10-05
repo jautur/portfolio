@@ -25,6 +25,7 @@
   const body = document.body;
   const themeToggle = document.getElementById('theme-toggle');
   const langToggleEs = document.getElementById('lang-es');
+  const langToggleVa = document.getElementById('lang-va');
   const langToggleEn = document.getElementById('lang-en');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
@@ -93,11 +94,17 @@
   // =========================================================================
   function initLanguage() {
     const savedLang = localStorage.getItem(STORAGE_KEYS.LANG);
-    if (savedLang === 'en' || savedLang === 'es') {
+    if (savedLang === 'en' || savedLang === 'es' || savedLang === 'va') {
       currentLang = savedLang;
     } else {
       const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-      currentLang = browserLang.startsWith('en') ? 'en' : 'es';
+      if (browserLang.startsWith('ca') || browserLang.startsWith('va')) {
+        currentLang = 'va';
+      } else if (browserLang.startsWith('en')) {
+        currentLang = 'en';
+      } else {
+        currentLang = 'es';
+      }
     }
     applyLanguage(currentLang, false);
   }
@@ -116,12 +123,18 @@
     html.setAttribute('lang', lang);
 
     // Update active state on language segmented controls
-    if (langToggleEs && langToggleEn) {
-      langToggleEs.classList.toggle('active', lang === 'es');
-      langToggleEs.setAttribute('aria-pressed', String(lang === 'es'));
-      langToggleEn.classList.toggle('active', lang === 'en');
-      langToggleEn.setAttribute('aria-pressed', String(lang === 'en'));
-    }
+    const langBtns = [
+      { el: langToggleEs, code: 'es' },
+      { el: langToggleVa, code: 'va' },
+      { el: langToggleEn, code: 'en' }
+    ];
+    langBtns.forEach(({ el, code }) => {
+      if (el) {
+        const isActive = lang === code;
+        el.classList.toggle('active', isActive);
+        el.setAttribute('aria-pressed', String(isActive));
+      }
+    });
 
     // Update SEO meta title and description
     const metaTrans = translations[lang].meta;
@@ -420,6 +433,9 @@
     // Language Segmented Control Clicks
     if (langToggleEs) {
       langToggleEs.addEventListener('click', () => applyLanguage('es', true));
+    }
+    if (langToggleVa) {
+      langToggleVa.addEventListener('click', () => applyLanguage('va', true));
     }
     if (langToggleEn) {
       langToggleEn.addEventListener('click', () => applyLanguage('en', true));
