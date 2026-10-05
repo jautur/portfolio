@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículum Vitae — Jaume Tur</title>
+  <style>
+    :root {
+      --primary: #0038b8;
+      --primary-dark: #002787;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #f8faff;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    @media print {
+      body { background: white !important; padding: 0 !important; }
+      .no-print { display: none !important; }
+      .cv-container { box-shadow: none !important; border: none !important; margin: 0 !important; max-width: 100% !important; padding: 20px !important; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 30px 15px;
+    }
+    .cv-container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0, 56, 184, 0.08);
+    }
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: var(--primary-dark); }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+    .btn-outline:hover {
+      background: #edf2fc;
+    }
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 25px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    .contact-info a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .contact-info a:hover { text-decoration: underline; }
+    section {
+      margin-bottom: 25px;
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+    .item {
+      margin-bottom: 14px;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+    .item-date {
+      color: var(--text-light);
+      font-weight: normal;
+      font-size: 0.85rem;
+    }
+    .item-sub {
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+    p, ul {
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    ul {
+      margin-left: 20px;
+      margin-top: 4px;
+    }
+    li {
+      margin-bottom: 3px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .skill-block {
+      background: #f8faff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .skill-block h3 {
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv-container">
+    <div class="actions-bar no-print">
+      <a href="../index.html" class="btn btn-outline">&larr; Volver al Portfolio</a>
+      <button onclick="window.print()" class="btn">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Imprimir / Guardar como PDF
+      </button>
+    </div>
+
+    <header>
+      <h1>Jaume Tur</h1>
+      <div class="subtitle">Desarrollador Web (DAW) · Técnico Microinformático y Redes (SMX)</div>
+      <div class="contact-info">
+        <span>📧 <a href="mailto:jautursis@alu.edu.gva.es">jautursis@alu.edu.gva.es</a></span>
+        <span>🌐 <a href="https://jautur.github.io/portfolio/" target="_blank">jautur.github.io/portfolio</a></span>
+        <span>💼 <a href="https://www.linkedin.com/in/jautur/" target="_blank">linkedin.com/in/jautur</a></span>
+        <span>🐙 <a href="https://github.com/jautur" target="_blank">github.com/jautur</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Perfil Profesional</h2>
+      <p>
+        Técnico en Sistemas Microinformáticos y Redes (SMX) con formación avanzada en Desarrollo de Aplicaciones Web (DAW). Perfil que combina el conocimiento de la infraestructura física y de red (servidores Linux/Windows, redes TCP/IP, cableado y servicios de red) con el desarrollo de software moderno tanto en frontend (HTML5 semántico, CSS3, JavaScript/TypeScript, Angular) como en backend (PHP, Java, Node.js y bases de datos relacionales SQL). Orientado a la calidad del código, rendimiento y metodologías de integración continua (CI/CD).
+      </p>
+    </section>
+
+    <section>
+      <h2>Educación y Formación Oficial</h2>
+      <div class="item">
+        <div class="item-header">
+          <span>Grado Superior en Desarrollo de Aplicaciones Web (DAW)</span>
+          <span class="item-date">Generalitat Valenciana</span>
+        </div>
+        <div class="item-sub">Especialización en desarrollo web full-stack y despliegue</div>
+        <ul>
+          <li><strong>Desarrollo Web en Entorno Cliente:</strong> JavaScript ES6+, TypeScript, Angular, accesibilidad web (WCAG) e interfaces adaptativas.</li>
+          <li><strong>Desarrollo Web en Entorno Servidor:</strong> PHP, Java (POO), APIs RESTful, servicios web y gestión de sesiones.</li>
+          <li><strong>Bases de Datos:</strong> Modelado relacional, consultas SQL, MySQL / MariaDB, normalización e integridad referencial.</li>
+          <li><strong>Despliegue de Aplicaciones Web:</strong> Configuración de servidores Apache/Nginx, Git & GitHub, pipelines de CI/CD y automatización.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>Grado Medio en Sistemas Microinformáticos y Redes (SMX)</span>
+          <span class="item-date">Generalitat Valenciana</span>
+        </div>
+        <div class="item-sub">Infraestructuras TIC, redes locales y sistemas operativos</div>
+        <ul>
+          <li><strong>Montaje y Mantenimiento de Equipos:</strong> Hardware informático, diagnóstico de averías y sustitución de componentes.</li>
+          <li><strong>Sistemas Operativos:</strong> Administración de sistemas Windows Server y Linux (Ubuntu/Debian), terminal Bash y directivas.</li>
+          <li><strong>Redes Locales:</strong> Protocolo TCP/IP, configuración de switches, routers, subredes y cableado estructurado.</li>
+          <li><strong>Servicios de Red:</strong> Implementación de servidores DNS, DHCP, Web, FTP y correo.</li>
+          <li><strong>Seguridad Informática:</strong> Copias de seguridad (backups), cortafuegos, antivirus y seguridad física/lógica.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Proyectos Destacados</h2>
+      <div class="item">
+        <div class="item-header">
+          <span>AVISA — Plataforma de Gestión de Incidencias</span>
+          <span class="item-date">2025</span>
+        </div>
+        <div class="item-sub">Angular · TypeScript · REST API · UX/UI Responsive</div>
+        <p>Aplicación web modular para el reporte, seguimiento y resolución en tiempo real de avisos e incidencias, con diseño accesible y experiencia de usuario fluida.</p>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>Panel de Métricas & Telemetría 3D</span>
+          <span class="item-date">2024</span>
+        </div>
+        <div class="item-sub">Three.js · WebGL · JavaScript ES6+ · Performance</div>
+        <p>Dashboard de monitorización acelerado por hardware mediante WebGL con renderizado eficiente optimizado para bajo consumo de recursos.</p>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>Pipeline CI/CD: Disparador & Ejecutor</span>
+          <span class="item-date">2026</span>
+        </div>
+        <div class="item-sub">GitHub Actions · Webhooks · JSON · Linux · CI/CD</div>
+        <p>Flujo automatizado de validación continua (HTML, linters, Lighthouse) y entrega continua basada en arquitectura dirigida por eventos.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Competencias Técnicas</h2>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h3>Frontend (Cliente)</h3>
+          <ul>
+            <li>HTML5 semántico</li>
+            <li>CSS3 / Flexbox / Grid</li>
+            <li>JavaScript (ES6+) / TypeScript</li>
+            <li>Angular</li>
+            <li>WebGL / Three.js</li>
+            <li>Responsive Design</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h3>Backend & Datos</h3>
+          <ul>
+            <li>PHP & Java (POO)</li>
+            <li>MySQL / MariaDB</li>
+            <li>Consultas SQL avanzadas</li>
+            <li>APIs RESTful & JSON</li>
+            <li>Node.js básico</li>
+            <li>Sesiones y autenticación</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h3>Sistemas & Redes (SMX)</h3>
+          <ul>
+            <li>Linux (Ubuntu/Debian) / Windows Server</li>
+            <li>Redes TCP/IP, DNS, DHCP</li>
+            <li>Servidores Apache & Nginx</li>
+            <li>Terminal Bash & Scripting</li>
+            <li>Mantenimiento de hardware</li>
+            <li>Seguridad & Backups</li>
+          </ul>
+        </div>
+        <div class="skill-block">
+          <h3>Herramientas & Calidad</h3>
+          <ul>
+            <li>Git & GitHub</li>
+            <li>GitHub Actions (CI/CD)</li>
+            <li>Validación W3C & Linters</li>
+            <li>Web Performance (Core Web Vitals)</li>
+            <li>Accesibilidad WCAG AA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Idiomas</h2>
+      <ul>
+        <li><strong>Valenciano / Catalán:</strong> Nativo</li>
+        <li><strong>Castellano:</strong> Nativo</li>
+        <li><strong>Inglés:</strong> Técnico (lectura fluida de documentación y especificaciones de software)</li>
+      </ul>
+    </section>
+  </div>
+
+</body>
+</html>

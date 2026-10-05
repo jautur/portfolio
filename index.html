@@ -17,6 +17,7 @@
     <meta property="og:url" content="https://jautur.github.io/portfolio/">
     <meta property="og:title" content="Jaume Tur — Desarrollador Web · Arquitectura Frontend · CI/CD">
     <meta property="og:description" content="Portfolio profesional de Jaume Tur. Soluciones web rápidas, robustas y orientadas a resultados.">
+    <meta property="og:image" content="https://jautur.github.io/portfolio/assets/img/jt-logo-dark.png">
     <meta property="og:locale" content="es_ES">
     <meta property="og:locale:alternate" content="en_US">
 
@@ -24,8 +25,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Jaume Tur — Desarrollador Web · Arquitectura Frontend · CI/CD">
     <meta name="twitter:description" content="Portfolio profesional de Jaume Tur. Desarrollo web moderno, interfaces reactivas y CI/CD.">
+    <meta name="twitter:image" content="https://jautur.github.io/portfolio/assets/img/jt-logo-dark.png">
 
-    <!-- Favicon -->
+    <!-- Favicons & App Icons -->
+    <link rel="icon" type="image/png" href="assets/img/jt-logo-dark.png">
+    <link rel="apple-touch-icon" href="assets/img/jt-logo-dark.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <!-- Google Fonts -->
@@ -70,23 +74,24 @@
     <!-- Accessible Skip Link -->
     <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
-    <!-- 3D WebGL Background Canvas -->
-    <canvas id="webgl-bg" class="webgl-bg" aria-hidden="true"></canvas>
+    <!-- Top Reading / Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scroll-progress-bar" aria-hidden="true"></div>
 
-    <!-- Ambient Glows -->
-    <div class="page-glow glow-1" aria-hidden="true"></div>
-    <div class="page-glow glow-2" aria-hidden="true"></div>
-    <div class="floating-shapes" aria-hidden="true">
-      <span class="float-orb orb-1"></span>
-      <span class="float-orb orb-2"></span>
-      <span class="float-orb orb-3"></span>
-    </div>
+    <!-- Custom Animated Pointer Followers (Expand on scroll down & interactive hover) -->
+    <div class="custom-cursor-follower" id="custom-cursor-follower" aria-hidden="true"></div>
+    <div class="custom-cursor-dot" id="custom-cursor-dot" aria-hidden="true"></div>
+
+    <!-- 3D Ambient Animated Background Logo Canvas -->
+    <canvas id="logo-3d-bg" class="logo-3d-canvas" aria-hidden="true"></canvas>
 
     <!-- Main Navigation Header -->
     <header class="header">
       <div class="header-inner">
         <a href="#hero" class="brand" aria-label="Jaume Tur — Inicio">
-          <span class="brand-mark" aria-hidden="true">&lt;JT/&gt;</span>
+          <div class="brand-logo-wrap" aria-hidden="true">
+            <img src="assets/img/jt-logo-dark.png" alt="Jaume Tur Logo" class="brand-logo logo-for-day" width="38" height="38">
+            <img src="assets/img/jt-logo-light.png" alt="Jaume Tur Logo" class="brand-logo logo-for-night" width="38" height="38">
+          </div>
           <span class="brand-text">
             <span class="brand-name">Jaume Tur</span>
             <span class="status-indicator">
@@ -104,6 +109,7 @@
           <a href="#skills" class="nav-link" data-i18n="nav.skills">Habilidades</a>
           <a href="#proceso" class="nav-link" data-i18n="nav.process">Metodología</a>
           <a href="#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a>
+          <a href="docs/CV_Jaume_tur.pdf" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-cv" data-i18n="nav.cv">CV ↗</a>
         </nav>
 
         <!-- Navigation Controls: Language & Theme -->
@@ -160,6 +166,7 @@
         <a href="#skills" class="mobile-nav-link" data-i18n="nav.skills">Habilidades</a>
         <a href="#proceso" class="mobile-nav-link" data-i18n="nav.process">Metodología</a>
         <a href="#contacto" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="docs/CV_Jaume_tur.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link mobile-nav-link-cv" data-i18n="nav.cv">CV (PDF) ↗</a>
       </nav>
     </div>
 
@@ -178,18 +185,18 @@
             </div>
 
             <h1 class="hero-headline">
-              <span data-i18n="hero.headlinePrefix">Construyo experiencias web </span>
-              <span class="hero-highlight" data-i18n="hero.headlineHighlight">rápidas, robustas</span>
-              <span data-i18n="hero.headlineSuffix"> y orientadas al rendimiento.</span>
+              <span data-i18n="hero.headlinePrefix">Desarrollo aplicaciones web </span>
+              <span class="hero-highlight" data-i18n="hero.headlineHighlight">completas y robustas</span>
+              <span data-i18n="hero.headlineSuffix">, desde los sistemas hasta el código.</span>
             </h1>
 
             <p class="hero-description" data-i18n="hero.description">
-              Especializado en ingeniería frontend, interfaces reactivas y sistemas de integración continua. Combino código limpio con arquitecturas escalables que resuelven problemas reales.
+              Titulado en Sistemas Microinformáticos y Redes (SMX) y estudiante/desarrollador de Desarrollo de Aplicaciones Web (DAW). Especializado en frontend (HTML5, CSS3, JS/TS, Angular), backend (PHP, Java, Node.js, SQL), administración de sistemas y redes.
             </p>
 
             <div class="hero-actions">
               <a href="#proyectos" class="btn btn-primary" data-i18n="hero.ctaProjects">Ver proyectos</a>
-              <a href="#contacto" class="btn btn-secondary" data-i18n="hero.ctaContact">Contactar</a>
+              <a href="#contacto" class="btn btn-outline" data-i18n="hero.ctaContact">Contactar</a>
               <a href="https://www.linkedin.com/in/jautur/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="hero.ctaLinkedIn">LinkedIn</a>
             </div>
           </div>
@@ -207,7 +214,7 @@
                   <strong>+4</strong>
                   <span class="metric-live-dot" aria-hidden="true"></span>
                 </div>
-                <span class="metric-label" data-i18n="hero.metrics.yearsLabel">Años de experiencia</span>
+                <span class="metric-label" data-i18n="hero.metrics.yearsLabel">Formación &amp; Práctica (SMX + DAW)</span>
                 <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
               </div>
 
@@ -216,7 +223,7 @@
                   <strong>20+</strong>
                   <span class="metric-live-dot" aria-hidden="true"></span>
                 </div>
-                <span class="metric-label" data-i18n="hero.metrics.automationLabel">Automatizaciones activas</span>
+                <span class="metric-label" data-i18n="hero.metrics.automationLabel">Despliegues y Proyectos</span>
                 <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
               </div>
 
@@ -240,11 +247,11 @@
             </div>
 
             <div class="panel-tags">
+              <span class="code-pill">SMX</span>
+              <span class="code-pill">DAW</span>
               <span class="code-pill">Frontend</span>
-              <span class="code-pill">Angular</span>
-              <span class="code-pill">TypeScript</span>
-              <span class="code-pill">CI/CD</span>
-              <span class="code-pill">Three.js</span>
+              <span class="code-pill">Backend</span>
+              <span class="code-pill">Redes</span>
             </div>
           </aside>
         </div>
@@ -253,17 +260,37 @@
       <!-- ====================================================================
            2. ABOUT ME SECTION
            ==================================================================== -->
-      <section id="sobre-mi" class="section reveal">
+      <section id="sobre-mi" class="section reveal section-explorer">
+        <!-- File Explorer Window Header -->
+        <div class="explorer-window-bar tech-card" aria-hidden="true">
+          <div class="explorer-dots">
+            <span class="exp-dot exp-dot-red"></span>
+            <span class="exp-dot exp-dot-yellow"></span>
+            <span class="exp-dot exp-dot-green"></span>
+          </div>
+          <div class="explorer-path">
+            <svg class="exp-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="exp-crumb">~/portfolio</span>
+            <span class="exp-slash">/</span>
+            <span class="exp-crumb exp-crumb-active">sobre-mi.md<span class="exp-terminal-cursor" aria-hidden="true">_</span></span>
+          </div>
+          <div class="explorer-meta">
+            <span class="exp-badge">SMX + DAW</span>
+          </div>
+        </div>
+
         <div class="section-header">
           <span class="section-tag" data-i18n="about.tag">Sobre mí</span>
-          <h2 class="section-title" data-i18n="about.title">Transformando ideas complejas en interfaces limpias y arquitecturas predecibles.</h2>
+          <h2 class="section-title" data-i18n="about.title">Integrando la administración de sistemas y redes con el desarrollo de aplicaciones web.</h2>
         </div>
 
         <div class="about-grid">
           <article class="about-card tech-card">
-            <h3 class="about-lead" data-i18n="about.lead">Soy desarrollador web enfocado en la intersección entre diseño de interacción, arquitectura frontend y automatización de procesos.</h3>
-            <p data-i18n="about.p1">Mi enfoque de trabajo se basa en principios de ingeniería de software sólidos: código modular, tipado estricto, accesibilidad (WCAG) y optimización de carga sin dependencias superfluas.</p>
-            <p data-i18n="about.p2">Me apasiona crear productos digitales donde cada interacción sea fluida y cada flujo de despliegue esté protegido por pruebas continuas y validaciones rigurosas.</p>
+            <h3 class="about-lead" data-i18n="about.lead">Perfil técnico multidisciplinar formado en el Grado Medio de SMX y el Grado Superior de DAW.</h3>
+            <p data-i18n="about.p1">Cuento con una base sólida de infraestructura: montaje y mantenimiento de equipos, sistemas operativos en red (Linux/Windows Server), servicios de red (DNS, DHCP, web, FTP) y seguridad informática. Sobre estos cimientos construyo aplicaciones web completas.</p>
+            <p data-i18n="about.p2">En el área de desarrollo domino tanto el entorno cliente (HTML5 semántico, CSS3, JavaScript/TypeScript y frameworks como Angular) como el entorno servidor (PHP, Java, Node.js, bases de datos relacionales y despliegue de aplicaciones).</p>
 
             <!-- Architecture Spotlight from actual README -->
             <div class="architecture-box">
@@ -271,7 +298,7 @@
                 <span class="arch-tag">&lt;architecture /&gt;</span>
                 <h4 data-i18n="about.architectureTitle">Arquitectura de Despliegue: Disparador &amp; Ejecutor</h4>
               </div>
-              <p data-i18n="about.architectureDesc">Implemento flujos de trabajo basados en eventos reactivos donde disparadores (webhooks, git push, cron) envían payloads a servicios ejecutores idempotentes que garantizan entregas seguras y sin fallos.</p>
+              <p data-i18n="about.architectureDesc">Implemento flujos de trabajo basados en eventos reactivos donde disparadores (webhooks, git push, cron) envían payloads a servicios ejecutores que procesan la lógica y garantizan entregas continuas y fiables.</p>
               <div class="arch-diagram" aria-hidden="true">
                 <span class="arch-node">[Origen]</span>
                 <span class="arch-arrow">──(Detecta)──&gt;</span>
@@ -288,23 +315,23 @@
           <div class="pillars-grid">
             <div class="pillar-card tech-card">
               <div class="pillar-num">01</div>
-              <h4 data-i18n="about.pillars.cleanCodeTitle">Código Limpio &amp; Semántico</h4>
-              <p data-i18n="about.pillars.cleanCodeDesc">Estructuras HTML5 nativas, CSS moderno sin bloat y JavaScript/TypeScript estructurado.</p>
+              <h4 data-i18n="about.pillars.cleanCodeTitle">Desarrollo Frontend &amp; Accesibilidad</h4>
+              <p data-i18n="about.pillars.cleanCodeDesc">Estructuras HTML5 nativas, CSS responsive, JavaScript interactivo y aplicaciones web accesibles.</p>
             </div>
             <div class="pillar-card tech-card">
               <div class="pillar-num">02</div>
-              <h4 data-i18n="about.pillars.perfTitle">Alto Rendimiento</h4>
-              <p data-i18n="about.pillars.perfDesc">Cargas instantáneas, minimización de layouts forzados y gráficos WebGL ligeros.</p>
+              <h4 data-i18n="about.pillars.perfTitle">Desarrollo Backend &amp; Datos</h4>
+              <p data-i18n="about.pillars.perfDesc">Lógica de servidor en PHP/Java/Node.js, diseño de bases de datos relacionales (MySQL/MariaDB) y APIs REST.</p>
             </div>
             <div class="pillar-card tech-card">
               <div class="pillar-num">03</div>
-              <h4 data-i18n="about.pillars.automationTitle">Integración Continua (CI/CD)</h4>
-              <p data-i18n="about.pillars.automationDesc">Pipelines automatizados de pruebas, linters y despliegues automáticos.</p>
+              <h4 data-i18n="about.pillars.automationTitle">Sistemas &amp; Servicios en Red</h4>
+              <p data-i18n="about.pillars.automationDesc">Configuración de servidores Linux/Windows, redes locales, protocolos TCP/IP y servicios de red.</p>
             </div>
             <div class="pillar-card tech-card">
               <div class="pillar-num">04</div>
-              <h4 data-i18n="about.pillars.uxTitle">Enfoque en Accesibilidad (a11y)</h4>
-              <p data-i18n="about.pillars.uxDesc">Navegación por teclado completa, contrastes verificados y semántica inclusiva.</p>
+              <h4 data-i18n="about.pillars.uxTitle">Seguridad &amp; Calidad Web</h4>
+              <p data-i18n="about.pillars.uxDesc">Buenas prácticas de seguridad informática, validación de estándares W3C y optimización web.</p>
             </div>
           </div>
         </div>
@@ -313,7 +340,29 @@
       <!-- ====================================================================
            3. PROJECTS SECTION
            ==================================================================== -->
-      <section id="proyectos" class="section reveal">
+      <section id="proyectos" class="section reveal section-explorer">
+        <!-- File Explorer Window Header -->
+        <div class="explorer-window-bar tech-card" aria-hidden="true">
+          <div class="explorer-dots">
+            <span class="exp-dot exp-dot-red"></span>
+            <span class="exp-dot exp-dot-yellow"></span>
+            <span class="exp-dot exp-dot-green"></span>
+          </div>
+          <div class="explorer-path">
+            <svg class="exp-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="exp-crumb">~/portfolio</span>
+            <span class="exp-slash">/</span>
+            <span class="exp-crumb">proyectos</span>
+            <span class="exp-slash">/</span>
+            <span class="exp-crumb exp-crumb-active">workspace/<span class="exp-terminal-cursor" aria-hidden="true">_</span></span>
+          </div>
+          <div class="explorer-meta">
+            <span class="exp-badge">3 repositories</span>
+          </div>
+        </div>
+
         <div class="section-header">
           <div class="header-titles">
             <span class="section-tag" data-i18n="projects.tag">Proyectos</span>
@@ -489,11 +538,33 @@
       <!-- ====================================================================
            4. SKILLS SECTION
            ==================================================================== -->
-      <section id="skills" class="section reveal">
+      <section id="skills" class="section reveal section-explorer">
+        <!-- File Explorer Window Header -->
+        <div class="explorer-window-bar tech-card" aria-hidden="true">
+          <div class="explorer-dots">
+            <span class="exp-dot exp-dot-red"></span>
+            <span class="exp-dot exp-dot-yellow"></span>
+            <span class="exp-dot exp-dot-green"></span>
+          </div>
+          <div class="explorer-path">
+            <svg class="exp-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="exp-crumb">~/portfolio</span>
+            <span class="exp-slash">/</span>
+            <span class="exp-crumb">skills</span>
+            <span class="exp-slash">/</span>
+            <span class="exp-crumb exp-crumb-active">curriculum-stack.json<span class="exp-terminal-cursor" aria-hidden="true">_</span></span>
+          </div>
+          <div class="explorer-meta">
+            <span class="exp-badge">SMX &amp; DAW modules</span>
+          </div>
+        </div>
+
         <div class="section-header">
           <span class="section-tag" data-i18n="skills.tag">Habilidades</span>
-          <h2 class="section-title" data-i18n="skills.title">Stack técnico y competencias</h2>
-          <p class="section-subtitle" data-i18n="skills.subtitle">Herramientas y tecnologías que utilizo para construir soluciones duraderas y de alta calidad.</p>
+          <h2 class="section-title" data-i18n="skills.title">Stack técnico y competencias (SMX &amp; DAW)</h2>
+          <p class="section-subtitle" data-i18n="skills.subtitle">Competencias adquiridas en Sistemas Microinformáticos y Redes y Desarrollo de Aplicaciones Web.</p>
         </div>
 
         <div class="skills-grid">
@@ -507,18 +578,17 @@
                 </svg>
               </span>
               <div>
-                <h3 class="skill-cat-title">Frontend &amp; UI Engineering</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.0.desc">Desarrollo de interfaces reactivas, modernas y de alto rendimiento.</p>
+                <h3 class="skill-cat-title">Desarrollo Web Cliente (Frontend)</h3>
+                <p class="skill-cat-desc" data-i18n="skills.categories.0.desc">Interfaces web interactivas, accesibles y adaptadas a cualquier dispositivo.</p>
               </div>
             </div>
             <ul class="skills-list">
-              <li><span class="check-mark" aria-hidden="true">✓</span> HTML5 Semántico</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> HTML5 semántico &amp; Accesibilidad</li>
               <li><span class="check-mark" aria-hidden="true">✓</span> CSS3 / Flexbox / Grid</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> JavaScript (ES6+)</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> TypeScript</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Angular</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Three.js / WebGL</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Responsive Web Design</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> JavaScript (ES6+) &amp; TypeScript</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Frameworks Web (Angular)</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Three.js &amp; Gráficos WebGL</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Diseño Web Adaptativo (Responsive)</li>
             </ul>
           </article>
 
@@ -534,17 +604,17 @@
                 </svg>
               </span>
               <div>
-                <h3 class="skill-cat-title">Arquitectura &amp; Backend</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.1.desc">Estructuración de datos, lógica de negocio y comunicación de servicios.</p>
+                <h3 class="skill-cat-title">Desarrollo Web Servidor &amp; Bases de Datos</h3>
+                <p class="skill-cat-desc" data-i18n="skills.categories.1.desc">Lógica de negocio, integración con APIs y persistencia de datos.</p>
               </div>
             </div>
             <ul class="skills-list">
-              <li><span class="check-mark" aria-hidden="true">✓</span> Node.js</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> RESTful APIs</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> JSON Payloads</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Arquitectura Trigger/Executor</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Microservicios</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Clean Architecture</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> PHP &amp; Programación Servidor</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Java &amp; POO</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Bases de Datos Relacionales (MySQL/MariaDB)</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Consultas SQL &amp; Modelado de Datos</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> APIs RESTful &amp; Formato JSON</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Node.js básico</li>
             </ul>
           </article>
 
@@ -559,17 +629,17 @@
                 </svg>
               </span>
               <div>
-                <h3 class="skill-cat-title">Herramientas, Git &amp; CI/CD</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.2.desc">Automatización de despliegues, control de versiones y entornos de desarrollo.</p>
+                <h3 class="skill-cat-title">Sistemas Operativos, Redes &amp; Servicios (SMX)</h3>
+                <p class="skill-cat-desc" data-i18n="skills.categories.2.desc">Instalación, configuración y administración de infraestructuras TIC.</p>
               </div>
             </div>
             <ul class="skills-list">
-              <li><span class="check-mark" aria-hidden="true">✓</span> Git &amp; GitHub</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> GitHub Actions</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Pipelines CI/CD</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Webhooks de automatización</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Linux Shell / Bash</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> npm / Node tooling</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Linux (Ubuntu/Debian) &amp; Windows Server</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Redes Locales &amp; Protocolo TCP/IP</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Servicios de Red (DNS, DHCP, Web, FTP)</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Montaje y Mantenimiento de Equipos</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Seguridad Informática &amp; Copias de Seguridad</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Terminal Bash &amp; Automatización de scripts</li>
             </ul>
           </article>
 
@@ -586,54 +656,174 @@
                 </svg>
               </span>
               <div>
-                <h3 class="skill-cat-title">Calidad, SEO &amp; Rendimiento</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.3.desc">Garantía de estándares, accesibilidad y máxima velocidad de carga.</p>
+                <h3 class="skill-cat-title">Despliegue, Git &amp; Calidad Web</h3>
+                <p class="skill-cat-desc" data-i18n="skills.categories.3.desc">Gestión de versiones, despliegue de aplicaciones y optimización.</p>
               </div>
             </div>
             <ul class="skills-list">
-              <li><span class="check-mark" aria-hidden="true">✓</span> Web Performance (Core Web Vitals)</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Accesibilidad WCAG AA</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> SEO Técnico &amp; Metadatos</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> html-validate / Linters</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Cross-browser Testing</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Control de versiones Git &amp; GitHub</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> GitHub Actions &amp; Integración Continua (CI)</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Despliegue de Aplicaciones Web (DAW)</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Web Performance &amp; Core Web Vitals</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> html-validate &amp; Validación W3C</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Servidores Web (Apache / Nginx)</li>
             </ul>
           </article>
+        </div>
+
+        <!-- Core Languages & Technologies Interactive Dock -->
+        <div class="skills-tech-stack tech-card">
+          <div class="tech-stack-header">
+            <div class="tech-stack-title-wrap">
+              <span class="tech-stack-tag">&lt;ecosystem /&gt;</span>
+              <h3 class="tech-stack-title" data-i18n="skills.techStackTitle">Lenguajes y Tecnologías Principales</h3>
+              <p class="tech-stack-desc" data-i18n="skills.techStackDesc">Acceso directo a la documentación oficial y ecosistema de cada tecnología que domino.</p>
+            </div>
+          </div>
+
+          <div class="tech-icons-grid">
+            <!-- HTML5 -->
+            <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="tech-icon-card" aria-label="HTML5 — Documentación oficial en MDN">
+              <div class="tech-icon-svg-wrap tech-html5">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+                  <path d="M4.14 2.87L5.78 21.13L12 22.87L18.22 21.13L19.86 2.87H4.14ZM16.66 7.42H8.38L8.6 9.87H16.44L15.82 16.79L12 17.85L8.18 16.79L7.96 14.34H10.36L10.48 15.65L12 16.07L13.52 15.65L13.72 13.44H7.85L7.36 7.97L7.31 7.42H16.66V7.42Z"/>
+                </svg>
+              </div>
+              <div class="tech-icon-info">
+                <span class="tech-name">HTML5</span>
+                <span class="tech-category" data-i18n="skills.tech.html5">Marcado &amp; Semántica</span>
+              </div>
+              <span class="tech-link-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <!-- CSS3 -->
+            <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener noreferrer" class="tech-icon-card" aria-label="CSS3 — Documentación oficial en MDN">
+              <div class="tech-icon-svg-wrap tech-css3">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+                  <path d="M4.14 2.87L5.78 21.13L12 22.87L18.22 21.13L19.86 2.87H4.14ZM16.66 7.42H8.38L8.6 9.87H16.44L15.82 16.79L12 17.85L8.18 16.79L7.96 14.34H10.36L10.48 15.65L12 16.07L13.52 15.65L13.72 13.44H7.85L7.36 7.97L7.31 7.42H16.66V7.42Z"/>
+                </svg>
+              </div>
+              <div class="tech-icon-info">
+                <span class="tech-name">CSS</span>
+                <span class="tech-category" data-i18n="skills.tech.css3">Estilos &amp; Grid</span>
+              </div>
+              <span class="tech-link-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <!-- JavaScript -->
+            <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="tech-icon-card" aria-label="JavaScript — Documentación oficial en MDN">
+              <div class="tech-icon-svg-wrap tech-js">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+                  <path d="M3 3h18v18H3V3zm8.9 14.5c.6.9 1.5 1.5 2.7 1.5 1.5 0 2.5-.8 2.5-2.2v-6.3h-2.3v6.2c0 .6-.3.9-.8.9-.4 0-.7-.3-.9-.7l-1.2.6zm-4.6-.3c.4.8 1.1 1.4 2.1 1.4 1.1 0 1.8-.5 1.8-1.3 0-.8-.5-1.1-1.5-1.5l-.6-.2c-1.4-.6-2.2-1.3-2.2-2.7 0-1.4 1.1-2.4 2.7-2.4 1.2 0 2 .5 2.5 1.4l-1.2.8c-.3-.5-.7-.8-1.3-.8-.5 0-.9.3-.9.7 0 .4.3.7 1.1 1l.6.2c1.7.7 2.6 1.4 2.6 2.8 0 1.6-1.2 2.6-3.1 2.6-1.5 0-2.6-.7-3.1-1.7l1.5-.9z"/>
+                </svg>
+              </div>
+              <div class="tech-icon-info">
+                <span class="tech-name">JS</span>
+                <span class="tech-category" data-i18n="skills.tech.js">JavaScript ES6+</span>
+              </div>
+              <span class="tech-link-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <!-- PHP -->
+            <a href="https://www.php.net/" target="_blank" rel="noopener noreferrer" class="tech-icon-card" aria-label="PHP — Sitio web oficial php.net">
+              <div class="tech-icon-svg-wrap tech-php">
+                <svg viewBox="0 0 24 24" width="30" height="28" fill="currentColor" aria-hidden="true">
+                  <path d="M12 4C5.4 4 0 7.6 0 12s5.4 8 12 8 12-3.6 12-8-5.4-8-12-8zm-5.7 11.7H4.5L5.8 8.3h2.6c1.4 0 2.3.7 2 2.1-.3 1.6-1.6 2.5-3.1 2.5h-1l-.6 2.8zm1.5-4.4h.8c.6 0 1.1-.3 1.2-.9.1-.6-.2-.9-.8-.9h-.8l-.4 1.8zm6 4.4h-1.8l1.3-7.4h1.8l-.4 2.3h2.1l.4-2.3h1.8l-1.3 7.4h-1.8l.5-2.8h-2.1l-.5 2.8zm7.5 0h-1.8l1.3-7.4h2.6c1.4 0 2.3.7 2 2.1-.3 1.6-1.6 2.5-3.1 2.5h-1l-.6 2.8zm1.5-4.4h.8c.6 0 1.1-.3 1.2-.9.1-.6-.2-.9-.8-.9h-.8l-.4 1.8z"/>
+                </svg>
+              </div>
+              <div class="tech-icon-info">
+                <span class="tech-name">PHP</span>
+                <span class="tech-category" data-i18n="skills.tech.php">Backend &amp; Servidor</span>
+              </div>
+              <span class="tech-link-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <!-- Java -->
+            <a href="https://dev.java/" target="_blank" rel="noopener noreferrer" class="tech-icon-card" aria-label="Java — Portal oficial dev.java">
+              <div class="tech-icon-svg-wrap tech-java">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+                  <path d="M9.1 19.3c3.8.3 7.7-.2 10.9-1.8-1 .7-2.6 1.3-4.3 1.7-2.4.5-5 .6-7.4.2.2 0 .5 0 .8-.1zm-1.8 1.9c3.9.5 8 .3 11.9-.9-1.2.6-3 1.1-4.8 1.4-2.7.4-5.6.4-8.3-.2.3-.1.8-.2 1.2-.3zM12 2.5c.3.9-.2 1.9-.3 2.8-.2 1.4.3 2.7.2 4.1-.4-.9-.6-2-.3-3 .3-1.3.8-2.6.4-3.9zm-2.8 4c.4.9.2 2 .2 3-.1 1.3.3 2.6.2 3.8-.4-.9-.6-2-.3-3 .3-1.3.7-2.6-.1-3.8zm5.5 1.5c.2.8 0 1.7 0 2.5 0 1.2.2 2.3.1 3.4-.3-.8-.5-1.7-.2-2.5.2-1.1.5-2.2.1-3.4zm4.8 6.5c-.7-.3-1.6-.4-2.4-.4.8-.4 1.8-.7 2.8-.7.8 0 1.5.3 1.8.9.4.8.1 1.7-.4 2.4-1.1 1.3-2.9 1.9-4.5 2.3 2.2-.2 4.5-1.1 5.3-3.2.4-1-.1-2.1-1-2.7-.5-.4-1.1-.6-1.6-.6zm-11 1.2c2.2.3 4.5.3 6.7 0 1.2-.2 2.5-.5 3.6-1.1-1.3.5-2.8.8-4.3.9-2 .1-4.1 0-6-.6.3.2.7.5 1 .7l-1 .1z"/>
+                </svg>
+              </div>
+              <div class="tech-icon-info">
+                <span class="tech-name">JAVA</span>
+                <span class="tech-category" data-i18n="skills.tech.java">POO &amp; Backend</span>
+              </div>
+              <span class="tech-link-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <!-- Spring Boot -->
+            <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer" class="tech-icon-card" aria-label="Spring Boot — Sitio web oficial spring.io">
+              <div class="tech-icon-svg-wrap tech-spring">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+                  <path d="M21.7 10.2L13.8 2.3c-.8-.8-2-.8-2.8 0L9.4 3.9l3.5 3.5c.6-.2 1.3-.1 1.8.4.5.5.7 1.3.4 1.9l3.4 3.4c.6-.2 1.4-.1 1.9.4.8.8.8 2 0 2.8s-2 .8-2.8 0c-.5-.5-.7-1.3-.4-1.9L13.8 11c-.2.6-.1 1.4.4 1.9-.8.8-2 .8-2.8 0-.5-.5-.7-1.3-.4-1.9L7.5 7.5 2.3 12.7c-.8.8-.8 2 0 2.8l7.9 7.9c.8.8 2 .8 2.8 0l8.7-8.7c.8-.8.8-2 0-2.8z"/>
+                </svg>
+              </div>
+              <div class="tech-icon-info">
+                <span class="tech-name">SpringBoot</span>
+                <span class="tech-category" data-i18n="skills.tech.spring">Framework Empresarial</span>
+              </div>
+              <span class="tech-link-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </section>
 
       <!-- ====================================================================
            5. PROCESS / METHODOLOGY SECTION
            ==================================================================== -->
-      <section id="proceso" class="section reveal">
+      <section id="proceso" class="section reveal section-explorer">
+        <!-- File Explorer Window Header -->
+        <div class="explorer-window-bar tech-card" aria-hidden="true">
+          <div class="explorer-dots">
+            <span class="exp-dot exp-dot-red"></span>
+            <span class="exp-dot exp-dot-yellow"></span>
+            <span class="exp-dot exp-dot-green"></span>
+          </div>
+          <div class="explorer-path">
+            <svg class="exp-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="exp-crumb">~/portfolio</span>
+            <span class="exp-slash">/</span>
+            <span class="exp-crumb">metodologia</span>
+            <span class="exp-slash">/</span>
+            <span class="exp-crumb exp-crumb-active">workflow.yml<span class="exp-terminal-cursor" aria-hidden="true">_</span></span>
+          </div>
+          <div class="explorer-meta">
+            <span class="exp-badge">4 steps</span>
+          </div>
+        </div>
+
         <div class="section-header">
           <span class="section-tag" data-i18n="process.tag">Metodología</span>
           <h2 class="section-title" data-i18n="process.title">Un proceso estructurado orientado a resultados</h2>
-          <p class="section-subtitle" data-i18n="process.subtitle">Cada etapa está diseñada para minimizar la fricción técnica y maximizar el valor del producto.</p>
+          <p class="section-subtitle" data-i18n="process.subtitle">Cada etapa está diseñada para garantizar calidad, estabilidad del sistema y código limpio.</p>
         </div>
 
         <div class="process-grid">
           <div class="process-step-card tech-card">
             <span class="step-num">01</span>
-            <h3 class="step-title" data-i18n="process.steps.0.title">Diagnóstico &amp; Requisitos</h3>
-            <p class="step-desc" data-i18n="process.steps.0.desc">Análisis del problema, definición del alcance técnico, selección del stack óptimo y establecimiento de objetivos de rendimiento y accesibilidad.</p>
+            <h3 class="step-title" data-i18n="process.steps.0.title">Análisis &amp; Requisitos</h3>
+            <p class="step-desc" data-i18n="process.steps.0.desc">Estudio de necesidades, definición técnica del proyecto y planificación del entorno de sistemas y desarrollo.</p>
           </div>
 
           <div class="process-step-card tech-card">
             <span class="step-num">02</span>
             <h3 class="step-title" data-i18n="process.steps.1.title">Diseño &amp; Arquitectura</h3>
-            <p class="step-desc" data-i18n="process.steps.1.desc">Creación de la estructura visual, flujos de usuario, diseño de contratos de datos (JSON) y definición de la arquitectura de componentes.</p>
+            <p class="step-desc" data-i18n="process.steps.1.desc">Modelado de base de datos relacional, esquemas de red/servidor y diseño de la interfaz de usuario.</p>
           </div>
 
           <div class="process-step-card tech-card">
             <span class="step-num">03</span>
             <h3 class="step-title" data-i18n="process.steps.2.title">Desarrollo &amp; Pruebas</h3>
-            <p class="step-desc" data-i18n="process.steps.2.desc">Implementación con código limpio y tipado, pruebas unitarias y de validación automática en cada confirmación de código.</p>
+            <p class="step-desc" data-i18n="process.steps.2.desc">Programación en cliente y servidor, pruebas funcionales, validación de código y comprobación de seguridad.</p>
           </div>
 
           <div class="process-step-card tech-card">
             <span class="step-num">04</span>
-            <h3 class="step-title" data-i18n="process.steps.3.title">CI/CD &amp; Optimización</h3>
-            <p class="step-desc" data-i18n="process.steps.3.desc">Despliegue automático mediante pipelines continuos, auditorías de Lighthouse, verificación de accesibilidad y monitorización activa.</p>
+            <h3 class="step-title" data-i18n="process.steps.3.title">Despliegue &amp; Mantenimiento</h3>
+            <p class="step-desc" data-i18n="process.steps.3.desc">Puesta en producción en servidor web, automatización de tareas, monitorización y copias de seguridad.</p>
           </div>
         </div>
       </section>
@@ -691,7 +881,27 @@
       <!-- ====================================================================
            7. CONTACT SECTION
            ==================================================================== -->
-      <section id="contacto" class="section reveal">
+      <section id="contacto" class="section reveal section-explorer">
+        <!-- File Explorer Window Header -->
+        <div class="explorer-window-bar tech-card" aria-hidden="true">
+          <div class="explorer-dots">
+            <span class="exp-dot exp-dot-red"></span>
+            <span class="exp-dot exp-dot-yellow"></span>
+            <span class="exp-dot exp-dot-green"></span>
+          </div>
+          <div class="explorer-path">
+            <svg class="exp-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="exp-crumb">~/portfolio</span>
+            <span class="exp-slash">/</span>
+            <span class="exp-crumb exp-crumb-active">contacto.sh<span class="exp-terminal-cursor" aria-hidden="true">_</span></span>
+          </div>
+          <div class="explorer-meta">
+            <span class="exp-badge">interactive terminal</span>
+          </div>
+        </div>
+
         <div class="section-header">
           <span class="section-tag" data-i18n="contact.tag">Contacto</span>
           <h2 class="section-title" data-i18n="contact.title">¿Tienes un proyecto en mente?</h2>
@@ -707,8 +917,8 @@
             <div class="channel-box">
               <span class="channel-label" data-i18n="contact.emailLabel">Correo electrónico:</span>
               <div class="channel-value-row">
-                <a href="mailto:jautursis@alu.edu.gva.es" class="channel-link">jautursis@alu.edu.gva.es</a>
-                <button type="button" id="copy-email-btn" class="copy-btn" data-email="jautursis@alu.edu.gva.es" aria-label="Copiar correo al portapapeles">
+                <a href="mailto:tursisternes53@gmail.com" class="channel-link">tursisternes53@gmail.com</a>
+                <button type="button" id="copy-email-btn" class="copy-btn" data-email="tursisternes53@gmail.com" aria-label="Copiar correo al portapapeles">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -741,6 +951,23 @@
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Curriculum Vitae Channel -->
+            <div class="channel-box">
+              <span class="channel-label" data-i18n="contact.cvLabel">Currículum Vitae:</span>
+              <div class="channel-value-row">
+                <a href="docs/CV_Jaume_tur.pdf" target="_blank" rel="noopener noreferrer" class="channel-link">
+                  <span data-i18n="contact.cvDownload">Descargar CV en PDF</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
                   </svg>
                 </a>
               </div>
@@ -787,7 +1014,10 @@
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span class="footer-logo">&lt;JT/&gt;</span>
+          <div class="footer-logo-wrap" aria-hidden="true">
+            <img src="assets/img/jt-logo-dark.png" alt="Jaume Tur Logo" class="footer-logo-img logo-for-day" width="32" height="32">
+            <img src="assets/img/jt-logo-light.png" alt="Jaume Tur Logo" class="footer-logo-img logo-for-night" width="32" height="32">
+          </div>
           <p class="footer-copy" data-i18n="footer.copyright">© 2026 Jaume Tur. Todos los derechos reservados.</p>
         </div>
 
@@ -811,7 +1041,10 @@
     <!-- Three.js Library -->
     <script src="js/three.min.js"></script>
 
+    <!-- Three.js SVG Loader -->
+    <script src="js/SVGLoader.js"></script>
+
     <!-- 3D WebGL Engine -->
-    <script src="js/portfolio-3d.js?v=2.3"></script>
+    <script src="js/portfolio-3d.js?v=2.4"></script>
   </body>
 </html>

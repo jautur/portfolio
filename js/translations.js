@@ -18,6 +18,7 @@ const translations = {
       skills: "Habilidades",
       process: "Metodología",
       contact: "Contacto",
+      cv: "CV ↗",
       themeLight: "Modo Día",
       themeDark: "Modo Noche",
       menuOpen: "Abrir menú de navegación",
@@ -28,17 +29,19 @@ const translations = {
     // Hero Section
     hero: {
       greeting: "Hola, soy Jaume Tur",
-      role: "Desarrollador Web · Automatización · CI/CD",
-      headlinePrefix: "Construyo experiencias web ",
-      headlineHighlight: "rápidas, robustas",
-      headlineSuffix: " y orientadas al rendimiento.",
-      description: "Especializado en ingeniería frontend, interfaces reactivas y sistemas de integración continua. Combino código limpio con arquitecturas escalables que resuelven problemas reales.",
+      role: "Desarrollador Web (DAW) · Técnico Microinformático y Redes (SMX)",
+      headlinePrefix: "Desarrollo aplicaciones web ",
+      headlineHighlight: "completas y robustas",
+      headlineSuffix: ", desde los sistemas hasta el código.",
+      description: "Titulado en Sistemas Microinformáticos y Redes (SMX) y estudiante/desarrollador de Desarrollo de Aplicaciones Web (DAW). Especializado en frontend (HTML5, CSS3, JS/TS, Angular), backend (PHP, Java, Node.js, SQL), administración de sistemas y redes.",
       ctaProjects: "Ver proyectos",
+      ctaCv: "Ver / Descargar Currículum Vitae",
+      ctaCvText: "Ver / Descargar CV",
       ctaContact: "Contactar",
       ctaLinkedIn: "LinkedIn",
       metrics: {
-        yearsLabel: "Años de experiencia",
-        automationLabel: "Automatizaciones activas",
+        yearsLabel: "Formación & Práctica (SMX + DAW)",
+        automationLabel: "Despliegues y Proyectos",
         perfLabel: "Rendimiento Lighthouse",
         uptimeLabel: "Disponibilidad de servicios"
       }
@@ -47,21 +50,21 @@ const translations = {
     // About Section
     about: {
       tag: "Sobre mí",
-      title: "Transformando ideas complejas en interfaces limpias y arquitecturas predecibles.",
-      lead: "Soy desarrollador web enfocado en la intersección entre diseño de interacción, arquitectura frontend y automatización de procesos.",
-      p1: "Mi enfoque de trabajo se basa en principios de ingeniería de software sólidos: código modular, tipado estricto, accesibilidad (WCAG) y optimización de carga sin dependencias superfluas.",
-      p2: "Me apasiona crear productos digitales donde cada interacción sea fluida y cada flujo de despliegue esté protegido por pruebas continuas y validaciones rigurosas.",
+      title: "Integrando la administración de sistemas y redes con el desarrollo de aplicaciones web.",
+      lead: "Perfil técnico multidisciplinar formado en el Grado Medio de SMX y el Grado Superior de DAW.",
+      p1: "Cuento con una base sólida de infraestructura: montaje y mantenimiento de equipos, sistemas operativos en red (Linux/Windows Server), servicios de red (DNS, DHCP, web, FTP) y seguridad informática. Sobre estos cimientos construyo aplicaciones web completas.",
+      p2: "En el área de desarrollo domino tanto el entorno cliente (HTML5 semántico, CSS3, JavaScript/TypeScript y frameworks como Angular) como el entorno servidor (PHP, Java, Node.js, bases de datos relacionales y despliegue de aplicaciones).",
       architectureTitle: "Arquitectura de Despliegue: Disparador & Ejecutor",
-      architectureDesc: "Implemento flujos de trabajo basados en eventos reactivos donde disparadores (webhooks, git push, cron) envían payloads a servicios ejecutores idempotentes que garantizan entregas seguras y sin fallos.",
+      architectureDesc: "Implemento flujos de trabajo basados en eventos reactivos donde disparadores (webhooks, git push, cron) envían payloads a servicios ejecutores que procesan la lógica y garantizan entregas continuas y fiables.",
       pillars: {
-        cleanCodeTitle: "Código Limpio & Semántico",
-        cleanCodeDesc: "Estructuras HTML5 nativas, CSS moderno sin bloat y JavaScript/TypeScript estructurado.",
-        perfTitle: "Alto Rendimiento",
-        perfDesc: "Cargas instantáneas, minimización de layouts forzados y gráficos WebGL ligeros.",
-        automationTitle: "Integración Continua (CI/CD)",
-        automationDesc: "Pipelines automatizados de pruebas, linters y despliegues automáticos.",
-        uxTitle: "Enfoque en Accesibilidad (a11y)",
-        uxDesc: "Navegación por teclado completa, contrastes verificados y semántica inclusiva."
+        cleanCodeTitle: "Desarrollo Frontend & Accesibilidad",
+        cleanCodeDesc: "Estructuras HTML5 nativas, CSS responsive, JavaScript interactivo y aplicaciones web accesibles.",
+        perfTitle: "Desarrollo Backend & Datos",
+        perfDesc: "Lógica de servidor en PHP/Java/Node.js, diseño de bases de datos relacionales (MySQL/MariaDB) y APIs REST.",
+        automationTitle: "Sistemas & Servicios en Red",
+        automationDesc: "Configuración de servidores Linux/Windows, redes locales, protocolos TCP/IP y servicios de red.",
+        uxTitle: "Seguridad & Calidad Web",
+        uxDesc: "Buenas prácticas de seguridad informática, validación de estándares W3C y optimización web."
       }
     },
 
@@ -126,57 +129,67 @@ const translations = {
     // Skills Section
     skills: {
       tag: "Habilidades",
-      title: "Stack técnico y competencias",
-      subtitle: "Herramientas y tecnologías que utilizo para construir soluciones duraderas y de alta calidad.",
+      title: "Stack técnico y competencias (SMX & DAW)",
+      subtitle: "Competencias adquiridas en Sistemas Microinformáticos y Redes y Desarrollo de Aplicaciones Web.",
       categories: [
         {
-          name: "Frontend & UI Engineering",
-          desc: "Desarrollo de interfaces reactivas, modernas y de alto rendimiento.",
-          skills: ["HTML5 Semántico", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Three.js / WebGL", "Responsive Web Design"]
+          name: "Desarrollo Web Cliente (Frontend)",
+          desc: "Interfaces web interactivas, accesibles y adaptadas a cualquier dispositivo.",
+          skills: ["HTML5 semántico & Accesibilidad", "CSS3 / Flexbox / Grid", "JavaScript (ES6+) & TypeScript", "Frameworks Web (Angular)", "Three.js & Gráficos WebGL", "Diseño Web Adaptativo (Responsive)"]
         },
         {
-          name: "Arquitectura & Backend",
-          desc: "Estructuración de datos, lógica de negocio y comunicación de servicios.",
-          skills: ["Node.js", "RESTful APIs", "JSON Payloads", "Arquitectura Trigger/Executor", "Microservicios", "Clean Architecture"]
+          name: "Desarrollo Web Servidor & Bases de Datos",
+          desc: "Lógica de negocio, integración con APIs y persistencia de datos.",
+          skills: ["PHP & Programación Servidor", "Java & POO", "Bases de Datos Relacionales (MySQL/MariaDB)", "Consultas SQL & Modelado de Datos", "APIs RESTful & Formato JSON", "Node.js básico"]
         },
         {
-          name: "Herramientas, Git & CI/CD",
-          desc: "Automatización de despliegues, control de versiones y entornos de desarrollo.",
-          skills: ["Git & GitHub", "GitHub Actions", "Pipelines CI/CD", "Webhooks de automatización", "Linux Shell / Bash", "npm / Node tooling"]
+          name: "Sistemas Operativos, Redes & Servicios (SMX)",
+          desc: "Instalación, configuración y administración de infraestructuras TIC.",
+          skills: ["Linux (Ubuntu/Debian) & Windows Server", "Redes Locales & Protocolo TCP/IP", "Servicios de Red (DNS, DHCP, Web, FTP)", "Montaje y Mantenimiento de Equipos", "Seguridad Informática & Copias de Seguridad", "Terminal Bash & Automatización de scripts"]
         },
         {
-          name: "Calidad, SEO & Rendimiento",
-          desc: "Garantía de estándares, accesibilidad y máxima velocidad de carga.",
-          skills: ["Web Performance (Core Web Vitals)", "Accesibilidad WCAG AA", "SEO Técnico & Metadatos", "html-validate / Linters", "Cross-browser Testing"]
+          name: "Despliegue, Git & Calidad Web",
+          desc: "Gestión de versiones, despliegue de aplicaciones y optimización.",
+          skills: ["Control de versiones Git & GitHub", "GitHub Actions & Integración Continua (CI)", "Despliegue de Aplicaciones Web (DAW)", "Web Performance & Core Web Vitals", "html-validate & Validación W3C", "Servidores Web (Apache / Nginx)"]
         }
-      ]
+      ],
+      techStackTitle: "Lenguajes y Tecnologías Principales",
+      techStackDesc: "Acceso directo a la documentación oficial y ecosistema de cada tecnología que domino.",
+      tech: {
+        html5: "Marcado & Semántica",
+        css3: "Estilos & Grid",
+        js: "JavaScript ES6+",
+        php: "Backend & Servidor",
+        java: "POO & Backend",
+        spring: "Framework Empresarial"
+      }
     },
 
     // Process Section
     process: {
       tag: "Metodología",
       title: "Un proceso estructurado orientado a resultados",
-      subtitle: "Cada etapa está diseñada para minimizar la fricción técnica y maximizar el valor del producto.",
+      subtitle: "Cada etapa está diseñada para garantizar calidad, estabilidad del sistema y código limpio.",
       steps: [
         {
           number: "01",
-          title: "Diagnóstico & Requisitos",
-          desc: "Análisis del problema, definición del alcance técnico, selección del stack óptimo y establecimiento de objetivos de rendimiento y accesibilidad."
+          title: "Análisis & Requisitos",
+          desc: "Estudio de necesidades, definición técnica del proyecto y planificación del entorno de sistemas y desarrollo."
         },
         {
           number: "02",
           title: "Diseño & Arquitectura",
-          desc: "Creación de la estructura visual, flujos de usuario, diseño de contratos de datos (JSON) y definición de la arquitectura de componentes."
+          desc: "Modelado de base de datos relacional, esquemas de red/servidor y diseño de la interfaz de usuario."
         },
         {
           number: "03",
           title: "Desarrollo & Pruebas",
-          desc: "Implementación con código limpio y tipado, pruebas unitarias y de validación automática en cada confirmación de código."
+          desc: "Programación en cliente y servidor, pruebas funcionales, validación de código y comprobación de seguridad."
         },
         {
           number: "04",
-          title: "CI/CD & Optimización",
-          desc: "Despliegue automático mediante pipelines continuos, auditorías de Lighthouse, verificación de accesibilidad y monitorización activa."
+          title: "Despliegue & Mantenimiento",
+          desc: "Puesta en producción en servidor web, automatización de tareas, monitorización y copias de seguridad."
         }
       ]
     },
@@ -206,6 +219,8 @@ const translations = {
       githubView: "Visitar github.com/jautur",
       linkedinLabel: "Perfil de LinkedIn:",
       linkedinView: "Visitar linkedin.com/in/jautur",
+      cvLabel: "Currículum Vitae:",
+      cvDownload: "Descargar CV (PDF)",
       formTitle: "Envíame un mensaje",
       nameLabel: "Tu nombre",
       namePlaceholder: "Ej: Ana García",
@@ -242,6 +257,7 @@ const translations = {
       skills: "Skills",
       process: "Process",
       contact: "Contact",
+      cv: "CV ↗",
       themeLight: "Light Mode",
       themeDark: "Dark Mode",
       menuOpen: "Open navigation menu",
@@ -252,17 +268,19 @@ const translations = {
     // Hero Section
     hero: {
       greeting: "Hello, I am Jaume Tur",
-      role: "Web Developer · Automation · CI/CD",
-      headlinePrefix: "I build web experiences that are ",
-      headlineHighlight: "fast, resilient",
-      headlineSuffix: " and performance-driven.",
-      description: "Specialized in frontend engineering, reactive interfaces, and continuous integration systems. Combining clean code with scalable architectures to solve real problems.",
+      role: "Web Developer (DAW) · Microcomputer Systems & Networks Technician (SMX)",
+      headlinePrefix: "I build complete and robust ",
+      headlineHighlight: "web applications",
+      headlineSuffix: ", from systems infrastructure to client code.",
+      description: "Qualified technician in Microcomputer Systems & Networks (SMX) and web developer specialized in Web Application Development (DAW). Skilled in frontend (HTML5, CSS3, JS/TS, Angular), backend (PHP, Java, Node.js, SQL), system administration, and computer networks.",
       ctaProjects: "View Projects",
+      ctaCv: "View / Download Résumé",
+      ctaCvText: "View / Download CV",
       ctaContact: "Get in Touch",
       ctaLinkedIn: "LinkedIn",
       metrics: {
-        yearsLabel: "Years of Experience",
-        automationLabel: "Active Automations",
+        yearsLabel: "Training & Practice (SMX + DAW)",
+        automationLabel: "Deployments & Projects",
         perfLabel: "Lighthouse Performance",
         uptimeLabel: "Service Availability"
       }
@@ -271,21 +289,21 @@ const translations = {
     // About Section
     about: {
       tag: "About Me",
-      title: "Turning complex ideas into clear interfaces and predictable architectures.",
-      lead: "I am a web developer focused on the intersection of interaction design, frontend architecture, and process automation.",
-      p1: "My approach is grounded in sound software engineering principles: modular code, strict typing, WCAG accessibility, and instant loading times without unnecessary bloat.",
-      p2: "I enjoy building digital products where every interaction is effortless and every deployment workflow is safeguarded by automated testing and rigorous validation.",
+      title: "Bridging systems administration and networks with web application development.",
+      lead: "Multidisciplinary technical profile trained across vocational qualifications in SMX and DAW.",
+      p1: "I have a solid grounding in IT infrastructure: hardware assembly, operating systems (Linux/Windows Server), network services (DNS, DHCP, Web, FTP), and IT security. On top of these foundations, I build complete web applications.",
+      p2: "In web development, I master both client-side technologies (semantic HTML5, modern CSS3, JavaScript/TypeScript, and Angular) and server-side engineering (PHP, Java, Node.js, relational databases, and application deployment).",
       architectureTitle: "Deployment Architecture: Trigger & Executor",
-      architectureDesc: "I build event-driven workflows where triggers (webhooks, git push, cron) deliver structured JSON payloads to idempotent executors, guaranteeing safe and resilient deployments.",
+      architectureDesc: "I build event-driven workflows where triggers (webhooks, git push, cron) deliver structured JSON payloads to executors that process business logic and ensure continuous, resilient delivery.",
       pillars: {
-        cleanCodeTitle: "Clean & Semantic Code",
-        cleanCodeDesc: "Native HTML5 structures, lean modern CSS, and structured JavaScript/TypeScript.",
-        perfTitle: "High Performance",
-        perfDesc: "Instant loading, zero forced reflows, and lightweight WebGL rendering.",
-        automationTitle: "Continuous Integration (CI/CD)",
-        automationDesc: "Automated test suites, linters, and headless zero-downtime deployment pipelines.",
-        uxTitle: "Accessibility First (a11y)",
-        uxDesc: "Full keyboard navigation, verified color contrast, and inclusive semantics."
+        cleanCodeTitle: "Frontend Development & Accessibility",
+        cleanCodeDesc: "Native HTML5 structures, responsive modern CSS, interactive JavaScript, and accessible web standards.",
+        perfTitle: "Backend Development & Data",
+        perfDesc: "Server logic in PHP/Java/Node.js, relational database design (MySQL/MariaDB), and RESTful APIs.",
+        automationTitle: "Systems & Network Services",
+        automationDesc: "Configuration of Linux/Windows servers, local area networks, TCP/IP protocols, and network services.",
+        uxTitle: "Security & Web Quality",
+        uxDesc: "IT security best practices, W3C standards validation, and web performance optimization."
       }
     },
 
@@ -350,57 +368,67 @@ const translations = {
     // Skills Section
     skills: {
       tag: "Skills",
-      title: "Technical stack and core competencies",
-      subtitle: "The tools, languages, and methodologies I leverage to engineer enduring solutions.",
+      title: "Technical Stack & Core Competencies (SMX & DAW)",
+      subtitle: "Competencies acquired across Microcomputer Systems & Networks and Web Application Development.",
       categories: [
         {
-          name: "Frontend & UI Engineering",
-          desc: "Crafting modern, reactive, high-performance interfaces.",
-          skills: ["Semantic HTML5", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Three.js / WebGL", "Responsive Web Design"]
+          name: "Client-side Web Development (Frontend)",
+          desc: "Interactive, accessible, and responsive user interfaces.",
+          skills: ["Semantic HTML5 & Accessibility", "CSS3 / Flexbox / Grid", "JavaScript (ES6+) & TypeScript", "Web Frameworks (Angular)", "Three.js & WebGL Graphics", "Responsive Web Design"]
         },
         {
-          name: "Architecture & Backend",
-          desc: "Structuring data models, business logic, and resilient services.",
-          skills: ["Node.js", "RESTful APIs", "JSON Payloads", "Trigger/Executor Architecture", "Microservices", "Clean Architecture"]
+          name: "Server-side Web Development & Databases",
+          desc: "Business logic, API integrations, and persistent data storage.",
+          skills: ["PHP & Server Programming", "Java & OOP", "Relational Databases (MySQL/MariaDB)", "SQL Queries & Data Modeling", "RESTful APIs & JSON Format", "Node.js Basics"]
         },
         {
-          name: "Tools, Git & CI/CD",
-          desc: "Automating deployments, version control, and development toolchains.",
-          skills: ["Git & GitHub", "GitHub Actions", "CI/CD Pipelines", "Webhook Automation", "Linux Shell / Bash", "npm / Node tooling"]
+          name: "Operating Systems, Networks & Services (SMX)",
+          desc: "Installation, configuration, and administration of IT infrastructures.",
+          skills: ["Linux (Ubuntu/Debian) & Windows Server", "Local Networks & TCP/IP Protocol", "Network Services (DNS, DHCP, Web, FTP)", "Computer Hardware Assembly & Repair", "IT Security & Backup Strategies", "Bash Shell & Script Automation"]
         },
         {
-          name: "Quality, SEO & Performance",
-          desc: "Guaranteeing high standards, accessibility, and fast load speeds.",
-          skills: ["Web Performance (Core Web Vitals)", "WCAG AA Accessibility", "Technical SEO & Metadata", "html-validate / Linters", "Cross-browser Testing"]
+          name: "Deployment, Git & Web Quality",
+          desc: "Version control, application deployment, and continuous optimization.",
+          skills: ["Git & GitHub Version Control", "GitHub Actions & Continuous Integration (CI)", "Web Application Deployment (DAW)", "Web Performance & Core Web Vitals", "html-validate & W3C Standards", "Web Servers (Apache / Nginx)"]
         }
-      ]
+      ],
+      techStackTitle: "Core Languages & Technologies",
+      techStackDesc: "Direct access to the official documentation and ecosystem of each core technology.",
+      tech: {
+        html5: "Markup & Semantics",
+        css3: "Styling & Layout Grid",
+        js: "JavaScript ES6+",
+        php: "Backend & Server",
+        java: "OOP & Backend",
+        spring: "Enterprise Framework"
+      }
     },
 
     // Process Section
     process: {
       tag: "Methodology",
       title: "A structured process designed for impact",
-      subtitle: "Every phase is carefully calibrated to reduce technical friction and maximize software value.",
+      subtitle: "Every phase is carefully calibrated to ensure system reliability, quality, and clean code.",
       steps: [
         {
           number: "01",
-          title: "Discovery & Requirements",
-          desc: "Analyzing the problem domain, establishing technical scope, selecting optimal toolchains, and locking performance benchmarks."
+          title: "Analysis & Requirements",
+          desc: "Assessing user needs, technical scope definition, and planning the deployment and development environment."
         },
         {
           number: "02",
           title: "Design & Architecture",
-          desc: "Wireframing user flows, defining clean JSON data contracts, and mapping modular component boundaries."
+          desc: "Relational database schema modeling, network/server topology, and component UX/UI design."
         },
         {
           number: "03",
           title: "Development & Testing",
-          desc: "Writing typed, maintainable code with strict linting, automated unit testing, and immediate feedback loops."
+          desc: "Client-side and server-side coding, functional testing, code validation, and security verification."
         },
         {
           number: "04",
-          title: "CI/CD & Optimization",
-          desc: "Automated deployments via headless pipelines, continuous Lighthouse benchmarking, and zero-downtime releases."
+          title: "Deployment & Maintenance",
+          desc: "Production release on web servers, task automation, monitoring, and regular backups."
         }
       ]
     },
@@ -430,6 +458,8 @@ const translations = {
       githubView: "Visit github.com/jautur",
       linkedinLabel: "LinkedIn Profile:",
       linkedinView: "Visit linkedin.com/in/jautur",
+      cvLabel: "Curriculum Vitae:",
+      cvDownload: "Download CV (PDF)",
       formTitle: "Send me a message",
       nameLabel: "Your Name",
       namePlaceholder: "e.g. John Doe",
@@ -466,6 +496,7 @@ const translations = {
       skills: "Habilitats",
       process: "Metodologia",
       contact: "Contacte",
+      cv: "CV ↗",
       themeLight: "Mode Dia",
       themeDark: "Mode Nit",
       menuOpen: "Obrir menú de navegació",
@@ -476,17 +507,19 @@ const translations = {
     // Hero Section
     hero: {
       greeting: "Hola, sóc Jaume Tur",
-      role: "Desenvolupador Web · Automatització · CI/CD",
-      headlinePrefix: "Construïsc experiències web ",
-      headlineHighlight: "ràpides, robustes",
-      headlineSuffix: " i orientades al rendiment.",
-      description: "Especialitzat en enginyeria frontend, interfícies reactives i sistemes d'integració contínua. Combine codi net amb arquitectures escalables que resolen problemes reals.",
+      role: "Desenvolupador Web (DAW) · Tècnic Microinformàtic i Xarxes (SMX)",
+      headlinePrefix: "Desenvolupe aplicacions web ",
+      headlineHighlight: "completes i robustes",
+      headlineSuffix: ", des dels sistemes fins al codi.",
+      description: "Titulat en Sistemes Microinformàtics i Xarxes (SMX) i estudiant/desenvolupador de Desenvolupament d'Aplicacions Web (DAW). Especialitzat en frontend (HTML5, CSS3, JS/TS, Angular), backend (PHP, Java, Node.js, SQL), administració de sistemes i xarxes.",
       ctaProjects: "Veure projectes",
+      ctaCv: "Veure / Descarregar Currículum Vitae",
+      ctaCvText: "Veure / Descarregar CV",
       ctaContact: "Contactar",
       ctaLinkedIn: "LinkedIn",
       metrics: {
-        yearsLabel: "Anys d'experiència",
-        automationLabel: "Automatitzacions actives",
+        yearsLabel: "Formació & Pràctica (SMX + DAW)",
+        automationLabel: "Desplegaments i Projectes",
         perfLabel: "Rendiment Lighthouse",
         uptimeLabel: "Disponibilitat de servicis"
       }
@@ -495,21 +528,21 @@ const translations = {
     // About Section
     about: {
       tag: "Sobre mi",
-      title: "Transformant idees complexes en interfícies netes i arquitectures predictibles.",
-      lead: "Sóc desenvolupador web enfocat en la intersecció entre disseny d'interacció, arquitectura frontend i automatització de processos.",
-      p1: "El meu enfocament de treball es basa en principis d'enginyeria de programari sòlids: codi modular, tipat estricte, accessibilitat (WCAG) i optimització de càrrega sense dependències supèrflues.",
-      p2: "M'apassiona crear productes digitals on cada interacció siga fluida i cada flux de desplegament estiga protegit per proves contínues i validacions rigoroses.",
+      title: "Integrant l'administració de sistemes i xarxes amb el desenvolupament d'aplicacions web.",
+      lead: "Perfil tècnic multidisciplinari format en el Grau Mitjà d'SMX i el Grau Superior de DAW.",
+      p1: "Comte amb una base sòlida d'infraestructura: muntatge i manteniment d'equips, sistemes operatius en xarxa (Linux/Windows Server), servicis de xarxa (DNS, DHCP, web, FTP) i seguretat informàtica. Sobre estos fonaments construïsc aplicacions web completes.",
+      p2: "En l'àrea de desenvolupament domine tant l'entorn client (HTML5 semàntic, CSS3, JavaScript/TypeScript i frameworks com Angular) com l'entorn servidor (PHP, Java, Node.js, bases de dades relacionals i desplegament d'aplicacions).",
       architectureTitle: "Arquitectura de Desplegament: Disparador & Executor",
-      architectureDesc: "Implemente fluxos de treball basats en esdeveniments reactius on disparadors (webhooks, git push, cron) envien payloads a servicis executors idempotents que garantixen entregues segures i sense fallades.",
+      architectureDesc: "Implemente fluxos de treball basats en esdeveniments reactius on disparadors (webhooks, git push, cron) envien payloads a servicis executors que processen la lògica i garantixen entregues contínues i fiables.",
       pillars: {
-        cleanCodeTitle: "Codi Net & Semàntic",
-        cleanCodeDesc: "Estructures HTML5 natives, CSS modern sense bloat i JavaScript/TypeScript estructurat.",
-        perfTitle: "Alt Rendiment",
-        perfDesc: "Càrregues instantànies, minimització de layouts forçats i gràfics WebGL lleugers.",
-        automationTitle: "Integració Contínua (CI/CD)",
-        automationDesc: "Pipelines automatitzats de proves, linters i desplegaments automàtics.",
-        uxTitle: "Enfocament en Accessibilitat (a11y)",
-        uxDesc: "Navegació per teclat completa, contrastos verificats i semàntica inclusiva."
+        cleanCodeTitle: "Desenvolupament Frontend & Accessibilitat",
+        cleanCodeDesc: "Estructures HTML5 natives, CSS responsive, JavaScript interactiu i aplicacions web accessibles.",
+        perfTitle: "Desenvolupament Backend & Dades",
+        perfDesc: "Lògica de servidor en PHP/Java/Node.js, disseny de bases de dades relacionals (MySQL/MariaDB) i APIs REST.",
+        automationTitle: "Sistemes & Servicis en Xarxa",
+        automationDesc: "Configuració de servidors Linux/Windows, xarxes locals, protocols TCP/IP i servicis de xarxa.",
+        uxTitle: "Seguretat & Qualitat Web",
+        uxDesc: "Bones pràctiques de seguretat informàtica, validació d'estàndards W3C i optimització web."
       }
     },
 
@@ -574,57 +607,67 @@ const translations = {
     // Skills Section
     skills: {
       tag: "Habilitats",
-      title: "Stack tècnic i competències",
-      subtitle: "Eines i tecnologies que utilitze per a construir solucions duradores i d'alta qualitat.",
+      title: "Stack tècnic i competències (SMX & DAW)",
+      subtitle: "Competències adquirides en Sistemes Microinformàtics i Xarxes i Desenvolupament d'Aplicacions Web.",
       categories: [
         {
-          name: "Frontend & UI Engineering",
-          desc: "Desenvolupament d'interfícies reactives, modernes i d'alt rendiment.",
-          skills: ["HTML5 Semàntic", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Three.js / WebGL", "Responsive Web Design"]
+          name: "Desenvolupament Web Client (Frontend)",
+          desc: "Interfícies web interactives, accessibles i adaptades a qualsevol dispositiu.",
+          skills: ["HTML5 semàntic & Accessibilitat", "CSS3 / Flexbox / Grid", "JavaScript (ES6+) & TypeScript", "Frameworks Web (Angular)", "Three.js & Gràfics WebGL", "Disseny Web Adaptatiu (Responsive)"]
         },
         {
-          name: "Arquitectura & Backend",
-          desc: "Estructuració de dades, lògica de negoci i comunicació de servicis.",
-          skills: ["Node.js", "RESTful APIs", "JSON Payloads", "Arquitectura Trigger/Executor", "Microservicis", "Clean Architecture"]
+          name: "Desenvolupament Web Servidor & Bases de Dades",
+          desc: "Lògica de negoci, integració amb APIs i persistència de dades.",
+          skills: ["PHP & Programació Servidor", "Java & POO", "Bases de Dades Relacionals (MySQL/MariaDB)", "Consultes SQL & Modelatge de Dades", "APIs RESTful & Format JSON", "Node.js bàsic"]
         },
         {
-          name: "Eines, Git & CI/CD",
-          desc: "Automatització de desplegaments, control de versions i entorns de desenvolupament.",
-          skills: ["Git & GitHub", "GitHub Actions", "Pipelines CI/CD", "Webhooks d'automatització", "Linux Shell / Bash", "npm / Node tooling"]
+          name: "Sistemes Operatius, Xarxes & Servicis (SMX)",
+          desc: "Instal·lació, configuració i administració d'infraestructures TIC.",
+          skills: ["Linux (Ubuntu/Debian) & Windows Server", "Xarxes Locals & Protocol TCP/IP", "Servicis de Xarxa (DNS, DHCP, Web, FTP)", "Muntatge i Manteniment d'Equips", "Seguretat Informàtica & Còpies de Seguretat", "Terminal Bash & Automatització d'scripts"]
         },
         {
-          name: "Qualitat, SEO & Rendiment",
-          desc: "Garantia d'estàndards, accessibilitat i màxima velocitat de càrrega.",
-          skills: ["Web Performance (Core Web Vitals)", "Accessibilitat WCAG AA", "SEO Tècnic & Metadades", "html-validate / Linters", "Cross-browser Testing"]
+          name: "Desplegament, Git & Qualitat Web",
+          desc: "Gestió de versions, desplegament d'aplicacions i optimització.",
+          skills: ["Control de versions Git & GitHub", "GitHub Actions & Integració Contínua (CI)", "Desplegament d'Aplicacions Web (DAW)", "Web Performance & Core Web Vitals", "html-validate & Validació W3C", "Servidors Web (Apache / Nginx)"]
         }
-      ]
+      ],
+      techStackTitle: "Llenguatges i Tecnologies Principals",
+      techStackDesc: "Accés directe a la documentació oficial i ecosistema de cada tecnologia que domine.",
+      tech: {
+        html5: "Marcat & Semàntica",
+        css3: "Estils & Grid",
+        js: "JavaScript ES6+",
+        php: "Backend & Servidor",
+        java: "POO & Backend",
+        spring: "Framework Empresarial"
+      }
     },
 
     // Process Section
     process: {
       tag: "Metodologia",
       title: "Un procés estructurat orientat a resultats",
-      subtitle: "Cada etapa està dissenyada per a minimitzar la fricció tècnica i maximitzar el valor del producte.",
+      subtitle: "Cada etapa està dissenyada per a garantir qualitat, estabilitat del sistema i codi net.",
       steps: [
         {
           number: "01",
-          title: "Diagnòstic & Requisits",
-          desc: "Anàlisi del problema, definició de l'abast tècnic, selecció de l'stack òptim i establiment d'objectius de rendiment i accessibilitat."
+          title: "Anàlisi & Requisits",
+          desc: "Estudi de necessitats, definició tècnica del projecte i planificació de l'entorn de sistemes i desenvolupament."
         },
         {
           number: "02",
           title: "Disseny & Arquitectura",
-          desc: "Creació de l'estructura visual, fluxos d'usuari, disseny de contractes de dades (JSON) i definició de l'arquitectura de components."
+          desc: "Modelatge de base de dades relacional, esquemes de xarxa/servidor i disseny de la interfície d'usuari."
         },
         {
           number: "03",
           title: "Desenvolupament & Proves",
-          desc: "Implementació amb codi net i tipat, proves unitàries i de validació automàtica en cada confirmació de codi."
+          desc: "Programació en client i servidor, proves funcionals, validació de codi i comprovació de seguretat."
         },
         {
           number: "04",
-          title: "CI/CD & Optimització",
-          desc: "Desplegament automàtic mitjançant pipelines continus, auditories de Lighthouse, verificació d'accessibilitat i monitorització activa."
+          title: "Desplegament & Manteniment",
+          desc: "Posada en producció en servidor web, automatització de tasques, monitorització i còpies de seguretat."
         }
       ]
     },
@@ -654,6 +697,8 @@ const translations = {
       githubView: "Visitar github.com/jautur",
       linkedinLabel: "Perfil de LinkedIn:",
       linkedinView: "Visitar linkedin.com/in/jautur",
+      cvLabel: "Currículum Vitae:",
+      cvDownload: "Descarregar CV (PDF)",
       formTitle: "Envia'm un missatge",
       nameLabel: "El teu nom",
       namePlaceholder: "Ex: Marc Pérez",
