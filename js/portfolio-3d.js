@@ -15,7 +15,8 @@
 (function () {
   'use strict';
 
-  if (typeof THREE === 'undefined') return;
+  try {
+    if (typeof THREE === 'undefined') return;
 
   function isWebGLAvailable() {
     try {
@@ -846,6 +847,8 @@
     }
   }
 
-  animate();
-
+    animate();
+  } catch (err) {
+    console.warn('3D visual engine initialization skipped:', err);
+  }
 })();
