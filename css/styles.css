@@ -12,13 +12,13 @@
 :root {
   /* Color Palette — Day Mode (Luminous, Crisp Israel Blue #0038b8) */
   --bg: #f8faff;
-  --bg-trans: rgba(248, 250, 255, 0.85);
+  --bg-trans: rgba(248, 250, 255, 0.88);
   --bg-strong: #edf2fc;
-  --panel: rgba(255, 255, 255, 0.88);
-  --panel-hover: rgba(255, 255, 255, 0.98);
+  --panel: #ffffff;
+  --panel-hover: #ffffff;
   --panel-header: rgba(0, 56, 184, 0.04);
-  --border: rgba(0, 56, 184, 0.18);
-  --border-strong: rgba(0, 56, 184, 0.35);
+  --border: rgba(0, 56, 184, 0.12);
+  --border-strong: rgba(0, 56, 184, 0.28);
   --border-focus: #0038b8;
 
   --text: #090e1d;
@@ -29,13 +29,13 @@
   --accent: #0055d4;
   --accent-strong: #0038b8; /* Authentic Israel Blue */
   --accent-deep: #002787;
-  --accent-soft: rgba(0, 56, 184, 0.08);
-  --accent-glow: rgba(0, 85, 212, 0.22);
+  --accent-soft: rgba(0, 56, 184, 0.07);
+  --accent-glow: rgba(0, 85, 212, 0.20);
   --accent-gradient: linear-gradient(135deg, #0055d4 0%, #0038b8 100%);
 
-  --shadow-sm: 0 2px 8px rgba(0, 56, 184, 0.06);
-  --shadow-md: 0 8px 24px rgba(0, 56, 184, 0.08);
-  --shadow-lg: 0 16px 40px rgba(0, 56, 184, 0.12);
+  --shadow-sm: 0 2px 8px rgba(0, 40, 120, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 40, 120, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 40, 120, 0.12);
   --shadow-glow: 0 0 24px rgba(0, 85, 212, 0.20);
 
   /* Typography */
@@ -54,37 +54,37 @@
   --transition-slow: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Color Palette — Night Mode (Electric Cyber Yellow #e5ff00 & Pure Black #000000) */
+/* Color Palette — Night Mode (Electric Cyber Yellow #e5ff00 & Deep Pure Black #000000) */
 body.theme-night {
   --bg: #000000;
-  --bg-trans: rgba(0, 0, 0, 0.94);
-  --bg-strong: #050505;
-  --panel: rgba(10, 10, 10, 0.94);
-  --panel-hover: rgba(18, 18, 18, 0.98);
-  --panel-header: rgba(229, 255, 0, 0.08);
-  --border: rgba(229, 255, 0, 0.32);
-  --border-strong: rgba(229, 255, 0, 0.60);
+  --bg-trans: rgba(0, 0, 0, 0.90);
+  --bg-strong: #07090e;
+  --panel: rgba(12, 15, 22, 0.94);
+  --panel-hover: rgba(18, 22, 32, 0.98);
+  --panel-header: rgba(229, 255, 0, 0.06);
+  --border: rgba(229, 255, 0, 0.22);
+  --border-strong: rgba(229, 255, 0, 0.45);
   --border-focus: #e5ff00;
 
-  --text: #e5ff00;
-  --text-muted: #e5ff00;
-  --text-soft: #e5ff00;
-  --text-dim: rgba(229, 255, 0, 0.75);
+  --text: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-soft: #94a3b8;
+  --text-dim: #64748b;
 
   --accent: #e5ff00;
   --accent-strong: #e5ff00;
   --accent-deep: #d4eb00;
-  --accent-soft: rgba(229, 255, 0, 0.12);
-  --accent-glow: rgba(229, 255, 0, 0.35);
-  --accent-gradient: linear-gradient(135deg, #e5ff00 0%, #ffffff 100%);
+  --accent-soft: rgba(229, 255, 0, 0.10);
+  --accent-glow: rgba(229, 255, 0, 0.32);
+  --accent-gradient: linear-gradient(135deg, #e5ff00 0%, #ffffff 85%);
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.85);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.90);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.95);
   --shadow-glow: 0 0 24px rgba(229, 255, 0, 0.35);
 
-  color: #e5ff00 !important;
-  background-color: #000000 !important;
+  color: #f8fafc;
+  background-color: #000000;
 }
 
 /* ==========================================================================
@@ -106,8 +106,8 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg);
   background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px),
+    linear-gradient(rgba(0, 56, 184, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 56, 184, 0.04) 1px, transparent 1px),
     radial-gradient(circle at 12% 8%, var(--accent-soft), transparent 28%),
     radial-gradient(circle at 88% 18%, var(--accent-soft), transparent 24%);
   background-size: 36px 36px, 36px 36px, auto, auto;
@@ -123,10 +123,10 @@ body {
 body.theme-night {
   background-color: #000000;
   background-image:
-    linear-gradient(rgba(229, 255, 0, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(229, 255, 0, 0.06) 1px, transparent 1px),
-    radial-gradient(circle at 12% 8%, rgba(229, 255, 0, 0.12), transparent 28%),
-    radial-gradient(circle at 88% 18%, rgba(229, 255, 0, 0.08), transparent 24%);
+    linear-gradient(rgba(229, 255, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 255, 0, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 12% 8%, rgba(229, 255, 0, 0.08), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(229, 255, 0, 0.05), transparent 24%);
   background-size: 36px 36px, 36px 36px, auto, auto;
 }
 
@@ -685,6 +685,13 @@ body.theme-night .icon-moon {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Hero section is always immediately visible without waiting for scroll */
+#hero,
+.hero-section {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* ==========================================================================
@@ -1721,72 +1728,85 @@ body.theme-night .project-visual {
 }
 
 /* ==========================================================================
-   15. NIGHT MODE COMPLETE COLOR TRANSFORMATION & WCAG AAA ACCESSIBILITY
-   In night mode, EVERY single element transforms into pure black and electric cyber yellow!
+   15. NIGHT MODE OPTIMIZED COLOR ARCHITECTURE & WCAG AAA ACCESSIBILITY
+   Harmonious balance: Deep pitch black (#000000), crisp high-contrast white
+   headings (#f8fafc), comfortable silver-slate body text (#cbd5e1), and
+   vibrant electric cyber yellow (#e5ff00) accents & primary CTA actions.
    ========================================================================== */
-body.theme-night,
-body.theme-night * {
-  border-color: rgba(229, 255, 0, 0.28);
-}
-
 body.theme-night {
-  color: #e5ff00 !important;
-  background-color: #000000 !important;
+  color: #f8fafc;
+  background-color: #000000;
 }
 
 body.theme-night h1,
 body.theme-night h2,
 body.theme-night h3,
-body.theme-night h4,
+body.theme-night h4 {
+  color: #f8fafc;
+}
+
 body.theme-night p,
-body.theme-night span:not(.metric-meter-bar):not(.status-dot):not(.pulse-dot):not(.metric-live-dot):not(.btn *):not(.filter-btn *):not(.lang-btn *):not(.copy-btn *),
-body.theme-night a:not(.btn):not(.filter-btn):not(.lang-btn):not(.copy-btn):not(.back-to-top),
-body.theme-night li,
-body.theme-night label,
-body.theme-night strong:not(.btn *),
-body.theme-night small {
-  color: #e5ff00 !important;
+body.theme-night li {
+  color: #cbd5e1;
+}
+
+body.theme-night small,
+body.theme-night .section-subtitle,
+body.theme-night .hero-description {
+  color: #cbd5e1;
+}
+
+body.theme-night strong {
+  color: #ffffff;
 }
 
 body.theme-night .hero-highlight {
-  background: linear-gradient(135deg, #e5ff00 0%, #ffffff 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  background: linear-gradient(135deg, #e5ff00 0%, #ffffff 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: inline;
 }
 
 /* Header & Navigation in Night Mode */
 body.theme-night .header {
-  background: rgba(0, 0, 0, 0.94) !important;
-  border-bottom-color: rgba(229, 255, 0, 0.35) !important;
+  background: rgba(0, 0, 0, 0.92);
+  border-bottom-color: rgba(229, 255, 0, 0.22);
 }
 
 body.theme-night .brand-mark {
-  background: rgba(229, 255, 0, 0.12) !important;
-  border-color: rgba(229, 255, 0, 0.50) !important;
-  color: #e5ff00 !important;
-  box-shadow: inset 0 0 14px rgba(229, 255, 0, 0.25) !important;
+  background: rgba(229, 255, 0, 0.12);
+  border-color: rgba(229, 255, 0, 0.50);
+  color: #e5ff00;
+  box-shadow: inset 0 0 14px rgba(229, 255, 0, 0.20);
+}
+
+body.theme-night .brand-name {
+  color: #f8fafc;
 }
 
 body.theme-night .nav-link {
-  color: #e5ff00 !important;
+  color: #cbd5e1;
 }
 
 body.theme-night .nav-link:hover,
-body.theme-night .nav-link:focus,
+body.theme-night .nav-link:focus {
+  background: rgba(229, 255, 0, 0.10);
+  color: #e5ff00;
+}
+
 body.theme-night .nav-link.active {
-  background: rgba(229, 255, 0, 0.15) !important;
-  color: #e5ff00 !important;
-  border-color: rgba(229, 255, 0, 0.4) !important;
+  background: rgba(229, 255, 0, 0.16);
+  color: #e5ff00;
+  border-color: rgba(229, 255, 0, 0.40);
 }
 
 body.theme-night .lang-switch {
-  background: rgba(229, 255, 0, 0.10) !important;
-  border-color: rgba(229, 255, 0, 0.35) !important;
+  background: rgba(229, 255, 0, 0.08);
+  border-color: rgba(229, 255, 0, 0.28);
 }
 
 body.theme-night .lang-btn {
-  color: #e5ff00 !important;
+  color: #cbd5e1;
 }
 
 body.theme-night .lang-btn.active {
@@ -1795,174 +1815,98 @@ body.theme-night .lang-btn.active {
   font-weight: 800 !important;
 }
 
-body.theme-night .theme-toggle-btn {
-  background: rgba(229, 255, 0, 0.12) !important;
-  border-color: rgba(229, 255, 0, 0.40) !important;
-  color: #e5ff00 !important;
-}
-
+body.theme-night .theme-toggle-btn,
 body.theme-night .mobile-menu-btn {
-  background: rgba(229, 255, 0, 0.12) !important;
-  border-color: rgba(229, 255, 0, 0.40) !important;
-  color: #e5ff00 !important;
+  background: rgba(229, 255, 0, 0.10);
+  border-color: rgba(229, 255, 0, 0.35);
+  color: #e5ff00;
 }
 
 body.theme-night .mobile-drawer {
-  background: rgba(0, 0, 0, 0.98) !important;
-  border-bottom-color: rgba(229, 255, 0, 0.40) !important;
+  background: rgba(0, 0, 0, 0.98);
+  border-bottom-color: rgba(229, 255, 0, 0.35);
 }
 
-/* Cards in Night Mode */
+/* Cards & Panels in Night Mode */
 body.theme-night .tech-card {
-  background: rgba(10, 10, 10, 0.94) !important;
-  border-color: rgba(229, 255, 0, 0.30) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(229, 255, 0, 0.12) !important;
+  background: rgba(12, 15, 22, 0.94);
+  border-color: rgba(229, 255, 0, 0.22);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.85), inset 0 0 0 1px rgba(229, 255, 0, 0.08);
 }
 
 body.theme-night .tech-card:hover {
-  border-color: #e5ff00 !important;
-  box-shadow: 0 0 28px rgba(229, 255, 0, 0.22) !important;
+  border-color: #e5ff00;
+  box-shadow: 0 0 28px rgba(229, 255, 0, 0.18);
 }
 
-/* Buttons in Night Mode — Yellow background with pitch black text */
-body.theme-night .btn,
+/* BUTTONS IN NIGHT MODE — Perfect Hierarchy & Contrast */
+/* Primary Buttons: High-impact Yellow with crisp Black text */
 body.theme-night .btn-primary,
-body.theme-night .btn-secondary,
-body.theme-night .btn-outline,
-body.theme-night .btn-sm,
-body.theme-night .btn-submit,
-body.theme-night .filter-btn.active,
-body.theme-night .lang-btn.active {
+body.theme-night .btn-submit {
   background: #e5ff00 !important;
   color: #000000 !important;
   font-weight: 800 !important;
   border-color: #e5ff00 !important;
-  box-shadow: 0 0 18px rgba(229, 255, 0, 0.45) !important;
+  box-shadow: 0 0 18px rgba(229, 255, 0, 0.38) !important;
 }
 
-body.theme-night .btn *,
-body.theme-night .btn-primary *,
-body.theme-night .btn-secondary *,
-body.theme-night .btn-outline *,
-body.theme-night .btn-sm *,
-body.theme-night .btn-submit *,
-body.theme-night .filter-btn.active *,
-body.theme-night .lang-btn.active * {
-  color: #000000 !important;
-  stroke: #000000 !important;
-  fill: none;
-}
-
-body.theme-night .btn:hover,
 body.theme-night .btn-primary:hover,
-body.theme-night .btn-secondary:hover,
-body.theme-night .btn-outline:hover,
-body.theme-night .btn-sm:hover,
 body.theme-night .btn-submit:hover {
   background: #ffffff !important;
   color: #000000 !important;
   border-color: #ffffff !important;
-  box-shadow: 0 0 28px rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 0 0 28px rgba(255, 255, 255, 0.70) !important;
   transform: translateY(-2px);
 }
 
-body.theme-night .btn:hover *,
-body.theme-night .btn-primary:hover *,
-body.theme-night .btn-secondary:hover *,
-body.theme-night .btn-outline:hover *,
-body.theme-night .btn-sm:hover *,
-body.theme-night .btn-submit:hover * {
+body.theme-night .btn-primary *,
+body.theme-night .btn-submit * {
   color: #000000 !important;
   stroke: #000000 !important;
 }
 
-/* Tags & Badges in Night Mode */
-body.theme-night .section-tag,
-body.theme-night .hero-badge,
-body.theme-night .project-badge {
-  background: rgba(229, 255, 0, 0.12) !important;
-  border-color: rgba(229, 255, 0, 0.45) !important;
-  color: #e5ff00 !important;
-}
-
-body.theme-night .project-badge.status-live {
-  background: rgba(229, 255, 0, 0.16) !important;
-  border-color: #e5ff00 !important;
-  color: #e5ff00 !important;
-}
-
-body.theme-night .chip,
-body.theme-night .code-pill {
+/* Secondary & Outline Buttons: Refined Dark/Ghost with Yellow accent */
+body.theme-night .btn-secondary,
+body.theme-night .btn-outline {
   background: rgba(229, 255, 0, 0.08) !important;
-  border-color: rgba(229, 255, 0, 0.35) !important;
   color: #e5ff00 !important;
-}
-
-/* Telemetry & Metrics in Night Mode */
-body.theme-night .metric-box,
-body.theme-night .insight-item {
-  background: rgba(229, 255, 0, 0.06) !important;
-  border-color: rgba(229, 255, 0, 0.35) !important;
-}
-
-body.theme-night .metric-box strong,
-body.theme-night .insight-item strong {
-  color: #e5ff00 !important;
-  text-shadow: 0 0 12px rgba(229, 255, 0, 0.4);
-}
-
-body.theme-night .metric-meter {
-  background: rgba(229, 255, 0, 0.2) !important;
-}
-
-body.theme-night .metric-meter-bar {
-  background: #e5ff00 !important;
-  box-shadow: 0 0 10px #e5ff00 !important;
-}
-
-body.theme-night .status-dot,
-body.theme-night .pulse-dot,
-body.theme-night .metric-live-dot {
-  background: #e5ff00 !important;
-  box-shadow: 0 0 10px #e5ff00 !important;
-}
-
-body.theme-night .check-mark {
-  color: #e5ff00 !important;
-  text-shadow: 0 0 8px rgba(229, 255, 0, 0.6);
-}
-
-/* Architecture box in Night Mode */
-body.theme-night .architecture-box {
-  background: rgba(229, 255, 0, 0.06) !important;
-  border-color: rgba(229, 255, 0, 0.35) !important;
-}
-
-body.theme-night .arch-diagram {
-  background: rgba(0, 0, 0, 0.9) !important;
+  font-weight: 700 !important;
   border-color: rgba(229, 255, 0, 0.45) !important;
+  box-shadow: none !important;
+}
+
+body.theme-night .btn-secondary:hover,
+body.theme-night .btn-outline:hover {
+  background: #e5ff00 !important;
+  color: #000000 !important;
+  border-color: #e5ff00 !important;
+  box-shadow: 0 0 20px rgba(229, 255, 0, 0.35) !important;
+  transform: translateY(-2px);
+}
+
+body.theme-night .btn-secondary *,
+body.theme-night .btn-outline * {
   color: #e5ff00 !important;
+  stroke: #e5ff00 !important;
 }
 
-body.theme-night .arch-node {
-  background: rgba(229, 255, 0, 0.15) !important;
-  color: #e5ff00 !important;
+body.theme-night .btn-secondary:hover *,
+body.theme-night .btn-outline:hover * {
+  color: #000000 !important;
+  stroke: #000000 !important;
 }
 
-body.theme-night .arch-arrow {
-  color: rgba(229, 255, 0, 0.7) !important;
-}
-
-/* Filter buttons in Night Mode */
+/* Filter Buttons */
 body.theme-night .filter-btn {
-  background: rgba(229, 255, 0, 0.10) !important;
-  border-color: rgba(229, 255, 0, 0.35) !important;
-  color: #e5ff00 !important;
+  background: rgba(229, 255, 0, 0.08);
+  border-color: rgba(229, 255, 0, 0.30);
+  color: #cbd5e1;
 }
 
 body.theme-night .filter-btn:hover {
-  background: rgba(229, 255, 0, 0.20) !important;
-  border-color: #e5ff00 !important;
+  background: rgba(229, 255, 0, 0.16);
+  border-color: #e5ff00;
+  color: #e5ff00;
 }
 
 body.theme-night .filter-btn.active {
@@ -1970,130 +1914,238 @@ body.theme-night .filter-btn.active {
   color: #000000 !important;
   border-color: #e5ff00 !important;
   font-weight: 800 !important;
-  box-shadow: 0 0 16px rgba(229, 255, 0, 0.4) !important;
+  box-shadow: 0 0 16px rgba(229, 255, 0, 0.35) !important;
 }
 
-/* Project Visuals in Night Mode */
+body.theme-night .filter-btn.active * {
+  color: #000000 !important;
+}
+
+/* Badges & Chips */
+body.theme-night .section-tag,
+body.theme-night .hero-badge,
+body.theme-night .project-badge {
+  background: rgba(229, 255, 0, 0.10);
+  border-color: rgba(229, 255, 0, 0.40);
+  color: #e5ff00;
+}
+
+body.theme-night .project-badge.status-live {
+  background: rgba(229, 255, 0, 0.16);
+  border-color: #e5ff00;
+  color: #e5ff00;
+}
+
+body.theme-night .chip,
+body.theme-night .code-pill {
+  background: rgba(229, 255, 0, 0.06);
+  border-color: rgba(229, 255, 0, 0.28);
+  color: #e5ff00;
+}
+
+/* Metrics & Telemetry */
+body.theme-night .metric-box,
+body.theme-night .insight-item {
+  background: rgba(229, 255, 0, 0.05);
+  border-color: rgba(229, 255, 0, 0.25);
+}
+
+body.theme-night .metric-box strong,
+body.theme-night .insight-item strong {
+  color: #e5ff00;
+  text-shadow: 0 0 12px rgba(229, 255, 0, 0.35);
+}
+
+body.theme-night .metric-label,
+body.theme-night .insight-label {
+  color: #94a3b8;
+}
+
+body.theme-night .metric-meter {
+  background: rgba(229, 255, 0, 0.16);
+}
+
+body.theme-night .metric-meter-bar {
+  background: #e5ff00;
+  box-shadow: 0 0 10px #e5ff00;
+}
+
+body.theme-night .status-dot,
+body.theme-night .pulse-dot,
+body.theme-night .metric-live-dot {
+  background: #e5ff00;
+  box-shadow: 0 0 10px #e5ff00;
+}
+
+body.theme-night .check-mark {
+  color: #e5ff00;
+  text-shadow: 0 0 8px rgba(229, 255, 0, 0.5);
+}
+
+/* Architecture Spotlight */
+body.theme-night .architecture-box {
+  background: rgba(229, 255, 0, 0.05);
+  border-color: rgba(229, 255, 0, 0.25);
+}
+
+body.theme-night .arch-tag {
+  color: #e5ff00;
+}
+
+body.theme-night .arch-diagram {
+  background: rgba(0, 0, 0, 0.85);
+  border-color: rgba(229, 255, 0, 0.35);
+  color: #e5ff00;
+}
+
+body.theme-night .arch-node {
+  background: rgba(229, 255, 0, 0.12);
+  color: #e5ff00;
+}
+
+body.theme-night .arch-arrow {
+  color: rgba(229, 255, 0, 0.6);
+}
+
+/* Project Visuals & Details */
 body.theme-night .project-visual {
-  background: rgba(5, 5, 5, 0.98) !important;
-  border-color: rgba(229, 255, 0, 0.35) !important;
+  background: rgba(6, 8, 12, 0.98);
+  border-color: rgba(229, 255, 0, 0.28);
 }
 
 body.theme-night .project-visual::after {
-  color: #e5ff00 !important;
-  opacity: 0.9 !important;
+  color: #e5ff00;
+  opacity: 0.85;
 }
 
 body.theme-night .project-details {
-  background: rgba(229, 255, 0, 0.08) !important;
-  border: 1px solid rgba(229, 255, 0, 0.25) !important;
+  background: rgba(229, 255, 0, 0.06);
+  border: 1px solid rgba(229, 255, 0, 0.20);
 }
 
-/* Skills Category Cards in Night Mode */
+/* Skills */
 body.theme-night .skill-icon {
-  background: rgba(229, 255, 0, 0.12) !important;
-  border-color: rgba(229, 255, 0, 0.40) !important;
-  color: #e5ff00 !important;
-  box-shadow: 0 0 14px rgba(229, 255, 0, 0.15) !important;
+  background: rgba(229, 255, 0, 0.10);
+  border-color: rgba(229, 255, 0, 0.35);
+  color: #e5ff00;
+  box-shadow: 0 0 14px rgba(229, 255, 0, 0.12);
 }
 
-/* Contact Channels & Form in Night Mode */
+/* Contact */
 body.theme-night .channel-box {
-  background: rgba(229, 255, 0, 0.08) !important;
-  border-color: rgba(229, 255, 0, 0.35) !important;
+  background: rgba(229, 255, 0, 0.06);
+  border-color: rgba(229, 255, 0, 0.28);
 }
 
 body.theme-night .channel-label {
-  color: #e5ff00 !important;
+  color: #94a3b8;
 }
 
 body.theme-night .channel-link {
-  color: #e5ff00 !important;
+  color: #f8fafc;
+}
+
+body.theme-night .channel-link:hover {
+  color: #e5ff00;
 }
 
 body.theme-night .copy-btn {
-  background: rgba(229, 255, 0, 0.12) !important;
-  border-color: rgba(229, 255, 0, 0.40) !important;
-  color: #e5ff00 !important;
+  background: rgba(229, 255, 0, 0.10);
+  border-color: rgba(229, 255, 0, 0.35);
+  color: #e5ff00;
 }
 
 body.theme-night .copy-btn:hover {
-  background: #e5ff00 !important;
-  color: #000000 !important;
+  background: #e5ff00;
+  color: #000000;
 }
 
 body.theme-night .copy-btn:hover * {
-  color: #000000 !important;
-  stroke: #000000 !important;
+  color: #000000;
+  stroke: #000000;
 }
 
 body.theme-night .copy-tooltip {
-  background: #e5ff00 !important;
-  color: #000000 !important;
-  font-weight: 800 !important;
+  background: #e5ff00;
+  color: #000000;
+  font-weight: 800;
+}
+
+body.theme-night .form-label {
+  color: #cbd5e1;
 }
 
 body.theme-night .form-input,
 body.theme-night .form-textarea {
-  background: rgba(5, 5, 5, 0.92) !important;
-  border-color: rgba(229, 255, 0, 0.45) !important;
-  color: #e5ff00 !important;
+  background: rgba(8, 11, 17, 0.95);
+  border-color: rgba(229, 255, 0, 0.35);
+  color: #f8fafc;
 }
 
 body.theme-night .form-input:focus,
 body.theme-night .form-textarea:focus {
-  border-color: #e5ff00 !important;
-  box-shadow: 0 0 0 3px rgba(229, 255, 0, 0.35) !important;
+  border-color: #e5ff00;
+  box-shadow: 0 0 0 3px rgba(229, 255, 0, 0.28);
+}
+
+body.theme-night .form-input::placeholder,
+body.theme-night .form-textarea::placeholder {
+  color: #64748b;
 }
 
 body.theme-night .form-feedback.error {
-  background: rgba(239, 68, 68, 0.20) !important;
-  border-color: #ef4444 !important;
-  color: #ff6b6b !important;
+  background: rgba(239, 68, 68, 0.18);
+  border-color: #ef4444;
+  color: #fca5a5;
 }
 
 body.theme-night .form-feedback.success {
-  background: rgba(229, 255, 0, 0.15) !important;
-  border-color: #e5ff00 !important;
-  color: #e5ff00 !important;
+  background: rgba(229, 255, 0, 0.12);
+  border-color: #e5ff00;
+  color: #e5ff00;
 }
 
-/* Footer & Back to top in Night Mode */
+/* Footer & Back to top */
 body.theme-night .footer {
-  background: rgba(0, 0, 0, 0.98) !important;
-  border-top-color: rgba(229, 255, 0, 0.35) !important;
+  background: rgba(0, 0, 0, 0.98);
+  border-top-color: rgba(229, 255, 0, 0.25);
+}
+
+body.theme-night .footer-copy,
+body.theme-night .footer-tech {
+  color: #94a3b8;
 }
 
 body.theme-night .footer-logo {
-  background: rgba(229, 255, 0, 0.12) !important;
-  border: 1px solid rgba(229, 255, 0, 0.45) !important;
-  color: #e5ff00 !important;
+  background: rgba(229, 255, 0, 0.10);
+  border: 1px solid rgba(229, 255, 0, 0.35);
+  color: #e5ff00;
 }
 
 body.theme-night .back-to-top {
-  background: rgba(229, 255, 0, 0.12) !important;
-  border-color: rgba(229, 255, 0, 0.45) !important;
-  color: #e5ff00 !important;
+  background: rgba(229, 255, 0, 0.10);
+  border-color: rgba(229, 255, 0, 0.35);
+  color: #e5ff00;
 }
 
 body.theme-night .back-to-top:hover {
-  background: #e5ff00 !important;
-  color: #000000 !important;
+  background: #e5ff00;
+  color: #000000;
 }
 
 body.theme-night .back-to-top:hover * {
-  color: #000000 !important;
-  stroke: #000000 !important;
+  color: #000000;
+  stroke: #000000;
 }
 
 body.theme-night .page-glow.glow-1,
 body.theme-night .page-glow.glow-2 {
-  background: #e5ff00 !important;
-  opacity: 0.10 !important;
+  background: #e5ff00;
+  opacity: 0.08;
 }
 
 body.theme-night .orb-1,
 body.theme-night .orb-2,
 body.theme-night .orb-3 {
-  background: radial-gradient(circle, rgba(229, 255, 0, 0.15), transparent 70%) !important;
+  background: radial-gradient(circle, rgba(229, 255, 0, 0.12), transparent 70%);
 }
