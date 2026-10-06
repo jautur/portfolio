@@ -400,102 +400,6 @@
   }
 
   // =========================================================================
-  // Enhanced Interactive Pointer & Spotlight Effect
-  // =========================================================================
-  function initPointerMove() {
-    const cursorDot = document.getElementById('custom-cursor-dot');
-    const cursorRing = document.getElementById('custom-cursor-ring');
-    const spotlight = document.getElementById('pointer-spotlight');
-
-    if (!cursorDot || !cursorRing) return;
-
-    let mouseX = -9999;
-    let mouseY = -9999;
-    let ringX = -9999;
-    let ringY = -9999;
-    let isVisible = false;
-    let isTouch = false;
-
-    // Detect touch device early
-    window.addEventListener('touchstart', () => {
-      isTouch = true;
-      cursorDot.style.display = 'none';
-      cursorRing.style.display = 'none';
-      if (spotlight) spotlight.style.display = 'none';
-    }, { once: true, passive: true });
-
-    window.addEventListener('pointermove', (event) => {
-      if (isTouch || event.pointerType === 'touch') return;
-
-      mouseX = event.clientX;
-      mouseY = event.clientY;
-
-      if (!isVisible) {
-        isVisible = true;
-        cursorDot.style.opacity = '1';
-        cursorRing.style.opacity = '1';
-        if (spotlight) spotlight.style.opacity = '1';
-        ringX = mouseX;
-        ringY = mouseY;
-      }
-
-      // Exact inner dot and spotlight position
-      cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-      if (spotlight) {
-        spotlight.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-      }
-
-      // Parallax helper
-      const px = (event.clientX / window.innerWidth - 0.5) * 16;
-      const py = (event.clientY / window.innerHeight - 0.5) * 16;
-      html.style.setProperty('--pointer-x', `${px}px`);
-      html.style.setProperty('--pointer-y', `${py}px`);
-    }, { passive: true });
-
-    // Smooth Lerp animation for the trailing ring
-    function renderRing() {
-      if (!isTouch && isVisible) {
-        ringX += (mouseX - ringX) * 0.20;
-        ringY += (mouseY - ringY) * 0.20;
-        cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
-      }
-      requestAnimationFrame(renderRing);
-    }
-    requestAnimationFrame(renderRing);
-
-    // Expand ring on interactive elements
-    const interactiveSelectors = 'a, button, input, textarea, .project-card, .filter-btn, .chip, .code-pill, .channel-box, .metric-box, .pillar-card, .tech-card';
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest(interactiveSelectors)) {
-        cursorRing.classList.add('cursor-hover');
-      }
-    });
-
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest(interactiveSelectors)) {
-        cursorRing.classList.remove('cursor-hover');
-      }
-    });
-
-    // Contract ring on click
-    window.addEventListener('pointerdown', () => {
-      cursorRing.classList.add('cursor-active');
-    }, { passive: true });
-
-    window.addEventListener('pointerup', () => {
-      cursorRing.classList.remove('cursor-active');
-    }, { passive: true });
-
-    // Hide when mouse leaves window
-    document.addEventListener('mouseleave', () => {
-      isVisible = false;
-      cursorDot.style.opacity = '0';
-      cursorRing.style.opacity = '0';
-      if (spotlight) spotlight.style.opacity = '0';
-    });
-  }
-
-  // =========================================================================
   // Initialization
   // =========================================================================
   function init() {
@@ -506,7 +410,6 @@
     initScrollReveal();
     initScrollListeners();
     initContact();
-    initPointerMove();
 
     // Theme Toggle Click
     if (themeToggle) {
