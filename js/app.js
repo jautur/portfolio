@@ -355,7 +355,7 @@
       threeScript.src = 'js/three.min.js';
       threeScript.onload = () => {
         const engineScript = document.createElement('script');
-        engineScript.src = 'js/portfolio-3d.js?v=2.9';
+        engineScript.src = 'js/portfolio-3d.js?v=3.0';
         document.body.appendChild(engineScript);
       };
       document.body.appendChild(threeScript);
