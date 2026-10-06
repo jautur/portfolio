@@ -1,16 +1,13 @@
 /**
- * Dictionary of translations for Jaume Tur's Portfolio
- * Languages: Spanish (es) and English (en)
+ * Dictionary of translations for Jaume Tur's Portfolio & CV
+ * Languages: Spanish (es), Valencian (va), and English (en)
  */
 const translations = {
   es: {
-    // Document metadata
     meta: {
-      title: "Jaume Tur — Desarrollador Web · Arquitectura Frontend · CI/CD",
-      description: "Portfolio profesional de Jaume Tur. Desarrollo web moderno, arquitecturas reactivas, optimización de rendimiento y automatización de despliegues."
+      title: "Jaume Tur — Desarrollador Web · CV & Portfolio",
+      description: "Portfolio y currículum de Jaume Tur. Desarrollo web frontend con Angular, TypeScript, código limpio y CI/CD."
     },
-
-    // Navigation
     nav: {
       home: "Inicio",
       about: "Sobre mí",
@@ -25,237 +22,199 @@ const translations = {
       menuClose: "Cerrar menú",
       availableStatus: "Disponible para proyectos"
     },
-
-    // Hero Section
     hero: {
       greeting: "Hola, soy Jaume Tur",
-      role: "Desarrollador Web (DAW) · Técnico Microinformático y Redes (SMX)",
-      headlinePrefix: "Desarrollo aplicaciones web ",
-      headlineHighlight: "completas y robustas",
-      headlineSuffix: ", desde los sistemas hasta el código.",
-      description: "Titulado en Sistemas Microinformáticos y Redes (SMX) y estudiante/desarrollador de Desarrollo de Aplicaciones Web (DAW). Especializado en frontend (HTML5, CSS3, JS/TS, Angular), backend (PHP, Java, Node.js, SQL), administración de sistemas y redes.",
+      role: "Desarrollador Web · Frontend",
+      headlinePrefix: "Desarrollo ",
+      headlineHighlight: "Frontend",
+      headlineSuffix: " & Aplicaciones Web",
+      description: "Enfocado en crear interfaces limpias, accesibles y componentes modulares con Angular, TypeScript y buenas prácticas.",
       ctaProjects: "Ver proyectos",
-      ctaCv: "Ver / Descargar Currículum Vitae",
-      ctaCvText: "Ver / Descargar CV",
+      ctaCv: "Descargar CV",
       ctaContact: "Contactar",
       ctaLinkedIn: "LinkedIn",
-      metrics: {
-        yearsLabel: "Formación & Práctica (SMX + DAW)",
-        automationLabel: "Despliegues y Proyectos",
-        perfLabel: "Rendimiento Lighthouse",
-        uptimeLabel: "Disponibilidad de servicios"
+      cvCard: {
+        title: "// curriculum.profile",
+        status: "DISPONIBLE",
+        roleLabel: "ROL",
+        roleVal: "Desarrollador Web / Frontend",
+        stackLabel: "STACK",
+        stackVal: "Angular · TypeScript · Node.js",
+        focusLabel: "ENFOQUE",
+        focusVal: "Interfaces accesibles y código limpio",
+        educationLabel: "ESTUDIOS",
+        educationVal: "CFGS Desarrollo de Aplicaciones Web",
+        locationLabel: "UBICACIÓN",
+        locationVal: "Valencia (Híbrido / Remoto)"
       }
     },
-
-    // About Section
     about: {
       tag: "Sobre mí",
-      title: "Integrando la administración de sistemas y redes con el desarrollo de aplicaciones web.",
-      lead: "Perfil técnico multidisciplinar formado en el Grado Medio de SMX y el Grado Superior de DAW.",
-      p1: "Cuento con una base sólida de infraestructura: montaje y mantenimiento de equipos, sistemas operativos en red (Linux/Windows Server), servicios de red (DNS, DHCP, web, FTP) y seguridad informática. Sobre estos cimientos construyo aplicaciones web completas.",
-      p2: "En el área de desarrollo domino tanto el entorno cliente (HTML5 semántico, CSS3, JavaScript/TypeScript y frameworks como Angular) como el entorno servidor (PHP, Java, Node.js, bases de datos relacionales y despliegue de aplicaciones).",
-      architectureTitle: "Arquitectura de Despliegue: Disparador & Ejecutor",
-      architectureDesc: "Implemento flujos de trabajo basados en eventos reactivos donde disparadores (webhooks, git push, cron) envían payloads a servicios ejecutores que procesan la lógica y garantizan entregas continuas y fiables.",
+      title: "Perfil Profesional",
+      lead: "Desarrollador web con base sólida en desarrollo frontend moderno y buenas prácticas de ingeniería de software.",
+      p1: "Me centro en escribir código limpio, maquetación semántica accesible y flujos automatizados de prueba y despliegue continuo.",
+      architectureTitle: "Arquitectura: Disparador & Ejecutor",
+      architectureDesc: "Flujos basados en eventos donde disparadores (webhooks, git push) envían datos JSON a tareas de validación y despliegue automático.",
       pillars: {
-        cleanCodeTitle: "Desarrollo Frontend & Accesibilidad",
-        cleanCodeDesc: "Estructuras HTML5 nativas, CSS responsive, JavaScript interactivo y aplicaciones web accesibles.",
-        perfTitle: "Desarrollo Backend & Datos",
-        perfDesc: "Lógica de servidor en PHP/Java/Node.js, diseño de bases de datos relacionales (MySQL/MariaDB) y APIs REST.",
-        automationTitle: "Sistemas & Servicios en Red",
-        automationDesc: "Configuración de servidores Linux/Windows, redes locales, protocolos TCP/IP y servicios de red.",
-        uxTitle: "Seguridad & Calidad Web",
-        uxDesc: "Buenas prácticas de seguridad informática, validación de estándares W3C y optimización web."
+        cleanCodeTitle: "Frontend Moderno",
+        cleanCodeDesc: "HTML5 semántico, CSS3 avanzado y aplicaciones modulares con Angular.",
+        perfTitle: "Calidad & Tipado",
+        perfDesc: "Tipado estricto con TypeScript, accesibilidad WCAG y rendimiento.",
+        automationTitle: "Integración Continua (CI/CD)",
+        automationDesc: "Pipelines en GitHub Actions para pruebas y publicación continua."
       }
     },
-
-    // Projects Section
     projects: {
       tag: "Proyectos",
-      title: "Soluciones reales en producción",
-      subtitle: "Una selección de proyectos destacados donde diseño, código y automatización trabajan juntos.",
+      title: "Proyectos destacados",
+      subtitle: "Trabajos prácticos desarrollados con foco en usabilidad, rendimiento y código estructurado.",
       filters: {
         all: "Todos",
         webapps: "Web Apps",
-        automation: "Sistemas & CI/CD",
-        graphics: "3D & Interfaces"
+        automation: "CI/CD & DevOps",
+        graphics: "3D & WebGL"
       },
-      viewLive: "Ver demo en vivo",
-      viewCode: "Ver código en GitHub",
+      viewLive: "Ver demo",
+      viewCode: "Ver código",
       roleLabel: "Rol:",
-      impactLabel: "Resultado:",
+      impactLabel: "Estado:",
       items: [
         {
           id: "avisa",
           category: "webapps",
-          badge: "Web App en Vivo",
+          badge: "Web App",
           year: "2025",
           title: "AVISA — Gestión de Incidencias",
-          description: "Plataforma web integral para la comunicación, seguimiento y resolución ágil de avisos e incidencias. Diseñada con arquitectura modular, retroalimentación en tiempo real y accesibilidad.",
-          role: "Desarrollo Frontend, UX/UI y Despliegue",
-          impact: "Interfaz ágil, accesible y completamente funcional desplegada en producción.",
-          tags: ["Angular", "TypeScript", "UX/UI", "REST API", "Responsive"],
+          description: "Plataforma web para registro, comunicación y seguimiento de incidencias en tiempo real con diseño accesible y modular.",
+          role: "Frontend y Despliegue",
+          impact: "En producción (GitHub Pages)",
+          tags: ["Angular", "TypeScript", "REST API", "UX/UI"],
           liveUrl: "https://jautur.github.io/AVISA-objectiu/",
           githubUrl: "https://github.com/jautur/AVISA"
         },
         {
           id: "telemetry",
           category: "graphics",
-          badge: "Data Visualization",
+          badge: "WebGL / 3D",
           year: "2024",
-          title: "Panel de Métricas & Telemetría 3D",
-          description: "Sistema visual de monitoreo en tiempo real con renderizado acelerado por hardware mediante WebGL/Three.js. Diseñado específicamente para ejecutarse de manera fluida incluso en dispositivos de recursos limitados.",
-          role: "Ingeniería Gráfica y Frontend",
-          impact: "60 FPS estables con bajo consumo de memoria y pausado dinámico de renderizado.",
-          tags: ["Three.js", "WebGL", "JavaScript ES6+", "Performance", "CSS Grid"],
-          liveUrl: "#",
+          title: "Panel Interactivo Three.js",
+          description: "Visualizador interactivo con aceleración por hardware en WebGL y optimización para bajo consumo de recursos.",
+          role: "Desarrollo Gráfico y Frontend",
+          impact: "60 FPS estables y render dinámico",
+          tags: ["Three.js", "WebGL", "JavaScript ES6+", "Performance"],
+          liveUrl: "#hero",
           githubUrl: "https://github.com/jautur/portfolio"
         },
         {
           id: "pipeline",
           category: "automation",
-          badge: "DevOps & CI/CD",
+          badge: "CI/CD",
           year: "2026",
-          title: "Pipeline CI/CD: Disparador & Ejecutor",
-          description: "Arquitectura orientada a eventos para integración y despliegue continuo. Un sistema de disparo por webhooks que procesa payloads JSON y ejecuta compilaciones, pruebas automatizadas y despliegues idempotentes.",
-          role: "Arquitectura de Automatización y CI/CD",
-          impact: "Validación automática de calidad (HTML/CSS/JS) y entrega continua sin interrupciones.",
-          tags: ["GitHub Actions", "CI/CD", "Webhooks", "JSON Payloads", "Linux"],
+          title: "Pipeline CI/CD Automatizado",
+          description: "Flujo automatizado con GitHub Actions que valida sintaxis, estándares de código y publica despliegues continuos.",
+          role: "Arquitectura CI/CD",
+          impact: "Despliegues automáticos sin interrupción",
+          tags: ["GitHub Actions", "CI/CD", "Linters", "Linux"],
           liveUrl: "#proceso",
           githubUrl: "https://github.com/jautur/portfolio"
         }
       ]
     },
-
-    // Skills Section
     skills: {
       tag: "Habilidades",
-      title: "Stack técnico y competencias (SMX & DAW)",
-      subtitle: "Competencias adquiridas en Sistemas Microinformáticos y Redes y Desarrollo de Aplicaciones Web.",
+      title: "Stack técnico",
+      subtitle: "Lenguajes, frameworks y herramientas que utilizo habitualmente en desarrollo.",
       categories: [
         {
-          name: "Desarrollo Web Cliente (Frontend)",
-          desc: "Interfaces web interactivas, accesibles y adaptadas a cualquier dispositivo.",
-          skills: ["HTML5 semántico & Accesibilidad", "CSS3 / Flexbox / Grid", "JavaScript (ES6+) & TypeScript", "Frameworks Web (Angular)", "Three.js & Gráficos WebGL", "Diseño Web Adaptativo (Responsive)"]
+          name: "Frontend & UI",
+          desc: "Desarrollo de interfaces reactivas, modernas y accesibles.",
+          skills: ["HTML5 Semántico", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Three.js / WebGL", "Responsive Web Design"]
         },
         {
-          name: "Desarrollo Web Servidor & Bases de Datos",
-          desc: "Lógica de negocio, integración con APIs y persistencia de datos.",
-          skills: ["PHP & Programación Servidor", "Java & POO", "Bases de Datos Relacionales (MySQL/MariaDB)", "Consultas SQL & Modelado de Datos", "APIs RESTful & Formato JSON", "Node.js básico"]
+          name: "Backend & APIs",
+          desc: "Consumo de servicios, intercambio de datos y arquitecturas modulares.",
+          skills: ["Node.js", "RESTful APIs", "JSON Payloads", "Arquitectura Trigger/Executor", "Clean Architecture"]
         },
         {
-          name: "Sistemas Operativos, Redes & Servicios (SMX)",
-          desc: "Instalación, configuración y administración de infraestructuras TIC.",
-          skills: ["Linux (Ubuntu/Debian) & Windows Server", "Redes Locales & Protocolo TCP/IP", "Servicios de Red (DNS, DHCP, Web, FTP)", "Montaje y Mantenimiento de Equipos", "Seguridad Informática & Copias de Seguridad", "Terminal Bash & Automatización de scripts"]
+          name: "Herramientas & CI/CD",
+          desc: "Control de versiones, pipelines automatizados y entornos Linux.",
+          skills: ["Git & GitHub", "GitHub Actions", "Pipelines CI/CD", "Linux Shell / Bash", "npm / Tooling"]
         },
         {
-          name: "Despliegue, Git & Calidad Web",
-          desc: "Gestión de versiones, despliegue de aplicaciones y optimización.",
-          skills: ["Control de versiones Git & GitHub", "GitHub Actions & Integración Continua (CI)", "Despliegue de Aplicaciones Web (DAW)", "Web Performance & Core Web Vitals", "html-validate & Validación W3C", "Servidores Web (Apache / Nginx)"]
-        }
-      ],
-      techStackTitle: "Lenguajes y Tecnologías Principales",
-      techStackDesc: "Acceso directo a la documentación oficial y ecosistema de cada tecnología que domino.",
-      tech: {
-        html5: "Marcado & Semántica",
-        css3: "Estilos & Grid",
-        js: "JavaScript ES6+",
-        php: "Backend & Servidor",
-        java: "POO & Backend",
-        spring: "Framework Empresarial"
-      }
-    },
-
-    // Process Section
-    process: {
-      tag: "Metodología",
-      title: "Un proceso estructurado orientado a resultados",
-      subtitle: "Cada etapa está diseñada para garantizar calidad, estabilidad del sistema y código limpio.",
-      steps: [
-        {
-          number: "01",
-          title: "Análisis & Requisitos",
-          desc: "Estudio de necesidades, definición técnica del proyecto y planificación del entorno de sistemas y desarrollo."
-        },
-        {
-          number: "02",
-          title: "Diseño & Arquitectura",
-          desc: "Modelado de base de datos relacional, esquemas de red/servidor y diseño de la interfaz de usuario."
-        },
-        {
-          number: "03",
-          title: "Desarrollo & Pruebas",
-          desc: "Programación en cliente y servidor, pruebas funcionales, validación de código y comprobación de seguridad."
-        },
-        {
-          number: "04",
-          title: "Despliegue & Mantenimiento",
-          desc: "Puesta en producción en servidor web, automatización de tareas, monitorización y copias de seguridad."
+          name: "Calidad & Rendimiento",
+          desc: "Estándares web, accesibilidad y optimización.",
+          skills: ["Accesibilidad WCAG AA", "Web Performance", "html-validate / Linters", "SEO Técnico"]
         }
       ]
     },
-
-    // Metrics / Insights
-    insights: {
-      title: "Rendimiento y fiabilidad medibles",
-      stat1Number: "98%",
-      stat1Label: "Índice de calidad y satisfacción",
-      stat2Number: "100%",
-      stat2Label: "Validación de código en CI",
-      stat3Number: "< 1s",
-      stat3Label: "Tiempo de carga inicial",
-      stat4Number: "24/7",
-      stat4Label: "Disponibilidad en GitHub Pages"
+    process: {
+      tag: "Metodología",
+      title: "Flujo de desarrollo",
+      subtitle: "Un método de trabajo ordenado para entregar software fiable y mantenible.",
+      steps: [
+        {
+          number: "01",
+          title: "Requisitos & Arquitectura",
+          desc: "Definición del alcance técnico, estructura modular y selección del stack idóneo."
+        },
+        {
+          number: "02",
+          title: "Diseño & Maquetación",
+          desc: "Estructura semántica, accesibilidad y diseño adaptado a todos los dispositivos."
+        },
+        {
+          number: "03",
+          title: "Desarrollo Frontend",
+          desc: "Implementación con TypeScript, componentes reutilizables y código limpio."
+        },
+        {
+          number: "04",
+          title: "Validación & Despliegue",
+          desc: "Pruebas automáticas en GitHub Actions y publicación continua a producción."
+        }
+      ]
     },
-
-    // Contact Section
     contact: {
       tag: "Contacto",
-      title: "¿Tienes un proyecto en mente?",
-      subtitle: "Estoy disponible para colaborar en proyectos desafiantes, arquitecturas web y desarrollo frontend.",
+      title: "Contacto directo",
+      subtitle: "Disponible para ofertas de empleo, proyectos o colaboraciones técnicas.",
       emailLabel: "Correo electrónico:",
       emailCopy: "Copiar email",
-      emailCopied: "¡Copiado al portapapeles!",
+      emailCopied: "¡Copiado!",
       githubLabel: "Perfil de GitHub:",
-      githubView: "Visitar github.com/jautur",
+      githubView: "github.com/jautur",
       linkedinLabel: "Perfil de LinkedIn:",
-      linkedinView: "Visitar linkedin.com/in/jautur",
-      cvLabel: "Currículum Vitae:",
-      cvDownload: "Descargar CV (PDF)",
-      formTitle: "Envíame un mensaje",
-      nameLabel: "Tu nombre",
-      namePlaceholder: "Ej: Ana García",
-      emailInputLabel: "Tu correo electrónico",
+      linkedinView: "linkedin.com/in/jautur",
+      formTitle: "Enviar mensaje",
+      nameLabel: "Nombre",
+      namePlaceholder: "Tu nombre",
+      emailInputLabel: "Correo electrónico",
       emailPlaceholder: "nombre@ejemplo.com",
       messageLabel: "Mensaje",
-      messagePlaceholder: "Cuéntame los detalles de tu proyecto o idea...",
+      messagePlaceholder: "Escribe brevemente tu propuesta o consulta...",
       submitBtn: "Enviar mensaje",
       submittingBtn: "Enviando...",
-      successMsg: "¡Gracias! Tu cliente de correo se abrirá para completar el envío.",
-      validationError: "Por favor, completa todos los campos requeridos con datos válidos."
+      successMsg: "¡Gracias! Se abrirá tu cliente de correo para completar el envío.",
+      validationError: "Por favor, completa los campos requeridos."
     },
-
-    // Footer
     footer: {
-      copyright: "© 2026 Jaume Tur. Todos los derechos reservados.",
-      builtWith: "Construido con HTML5 semántico, CSS3 moderno, Vanilla JS & Three.js",
+      copyright: "© 2026 Jaume Tur. Portfolio & CV.",
+      builtWith: "Construido con HTML5, CSS3, Vanilla JS & Three.js",
       backToTop: "Volver arriba"
     }
   },
 
   en: {
-    // Document metadata
     meta: {
-      title: "Jaume Tur — Web Developer · Frontend Architecture · CI/CD",
-      description: "Professional portfolio of Jaume Tur. Modern web development, reactive architectures, performance optimization, and CI/CD automation."
+      title: "Jaume Tur — Web Developer · CV & Portfolio",
+      description: "Portfolio and CV of Jaume Tur. Frontend web development with Angular, TypeScript, clean code, and CI/CD."
     },
-
-    // Navigation
     nav: {
       home: "Home",
       about: "About",
       projects: "Projects",
       skills: "Skills",
-      process: "Process",
+      process: "Workflow",
       contact: "Contact",
       cv: "CV ↗",
       themeLight: "Light Mode",
@@ -264,231 +223,193 @@ const translations = {
       menuClose: "Close menu",
       availableStatus: "Available for projects"
     },
-
-    // Hero Section
     hero: {
       greeting: "Hello, I am Jaume Tur",
-      role: "Web Developer (DAW) · Microcomputer Systems & Networks Technician (SMX)",
-      headlinePrefix: "I build complete and robust ",
-      headlineHighlight: "web applications",
-      headlineSuffix: ", from systems infrastructure to client code.",
-      description: "Qualified technician in Microcomputer Systems & Networks (SMX) and web developer specialized in Web Application Development (DAW). Skilled in frontend (HTML5, CSS3, JS/TS, Angular), backend (PHP, Java, Node.js, SQL), system administration, and computer networks.",
-      ctaProjects: "View Projects",
-      ctaCv: "View / Download Résumé",
-      ctaCvText: "View / Download CV",
-      ctaContact: "Get in Touch",
+      role: "Web Developer · Frontend",
+      headlinePrefix: "Frontend ",
+      headlineHighlight: "Developer",
+      headlineSuffix: " & Web Applications",
+      description: "Focused on building clean, accessible interfaces and modular components with Angular, TypeScript, and engineering best practices.",
+      ctaProjects: "View projects",
+      ctaCv: "Download CV",
+      ctaContact: "Get in touch",
       ctaLinkedIn: "LinkedIn",
-      metrics: {
-        yearsLabel: "Training & Practice (SMX + DAW)",
-        automationLabel: "Deployments & Projects",
-        perfLabel: "Lighthouse Performance",
-        uptimeLabel: "Service Availability"
+      cvCard: {
+        title: "// curriculum.profile",
+        status: "AVAILABLE",
+        roleLabel: "ROLE",
+        roleVal: "Web / Frontend Developer",
+        stackLabel: "STACK",
+        stackVal: "Angular · TypeScript · Node.js",
+        focusLabel: "FOCUS",
+        focusVal: "Accessible UI & clean architecture",
+        educationLabel: "STUDIES",
+        educationVal: "Higher VET in Web App Development",
+        locationLabel: "LOCATION",
+        locationVal: "Valencia (Hybrid / Remote)"
       }
     },
-
-    // About Section
     about: {
-      tag: "About Me",
-      title: "Bridging systems administration and networks with web application development.",
-      lead: "Multidisciplinary technical profile trained across vocational qualifications in SMX and DAW.",
-      p1: "I have a solid grounding in IT infrastructure: hardware assembly, operating systems (Linux/Windows Server), network services (DNS, DHCP, Web, FTP), and IT security. On top of these foundations, I build complete web applications.",
-      p2: "In web development, I master both client-side technologies (semantic HTML5, modern CSS3, JavaScript/TypeScript, and Angular) and server-side engineering (PHP, Java, Node.js, relational databases, and application deployment).",
-      architectureTitle: "Deployment Architecture: Trigger & Executor",
-      architectureDesc: "I build event-driven workflows where triggers (webhooks, git push, cron) deliver structured JSON payloads to executors that process business logic and ensure continuous, resilient delivery.",
+      tag: "About",
+      title: "Professional Profile",
+      lead: "Web developer with solid technical foundations in modern frontend engineering and software best practices.",
+      p1: "I focus on writing clean, semantic, accessible code and automated continuous integration workflows.",
+      architectureTitle: "Architecture: Trigger & Executor",
+      architectureDesc: "Event-driven workflows where triggers (webhooks, git push) send JSON payloads to automated validation and delivery tasks.",
       pillars: {
-        cleanCodeTitle: "Frontend Development & Accessibility",
-        cleanCodeDesc: "Native HTML5 structures, responsive modern CSS, interactive JavaScript, and accessible web standards.",
-        perfTitle: "Backend Development & Data",
-        perfDesc: "Server logic in PHP/Java/Node.js, relational database design (MySQL/MariaDB), and RESTful APIs.",
-        automationTitle: "Systems & Network Services",
-        automationDesc: "Configuration of Linux/Windows servers, local area networks, TCP/IP protocols, and network services.",
-        uxTitle: "Security & Web Quality",
-        uxDesc: "IT security best practices, W3C standards validation, and web performance optimization."
+        cleanCodeTitle: "Modern Frontend",
+        cleanCodeDesc: "Semantic HTML5, advanced modern CSS, and modular Angular apps.",
+        perfTitle: "Quality & Typing",
+        perfDesc: "Strict typing with TypeScript, WCAG accessibility, and high performance.",
+        automationTitle: "Continuous Integration (CI/CD)",
+        automationDesc: "GitHub Actions pipelines for automated testing and deployments."
       }
     },
-
-    // Projects Section
     projects: {
       tag: "Projects",
-      title: "Real solutions running in production",
-      subtitle: "A curated selection of featured projects where design, clean code, and automation unite.",
+      title: "Featured Projects",
+      subtitle: "Hands-on projects built with a strong focus on usability, performance, and clean code.",
       filters: {
         all: "All",
         webapps: "Web Apps",
-        automation: "Systems & CI/CD",
-        graphics: "3D & Interfaces"
+        automation: "CI/CD & DevOps",
+        graphics: "3D & WebGL"
       },
       viewLive: "Live Demo",
-      viewCode: "GitHub Code",
+      viewCode: "View Code",
       roleLabel: "Role:",
-      impactLabel: "Result:",
+      impactLabel: "Status:",
       items: [
         {
           id: "avisa",
           category: "webapps",
-          badge: "Live Web App",
+          badge: "Web App",
           year: "2025",
-          title: "AVISA — Issue & Notice Management",
-          description: "Comprehensive web platform for real-time reporting, tracking, and resolution of issues and notices. Engineered with a modular architecture, instant user feedback, and accessibility.",
-          role: "Frontend Development, UX/UI & Deployment",
-          impact: "Fast, accessible, and production-ready application deployed on the web.",
-          tags: ["Angular", "TypeScript", "UX/UI", "REST API", "Responsive"],
+          title: "AVISA — Issue Management",
+          description: "Web application for real-time reporting, tracking, and resolution of civic issues with accessible modular UI.",
+          role: "Frontend & Deployment",
+          impact: "Live in production (GitHub Pages)",
+          tags: ["Angular", "TypeScript", "REST API", "UX/UI"],
           liveUrl: "https://jautur.github.io/AVISA-objectiu/",
           githubUrl: "https://github.com/jautur/AVISA"
         },
         {
           id: "telemetry",
           category: "graphics",
-          badge: "Data Visualization",
+          badge: "WebGL / 3D",
           year: "2024",
-          title: "3D Telemetry & Metrics Dashboard",
-          description: "Real-time hardware-accelerated monitoring dashboard built with WebGL and Three.js. Specially crafted to run silky smooth even on resource-constrained devices.",
-          role: "Graphics & Frontend Engineering",
-          impact: "Rock-solid 60 FPS with low memory footprint and automatic viewport sleep cycles.",
-          tags: ["Three.js", "WebGL", "JavaScript ES6+", "Performance", "CSS Grid"],
-          liveUrl: "#",
+          title: "Interactive Three.js Dashboard",
+          description: "Hardware-accelerated WebGL interactive visualization optimized for low memory usage and smooth 60 FPS.",
+          role: "Graphics & Frontend Development",
+          impact: "Rock-solid 60 FPS & dynamic pauses",
+          tags: ["Three.js", "WebGL", "JavaScript ES6+", "Performance"],
+          liveUrl: "#hero",
           githubUrl: "https://github.com/jautur/portfolio"
         },
         {
           id: "pipeline",
           category: "automation",
-          badge: "DevOps & CI/CD",
+          badge: "CI/CD",
           year: "2026",
-          title: "CI/CD Pipeline: Trigger & Executor",
-          description: "Event-driven architecture for continuous integration and delivery. A webhook-based trigger system processing JSON payloads to run automated builds, lint tests, and idempotent deployments.",
-          role: "Automation Architecture & CI/CD",
-          impact: "Automated quality validation (HTML/CSS/JS) and uninterrupted delivery pipelines.",
-          tags: ["GitHub Actions", "CI/CD", "Webhooks", "JSON Payloads", "Linux"],
+          title: "Automated CI/CD Pipeline",
+          description: "Event-driven GitHub Actions pipeline running linting, syntax verification, and automated static page delivery.",
+          role: "CI/CD Architecture",
+          impact: "Zero-downtime automated deployment",
+          tags: ["GitHub Actions", "CI/CD", "Linters", "Linux"],
           liveUrl: "#process",
           githubUrl: "https://github.com/jautur/portfolio"
         }
       ]
     },
-
-    // Skills Section
     skills: {
       tag: "Skills",
-      title: "Technical Stack & Core Competencies (SMX & DAW)",
-      subtitle: "Competencies acquired across Microcomputer Systems & Networks and Web Application Development.",
+      title: "Technical Stack",
+      subtitle: "Languages, frameworks, and tools I use on a regular basis.",
       categories: [
         {
-          name: "Client-side Web Development (Frontend)",
-          desc: "Interactive, accessible, and responsive user interfaces.",
-          skills: ["Semantic HTML5 & Accessibility", "CSS3 / Flexbox / Grid", "JavaScript (ES6+) & TypeScript", "Web Frameworks (Angular)", "Three.js & WebGL Graphics", "Responsive Web Design"]
+          name: "Frontend & UI",
+          desc: "Developing modern, reactive, accessible user interfaces.",
+          skills: ["Semantic HTML5", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Three.js / WebGL", "Responsive Web Design"]
         },
         {
-          name: "Server-side Web Development & Databases",
-          desc: "Business logic, API integrations, and persistent data storage.",
-          skills: ["PHP & Server Programming", "Java & OOP", "Relational Databases (MySQL/MariaDB)", "SQL Queries & Data Modeling", "RESTful APIs & JSON Format", "Node.js Basics"]
+          name: "Backend & APIs",
+          desc: "Service consumption, data contracts, and modular structures.",
+          skills: ["Node.js", "RESTful APIs", "JSON Payloads", "Trigger/Executor Architecture", "Clean Architecture"]
         },
         {
-          name: "Operating Systems, Networks & Services (SMX)",
-          desc: "Installation, configuration, and administration of IT infrastructures.",
-          skills: ["Linux (Ubuntu/Debian) & Windows Server", "Local Networks & TCP/IP Protocol", "Network Services (DNS, DHCP, Web, FTP)", "Computer Hardware Assembly & Repair", "IT Security & Backup Strategies", "Bash Shell & Script Automation"]
+          name: "Tools & CI/CD",
+          desc: "Version control, automated pipelines, and Linux toolchains.",
+          skills: ["Git & GitHub", "GitHub Actions", "CI/CD Pipelines", "Linux Shell / Bash", "npm / Tooling"]
         },
         {
-          name: "Deployment, Git & Web Quality",
-          desc: "Version control, application deployment, and continuous optimization.",
-          skills: ["Git & GitHub Version Control", "GitHub Actions & Continuous Integration (CI)", "Web Application Deployment (DAW)", "Web Performance & Core Web Vitals", "html-validate & W3C Standards", "Web Servers (Apache / Nginx)"]
-        }
-      ],
-      techStackTitle: "Core Languages & Technologies",
-      techStackDesc: "Direct access to the official documentation and ecosystem of each core technology.",
-      tech: {
-        html5: "Markup & Semantics",
-        css3: "Styling & Layout Grid",
-        js: "JavaScript ES6+",
-        php: "Backend & Server",
-        java: "OOP & Backend",
-        spring: "Enterprise Framework"
-      }
-    },
-
-    // Process Section
-    process: {
-      tag: "Methodology",
-      title: "A structured process designed for impact",
-      subtitle: "Every phase is carefully calibrated to ensure system reliability, quality, and clean code.",
-      steps: [
-        {
-          number: "01",
-          title: "Analysis & Requirements",
-          desc: "Assessing user needs, technical scope definition, and planning the deployment and development environment."
-        },
-        {
-          number: "02",
-          title: "Design & Architecture",
-          desc: "Relational database schema modeling, network/server topology, and component UX/UI design."
-        },
-        {
-          number: "03",
-          title: "Development & Testing",
-          desc: "Client-side and server-side coding, functional testing, code validation, and security verification."
-        },
-        {
-          number: "04",
-          title: "Deployment & Maintenance",
-          desc: "Production release on web servers, task automation, monitoring, and regular backups."
+          name: "Quality & Performance",
+          desc: "Web standards, accessibility, and optimization.",
+          skills: ["WCAG AA Accessibility", "Web Performance", "html-validate / Linters", "Technical SEO"]
         }
       ]
     },
-
-    // Metrics / Insights
-    insights: {
-      title: "Measurable performance and reliability",
-      stat1Number: "98%",
-      stat1Label: "Quality & Satisfaction Index",
-      stat2Number: "100%",
-      stat2Label: "CI Pipeline Validation Pass",
-      stat3Number: "< 1s",
-      stat3Label: "Initial Page Load Speed",
-      stat4Number: "24/7",
-      stat4Label: "High Availability on GitHub Pages"
+    process: {
+      tag: "Workflow",
+      title: "Development Workflow",
+      subtitle: "A structured, clean methodology to deliver reliable and maintainable software.",
+      steps: [
+        {
+          number: "01",
+          title: "Requirements & Scope",
+          desc: "Technical requirements analysis, component architecture, and optimal stack selection."
+        },
+        {
+          number: "02",
+          title: "Design & Layout",
+          desc: "Semantic structure, responsive layout, and full device accessibility."
+        },
+        {
+          number: "03",
+          title: "Frontend Engineering",
+          desc: "Implementation using TypeScript, reusable components, and clean code principles."
+        },
+        {
+          number: "04",
+          title: "Testing & Deployment",
+          desc: "Automated GitHub Actions checks and continuous release to production."
+        }
+      ]
     },
-
-    // Contact Section
     contact: {
       tag: "Contact",
-      title: "Have a project in mind?",
-      subtitle: "I am open to discuss new opportunities, challenging web architectures, and frontend development.",
+      title: "Get in Touch",
+      subtitle: "Available for job opportunities, projects, or technical collaboration.",
       emailLabel: "Email address:",
       emailCopy: "Copy email",
-      emailCopied: "Copied to clipboard!",
+      emailCopied: "Copied!",
       githubLabel: "GitHub profile:",
-      githubView: "Visit github.com/jautur",
-      linkedinLabel: "LinkedIn Profile:",
-      linkedinView: "Visit linkedin.com/in/jautur",
-      cvLabel: "Curriculum Vitae:",
-      cvDownload: "Download CV (PDF)",
-      formTitle: "Send me a message",
-      nameLabel: "Your Name",
-      namePlaceholder: "e.g. John Doe",
-      emailInputLabel: "Your Email Address",
+      githubView: "github.com/jautur",
+      linkedinLabel: "LinkedIn profile:",
+      linkedinView: "linkedin.com/in/jautur",
+      formTitle: "Send a message",
+      nameLabel: "Name",
+      namePlaceholder: "Your name",
+      emailInputLabel: "Email address",
       emailPlaceholder: "name@example.com",
       messageLabel: "Message",
-      messagePlaceholder: "Share the details of your project or ideas...",
-      submitBtn: "Send Message",
+      messagePlaceholder: "Briefly outline your project or query...",
+      submitBtn: "Send message",
       submittingBtn: "Sending...",
-      successMsg: "Thank you! Your default mail client will open to finalize sending.",
-      validationError: "Please fill in all required fields with valid information."
+      successMsg: "Thank you! Your mail client will open to finalize sending.",
+      validationError: "Please fill in all required fields."
     },
-
-    // Footer
     footer: {
-      copyright: "© 2026 Jaume Tur. All rights reserved.",
-      builtWith: "Built with semantic HTML5, modern CSS3, Vanilla JS & Three.js",
+      copyright: "© 2026 Jaume Tur. Portfolio & CV.",
+      builtWith: "Built with HTML5, CSS3, Vanilla JS & Three.js",
       backToTop: "Back to top"
     }
   },
 
   va: {
-    // Document metadata
     meta: {
-      title: "Jaume Tur — Desenvolupador Web · Arquitectura Frontend · CI/CD",
-      description: "Portfolio professional de Jaume Tur. Desenvolupament web modern, arquitectures reactives, optimització de rendiment i automatització de desplegaments."
+      title: "Jaume Tur — Desenvolupador Web · CV & Portfolio",
+      description: "Portfolio i currículum de Jaume Tur. Desenvolupament web frontend amb Angular, TypeScript, codi net i CI/CD."
     },
-
-    // Navigation
     nav: {
       home: "Inici",
       about: "Sobre mi",
@@ -503,219 +424,184 @@ const translations = {
       menuClose: "Tancar menú",
       availableStatus: "Disponible per a projectes"
     },
-
-    // Hero Section
     hero: {
       greeting: "Hola, sóc Jaume Tur",
-      role: "Desenvolupador Web (DAW) · Tècnic Microinformàtic i Xarxes (SMX)",
-      headlinePrefix: "Desenvolupe aplicacions web ",
-      headlineHighlight: "completes i robustes",
-      headlineSuffix: ", des dels sistemes fins al codi.",
-      description: "Titulat en Sistemes Microinformàtics i Xarxes (SMX) i estudiant/desenvolupador de Desenvolupament d'Aplicacions Web (DAW). Especialitzat en frontend (HTML5, CSS3, JS/TS, Angular), backend (PHP, Java, Node.js, SQL), administració de sistemes i xarxes.",
+      role: "Desenvolupador Web · Frontend",
+      headlinePrefix: "Desenvolupament ",
+      headlineHighlight: "Frontend",
+      headlineSuffix: " & Aplicacions Web",
+      description: "Enfocat a crear interfícies netes, accessibles i components modulars amb Angular, TypeScript i bones pràctiques.",
       ctaProjects: "Veure projectes",
-      ctaCv: "Veure / Descarregar Currículum Vitae",
-      ctaCvText: "Veure / Descarregar CV",
+      ctaCv: "Descarregar CV",
       ctaContact: "Contactar",
       ctaLinkedIn: "LinkedIn",
-      metrics: {
-        yearsLabel: "Formació & Pràctica (SMX + DAW)",
-        automationLabel: "Desplegaments i Projectes",
-        perfLabel: "Rendiment Lighthouse",
-        uptimeLabel: "Disponibilitat de servicis"
+      cvCard: {
+        title: "// curriculum.profile",
+        status: "DISPONIBLE",
+        roleLabel: "ROL",
+        roleVal: "Desenvolupador Web / Frontend",
+        stackLabel: "STACK",
+        stackVal: "Angular · TypeScript · Node.js",
+        focusLabel: "ENFOCAMENT",
+        focusVal: "Interfícies accessibles i codi net",
+        educationLabel: "ESTUDIS",
+        educationVal: "CFGS Desenvolupament d'Aplicacions Web",
+        locationLabel: "UBICACIÓ",
+        locationVal: "València (Híbrid / Remot)"
       }
     },
-
-    // About Section
     about: {
       tag: "Sobre mi",
-      title: "Integrant l'administració de sistemes i xarxes amb el desenvolupament d'aplicacions web.",
-      lead: "Perfil tècnic multidisciplinari format en el Grau Mitjà d'SMX i el Grau Superior de DAW.",
-      p1: "Comte amb una base sòlida d'infraestructura: muntatge i manteniment d'equips, sistemes operatius en xarxa (Linux/Windows Server), servicis de xarxa (DNS, DHCP, web, FTP) i seguretat informàtica. Sobre estos fonaments construïsc aplicacions web completes.",
-      p2: "En l'àrea de desenvolupament domine tant l'entorn client (HTML5 semàntic, CSS3, JavaScript/TypeScript i frameworks com Angular) com l'entorn servidor (PHP, Java, Node.js, bases de dades relacionals i desplegament d'aplicacions).",
-      architectureTitle: "Arquitectura de Desplegament: Disparador & Executor",
-      architectureDesc: "Implemente fluxos de treball basats en esdeveniments reactius on disparadors (webhooks, git push, cron) envien payloads a servicis executors que processen la lògica i garantixen entregues contínues i fiables.",
+      title: "Perfil Professional",
+      lead: "Desenvolupador web amb base sòlida en desenvolupament frontend modern i bones pràctiques d'enginyeria de programari.",
+      p1: "Em centre a escriure codi net, maquetació semàntica accessible i fluxos automatitzats de prova i desplegament continu.",
+      architectureTitle: "Arquitectura: Disparador & Executor",
+      architectureDesc: "Fluxos basats en esdeveniments on disparadors (webhooks, git push) envien dades JSON a tasques de validació i desplegament automàtic.",
       pillars: {
-        cleanCodeTitle: "Desenvolupament Frontend & Accessibilitat",
-        cleanCodeDesc: "Estructures HTML5 natives, CSS responsive, JavaScript interactiu i aplicacions web accessibles.",
-        perfTitle: "Desenvolupament Backend & Dades",
-        perfDesc: "Lògica de servidor en PHP/Java/Node.js, disseny de bases de dades relacionals (MySQL/MariaDB) i APIs REST.",
-        automationTitle: "Sistemes & Servicis en Xarxa",
-        automationDesc: "Configuració de servidors Linux/Windows, xarxes locals, protocols TCP/IP i servicis de xarxa.",
-        uxTitle: "Seguretat & Qualitat Web",
-        uxDesc: "Bones pràctiques de seguretat informàtica, validació d'estàndards W3C i optimització web."
+        cleanCodeTitle: "Frontend Modern",
+        cleanCodeDesc: "HTML5 semàntic, CSS3 avançat i aplicacions modulars amb Angular.",
+        perfTitle: "Qualitat & Tipat",
+        perfDesc: "Tipat estricte amb TypeScript, accessibilitat WCAG i rendiment.",
+        automationTitle: "Integració Contínua (CI/CD)",
+        automationDesc: "Pipelines en GitHub Actions per a proves i publicació contínua."
       }
     },
-
-    // Projects Section
     projects: {
       tag: "Projectes",
-      title: "Solucions reals en producció",
-      subtitle: "Una selecció de projectes destacats on disseny, codi i automatització treballen junts.",
+      title: "Projectes destacats",
+      subtitle: "Treballs pràctics desenvolupats amb focus en usabilitat, rendiment i codi estructurat.",
       filters: {
         all: "Tots",
         webapps: "Web Apps",
-        automation: "Sistemes & CI/CD",
-        graphics: "3D & Interfícies"
+        automation: "CI/CD & DevOps",
+        graphics: "3D & WebGL"
       },
-      viewLive: "Veure demo en viu",
-      viewCode: "Veure codi en GitHub",
+      viewLive: "Veure demo",
+      viewCode: "Veure codi",
       roleLabel: "Rol:",
-      impactLabel: "Resultat:",
+      impactLabel: "Estat:",
       items: [
         {
           id: "avisa",
           category: "webapps",
-          badge: "Web App en Viu",
+          badge: "Web App",
           year: "2025",
           title: "AVISA — Gestió d'Incidències",
-          description: "Plataforma web integral per a la comunicació, seguiment i resolució àgil d'avisos i incidències. Dissenyada amb arquitectura modular, retroalimentació en temps real i accessibilitat.",
-          role: "Desenvolupament Frontend, UX/UI i Desplegament",
-          impact: "Interfície àgil, accessible i completament funcional desplegada en producció.",
-          tags: ["Angular", "TypeScript", "UX/UI", "REST API", "Responsive"],
+          description: "Plataforma web per a registre, comunicació i seguiment d'incidències en temps real amb disseny accessible i modular.",
+          role: "Frontend i Desplegament",
+          impact: "En producció (GitHub Pages)",
+          tags: ["Angular", "TypeScript", "REST API", "UX/UI"],
           liveUrl: "https://jautur.github.io/AVISA-objectiu/",
           githubUrl: "https://github.com/jautur/AVISA"
         },
         {
           id: "telemetry",
           category: "graphics",
-          badge: "Data Visualization",
+          badge: "WebGL / 3D",
           year: "2024",
-          title: "Panell de Mètriques & Telemetria 3D",
-          description: "Sistema visual de monitorització en temps real amb renderitzat accelerat per maquinari mitjançant WebGL/Three.js. Dissenyat específicament per a executar-se de manera fluida fins i tot en dispositius de recursos limitats.",
-          role: "Enginyeria Gràfica i Frontend",
-          impact: "60 FPS estables amb baix consum de memòria i pausat dinàmic de renderitzat.",
-          tags: ["Three.js", "WebGL", "JavaScript ES6+", "Performance", "CSS Grid"],
-          liveUrl: "#",
+          title: "Panell Interactiu Three.js",
+          description: "Visualitzador interactiu amb acceleració per maquinari en WebGL i optimització per a baix consum de recursos.",
+          role: "Desenvolupament Gràfic i Frontend",
+          impact: "60 FPS estables i render dinàmic",
+          tags: ["Three.js", "WebGL", "JavaScript ES6+", "Performance"],
+          liveUrl: "#hero",
           githubUrl: "https://github.com/jautur/portfolio"
         },
         {
           id: "pipeline",
           category: "automation",
-          badge: "DevOps & CI/CD",
+          badge: "CI/CD",
           year: "2026",
-          title: "Pipeline CI/CD: Disparador & Executor",
-          description: "Arquitectura orientada a esdeveniments per a integració i desplegament continu. Un sistema de tret per webhooks que processa payloads JSON i executa compilacions, proves automatitzades i desplegaments idempotents.",
-          role: "Arquitectura d'Automatització i CI/CD",
-          impact: "Validació automàtica de qualitat (HTML/CSS/JS) i entrega contínua sense interrupcions.",
-          tags: ["GitHub Actions", "CI/CD", "Webhooks", "JSON Payloads", "Linux"],
+          title: "Pipeline CI/CD Automatitzat",
+          description: "Flux automatitzat amb GitHub Actions que valida sintaxi, estàndards de codi i publica desplegaments continus.",
+          role: "Arquitectura CI/CD",
+          impact: "Desplegaments automàtics sense interrupció",
+          tags: ["GitHub Actions", "CI/CD", "Linters", "Linux"],
           liveUrl: "#proceso",
           githubUrl: "https://github.com/jautur/portfolio"
         }
       ]
     },
-
-    // Skills Section
     skills: {
       tag: "Habilitats",
-      title: "Stack tècnic i competències (SMX & DAW)",
-      subtitle: "Competències adquirides en Sistemes Microinformàtics i Xarxes i Desenvolupament d'Aplicacions Web.",
+      title: "Stack tècnic",
+      subtitle: "Llenguatges, frameworks i eines que utilitze habitualment en desenvolupament.",
       categories: [
         {
-          name: "Desenvolupament Web Client (Frontend)",
-          desc: "Interfícies web interactives, accessibles i adaptades a qualsevol dispositiu.",
-          skills: ["HTML5 semàntic & Accessibilitat", "CSS3 / Flexbox / Grid", "JavaScript (ES6+) & TypeScript", "Frameworks Web (Angular)", "Three.js & Gràfics WebGL", "Disseny Web Adaptatiu (Responsive)"]
+          name: "Frontend & UI",
+          desc: "Desenvolupament d'interfícies reactives, modernes i accessibles.",
+          skills: ["HTML5 Semàntic", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Three.js / WebGL", "Responsive Web Design"]
         },
         {
-          name: "Desenvolupament Web Servidor & Bases de Dades",
-          desc: "Lògica de negoci, integració amb APIs i persistència de dades.",
-          skills: ["PHP & Programació Servidor", "Java & POO", "Bases de Dades Relacionals (MySQL/MariaDB)", "Consultes SQL & Modelatge de Dades", "APIs RESTful & Format JSON", "Node.js bàsic"]
+          name: "Backend & APIs",
+          desc: "Consum de servicis, intercanvi de dades i arquitectures modulars.",
+          skills: ["Node.js", "RESTful APIs", "JSON Payloads", "Arquitectura Trigger/Executor", "Clean Architecture"]
         },
         {
-          name: "Sistemes Operatius, Xarxes & Servicis (SMX)",
-          desc: "Instal·lació, configuració i administració d'infraestructures TIC.",
-          skills: ["Linux (Ubuntu/Debian) & Windows Server", "Xarxes Locals & Protocol TCP/IP", "Servicis de Xarxa (DNS, DHCP, Web, FTP)", "Muntatge i Manteniment d'Equips", "Seguretat Informàtica & Còpies de Seguretat", "Terminal Bash & Automatització d'scripts"]
+          name: "Eines & CI/CD",
+          desc: "Control de versions, pipelines automatitzats i entorns Linux.",
+          skills: ["Git & GitHub", "GitHub Actions", "Pipelines CI/CD", "Linux Shell / Bash", "npm / Tooling"]
         },
         {
-          name: "Desplegament, Git & Qualitat Web",
-          desc: "Gestió de versions, desplegament d'aplicacions i optimització.",
-          skills: ["Control de versions Git & GitHub", "GitHub Actions & Integració Contínua (CI)", "Desplegament d'Aplicacions Web (DAW)", "Web Performance & Core Web Vitals", "html-validate & Validació W3C", "Servidors Web (Apache / Nginx)"]
-        }
-      ],
-      techStackTitle: "Llenguatges i Tecnologies Principals",
-      techStackDesc: "Accés directe a la documentació oficial i ecosistema de cada tecnologia que domine.",
-      tech: {
-        html5: "Marcat & Semàntica",
-        css3: "Estils & Grid",
-        js: "JavaScript ES6+",
-        php: "Backend & Servidor",
-        java: "POO & Backend",
-        spring: "Framework Empresarial"
-      }
-    },
-
-    // Process Section
-    process: {
-      tag: "Metodologia",
-      title: "Un procés estructurat orientat a resultats",
-      subtitle: "Cada etapa està dissenyada per a garantir qualitat, estabilitat del sistema i codi net.",
-      steps: [
-        {
-          number: "01",
-          title: "Anàlisi & Requisits",
-          desc: "Estudi de necessitats, definició tècnica del projecte i planificació de l'entorn de sistemes i desenvolupament."
-        },
-        {
-          number: "02",
-          title: "Disseny & Arquitectura",
-          desc: "Modelatge de base de dades relacional, esquemes de xarxa/servidor i disseny de la interfície d'usuari."
-        },
-        {
-          number: "03",
-          title: "Desenvolupament & Proves",
-          desc: "Programació en client i servidor, proves funcionals, validació de codi i comprovació de seguretat."
-        },
-        {
-          number: "04",
-          title: "Desplegament & Manteniment",
-          desc: "Posada en producció en servidor web, automatització de tasques, monitorització i còpies de seguretat."
+          name: "Qualitat & Rendiment",
+          desc: "Estàndards web, accessibilitat i optimització.",
+          skills: ["Accessibilitat WCAG AA", "Web Performance", "html-validate / Linters", "SEO Tècnic"]
         }
       ]
     },
-
-    // Metrics / Insights
-    insights: {
-      title: "Rendiment i fiabilitat mesurables",
-      stat1Number: "98%",
-      stat1Label: "Índex de qualitat i satisfacció",
-      stat2Number: "100%",
-      stat2Label: "Validació de codi en CI",
-      stat3Number: "< 1s",
-      stat3Label: "Temps de càrrega inicial",
-      stat4Number: "24/7",
-      stat4Label: "Disponibilitat en GitHub Pages"
+    process: {
+      tag: "Metodologia",
+      title: "Flux de desenvolupament",
+      subtitle: "Un mètode de treball ordenat per a entregar programari fiable i mantenible.",
+      steps: [
+        {
+          number: "01",
+          title: "Requisits & Arquitectura",
+          desc: "Definició de l'abast tècnic, estructura modular i selecció de l'stack idoni."
+        },
+        {
+          number: "02",
+          title: "Disseny & Maquetació",
+          desc: "Estructura semàntica, accessibilitat i disseny adaptat a tots els dispositius."
+        },
+        {
+          number: "03",
+          title: "Desenvolupament Frontend",
+          desc: "Implementació amb TypeScript, components reutilitzables i codi net."
+        },
+        {
+          number: "04",
+          title: "Validació & Desplegament",
+          desc: "Proves automàtiques en GitHub Actions i publicació contínua a producció."
+        }
+      ]
     },
-
-    // Contact Section
     contact: {
       tag: "Contacte",
-      title: "Tens un projecte en ment?",
-      subtitle: "Estic disponible per a col·laborar en projectes desafiadors, arquitectures web i desenvolupament frontend.",
+      title: "Contacte directe",
+      subtitle: "Disponible per a ofertes de treball, projectes o col·laboracions tècniques.",
       emailLabel: "Correu electrònic:",
       emailCopy: "Copiar correu",
-      emailCopied: "Copiat al porta-retalls!",
+      emailCopied: "Copiat!",
       githubLabel: "Perfil de GitHub:",
-      githubView: "Visitar github.com/jautur",
+      githubView: "github.com/jautur",
       linkedinLabel: "Perfil de LinkedIn:",
-      linkedinView: "Visitar linkedin.com/in/jautur",
-      cvLabel: "Currículum Vitae:",
-      cvDownload: "Descarregar CV (PDF)",
-      formTitle: "Envia'm un missatge",
-      nameLabel: "El teu nom",
-      namePlaceholder: "Ex: Marc Pérez",
-      emailInputLabel: "El teu correu electrònic",
+      linkedinView: "linkedin.com/in/jautur",
+      formTitle: "Enviar missatge",
+      nameLabel: "Nom",
+      namePlaceholder: "El teu nom",
+      emailInputLabel: "Correu electrònic",
       emailPlaceholder: "nom@exemple.com",
       messageLabel: "Missatge",
-      messagePlaceholder: "Conta'm els detalls del teu projecte o idea...",
+      messagePlaceholder: "Escriu breument la teua proposta o consulta...",
       submitBtn: "Enviar missatge",
       submittingBtn: "Enviant...",
       successMsg: "Gràcies! S'obrirà el teu client de correu per a completar l'enviament.",
-      validationError: "Per favor, completa tots els camps requerits amb dades vàlides."
+      validationError: "Per favor, completa els camps requerits."
     },
-
-    // Footer
     footer: {
-      copyright: "© 2026 Jaume Tur. Tots els drets reservats.",
-      builtWith: "Construït amb HTML5 semàntic, CSS3 modern, Vanilla JS & Three.js",
+      copyright: "© 2026 Jaume Tur. Portfolio & CV.",
+      builtWith: "Construït amb HTML5, CSS3, Vanilla JS & Three.js",
       backToTop: "Tornar a dalt"
     }
   }
@@ -724,4 +610,3 @@ const translations = {
 if (typeof module !== "undefined" && module.exports) {
   module.exports = translations;
 }
-

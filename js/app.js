@@ -198,7 +198,7 @@
   }
 
   // =========================================================================
-  // Project Filtering (Smooth animated transition)
+  // Project Filtering
   // =========================================================================
   function initProjectFilters() {
     filterBtns.forEach((btn) => {
@@ -210,17 +210,9 @@
         projectCards.forEach((card) => {
           const category = card.getAttribute('data-category');
           if (filter === 'all' || category === filter) {
-            card.style.display = '';
-            setTimeout(() => {
-              card.classList.remove('hidden');
-            }, 20);
+            card.classList.remove('hidden');
           } else {
             card.classList.add('hidden');
-            setTimeout(() => {
-              if (card.classList.contains('hidden')) {
-                card.style.display = 'none';
-              }
-            }, 300);
           }
         });
       });
@@ -282,20 +274,13 @@
   // Scroll Reveal Animations
   // =========================================================================
   function initScrollReveal() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
-      return;
-    }
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach((el) => {
       revealObserver.observe(el);
@@ -303,26 +288,15 @@
   }
 
   // =========================================================================
-  // Top Scroll Progress, Back to Top & Active Nav Transitions
+  // Back to Top & Active Nav Indicators
   // =========================================================================
   function initScrollListeners() {
     let scrollTimeout;
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
     const sections = document.querySelectorAll('section[id]');
-    const progressBar = document.getElementById('scroll-progress-bar');
-
-    function updateProgress() {
-      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      if (progressBar && docHeight > 0) {
-        const percent = Math.min(Math.max((scrollY / docHeight) * 100, 0), 100);
-        progressBar.style.width = `${percent}%`;
-      }
-    }
 
     window.addEventListener('scroll', () => {
       const scrollY = window.pageYOffset;
-      updateProgress();
 
       // Back to top button
       if (backToTopBtn) {
@@ -359,39 +333,6 @@
       }
     }, { passive: true });
 
-    updateProgress();
-
-    // Smooth navigation click with section highlight pulse
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', (e) => {
-        const targetId = anchor.getAttribute('href');
-        if (!targetId || targetId === '#') return;
-
-        const targetEl = document.querySelector(targetId);
-        if (targetEl) {
-          const windowBar = targetEl.querySelector('.explorer-window-bar');
-          if (windowBar) {
-            windowBar.classList.remove('highlight-pulse');
-            setTimeout(() => {
-              windowBar.classList.add('highlight-pulse');
-            }, 350);
-          }
-        }
-      });
-    });
-
-    // Window control dots micro-interaction
-    document.querySelectorAll('.explorer-dots').forEach((dots) => {
-      dots.addEventListener('click', (e) => {
-        const bar = dots.closest('.explorer-window-bar');
-        if (bar) {
-          bar.classList.remove('highlight-pulse');
-          void bar.offsetWidth; // trigger reflow
-          bar.classList.add('highlight-pulse');
-        }
-      });
-    });
-
     if (backToTopBtn) {
       backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -406,7 +347,7 @@
     // Copy email to clipboard
     if (copyEmailBtn) {
       copyEmailBtn.addEventListener('click', () => {
-        const email = copyEmailBtn.getAttribute('data-email') || 'tursisternes53@gmail.com';
+        const email = copyEmailBtn.getAttribute('data-email') || 'jautursis@alu.edu.gva.es';
         navigator.clipboard.writeText(email).then(() => {
           const tooltip = copyEmailBtn.querySelector('.copy-tooltip');
           const originalText = tooltip ? tooltip.textContent : '';
@@ -442,7 +383,7 @@
         }
 
         // Prefill email
-        const recipient = 'tursisternes53@gmail.com';
+        const recipient = 'jautursis@alu.edu.gva.es';
         const subject = encodeURIComponent(`Contacto Portfolio de ${nameInput.value.trim()}`);
         const bodyText = encodeURIComponent(`Hola Jaume,\n\n${msgInput.value.trim()}\n\n--\nDe: ${nameInput.value.trim()} (${emailInput.value.trim()})`);
 
@@ -459,105 +400,6 @@
   }
 
   // =========================================================================
-  // Upgraded Dual-Layer Custom Follower Pointer with Fluid Physics
-  // =========================================================================
-  function initCustomCursor() {
-    const follower = document.getElementById('custom-cursor-follower');
-    const dot = document.getElementById('custom-cursor-dot');
-    if (!follower || !dot) return;
-
-    // Check for coarse pointer (touchscreen devices)
-    if (window.matchMedia('(pointer: coarse)').matches) return;
-
-    let mouseX = -100;
-    let mouseY = -100;
-    let followerX = -100;
-    let followerY = -100;
-    let isMoving = false;
-    let scrollTimeout = null;
-    let lastScrollY = window.scrollY;
-
-    // Track mouse coordinates
-    window.addEventListener('pointermove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-
-      if (!isMoving) {
-        isMoving = true;
-        document.body.classList.add('cursor-active');
-        followerX = mouseX;
-        followerY = mouseY;
-      }
-
-      // Fast immediate update for center dot
-      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-
-      // CSS custom property for subtle tilt/shift
-      const px = (e.clientX / window.innerWidth - 0.5) * 12;
-      const py = (e.clientY / window.innerHeight - 0.5) * 12;
-      html.style.setProperty('--pointer-x', `${px}px`);
-      html.style.setProperty('--pointer-y', `${py}px`);
-    }, { passive: true });
-
-    // Smooth lerp render loop for follower ring
-    function renderCursor() {
-      if (isMoving) {
-        followerX += (mouseX - followerX) * 0.2;
-        followerY += (mouseY - followerY) * 0.2;
-        follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
-      }
-      requestAnimationFrame(renderCursor);
-    }
-    requestAnimationFrame(renderCursor);
-
-    // Expand pointer when scrolling down
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
-      const scrollDelta = currentScrollY - lastScrollY;
-      lastScrollY = currentScrollY;
-
-      // When scrolling down with velocity
-      if (scrollDelta > 1.5) {
-        follower.classList.add('cursor-scrolling');
-      }
-
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        follower.classList.remove('cursor-scrolling');
-      }, 160);
-    }, { passive: true });
-
-    // Interactive Hover Expansion on links, buttons, filter pills
-    const interactiveTargets = 'a, button, input, textarea, .filter-btn, .lang-btn, .theme-toggle-btn, .copy-btn, .chip, .code-pill, .exp-dot';
-    document.addEventListener('pointerover', (e) => {
-      if (e.target && e.target.closest(interactiveTargets)) {
-        follower.classList.add('cursor-hover');
-        dot.classList.add('cursor-hover');
-      } else if (e.target && e.target.closest('.tech-card, .explorer-window-bar')) {
-        follower.classList.add('cursor-card-hover');
-      }
-    }, { passive: true });
-
-    document.addEventListener('pointerout', (e) => {
-      if (e.target && e.target.closest(interactiveTargets)) {
-        follower.classList.remove('cursor-hover');
-        dot.classList.remove('cursor-hover');
-      } else if (e.target && e.target.closest('.tech-card, .explorer-window-bar')) {
-        follower.classList.remove('cursor-card-hover');
-      }
-    }, { passive: true });
-
-    // Click pulse
-    window.addEventListener('pointerdown', () => {
-      follower.classList.add('cursor-click');
-    }, { passive: true });
-
-    window.addEventListener('pointerup', () => {
-      follower.classList.remove('cursor-click');
-    }, { passive: true });
-  }
-
-  // =========================================================================
   // Initialization
   // =========================================================================
   function init() {
@@ -568,7 +410,6 @@
     initScrollReveal();
     initScrollListeners();
     initContact();
-    initCustomCursor();
 
     // Theme Toggle Click
     if (themeToggle) {
@@ -602,6 +443,15 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('open')) {
         toggleMobileMenu(true);
+      }
+    });
+
+    // Close mobile drawer when clicking outside
+    document.addEventListener('click', (e) => {
+      if (mobileDrawer && mobileDrawer.classList.contains('open')) {
+        if (!mobileDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          toggleMobileMenu(true);
+        }
       }
     });
   }
