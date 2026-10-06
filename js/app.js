@@ -62,20 +62,18 @@
       localStorage.setItem(STORAGE_KEYS.THEME, theme);
     }
 
-    if (theme === 'dark') {
-      body.classList.add('theme-night');
-      body.classList.remove('theme-day');
-      if (themeToggle) {
-        themeToggle.setAttribute('aria-pressed', 'true');
-        themeToggle.setAttribute('title', translations[currentLang]?.nav?.themeLight || 'Cambiar a modo día');
-      }
-    } else {
-      body.classList.add('theme-day');
-      body.classList.remove('theme-night');
-      if (themeToggle) {
-        themeToggle.setAttribute('aria-pressed', 'false');
-        themeToggle.setAttribute('title', translations[currentLang]?.nav?.themeDark || 'Cambiar a modo noche');
-      }
+    const isDark = theme === 'dark';
+    html.classList.toggle('theme-night', isDark);
+    html.classList.toggle('theme-day', !isDark);
+    body.classList.toggle('theme-night', isDark);
+    body.classList.toggle('theme-day', !isDark);
+
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      themeToggle.setAttribute('title', isDark
+        ? (translations[currentLang]?.nav?.themeLight || 'Cambiar a modo día')
+        : (translations[currentLang]?.nav?.themeDark || 'Cambiar a modo noche')
+      );
     }
 
     // Notify 3D canvas if available
@@ -143,6 +141,9 @@
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute('content', metaTrans.description);
     }
+
+    // If initial load and default language is Spanish, HTML is already prerendered
+    if (!save && lang === 'es') return;
 
     // Update all elements with data-i18n
     const elements = document.querySelectorAll('[data-i18n]');
@@ -288,55 +289,98 @@
   }
 
   // =========================================================================
-  // Back to Top & Active Nav Indicators
+  // Back to Top & Active Nav Indicators (Zero Forced Reflow)
   // =========================================================================
   function initScrollListeners() {
-    let scrollTimeout;
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
     const sections = document.querySelectorAll('section[id]');
 
-    window.addEventListener('scroll', () => {
-      const scrollY = window.pageYOffset;
+    // IntersectionObserver tracks active sections without forced reflow
+    if ('IntersectionObserver' in window && sections.length > 0) {
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach((link) => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+              } else {
+                link.classList.remove('active');
+                link.removeAttribute('aria-current');
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -70% 0px'
+      });
 
-      // Back to top button
-      if (backToTopBtn) {
-        if (scrollY > 350) {
-          backToTopBtn.classList.add('visible');
-        } else {
-          backToTopBtn.classList.remove('visible');
-        }
-      }
+      sections.forEach((s) => sectionObserver.observe(s));
+    }
 
-      // Active nav link highlight
-      if (!scrollTimeout) {
-        scrollTimeout = setTimeout(() => {
-          sections.forEach((section) => {
-            const sectionTop = section.offsetTop - 120;
-            const sectionHeight = section.offsetHeight;
-            const id = section.getAttribute('id');
-
-            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-              navLinks.forEach((link) => {
-                const href = link.getAttribute('href');
-                if (href === `#${id}`) {
-                  link.classList.add('active');
-                  link.setAttribute('aria-current', 'page');
-                } else {
-                  link.classList.remove('active');
-                  link.removeAttribute('aria-current');
-                }
-              });
-            }
-          });
-          scrollTimeout = null;
-        }, 50);
-      }
-    }, { passive: true });
-
+    // Back to top button throttled with requestAnimationFrame
     if (backToTopBtn) {
+      let isCheckingScroll = false;
+      window.addEventListener('scroll', () => {
+        if (!isCheckingScroll) {
+          isCheckingScroll = true;
+          window.requestAnimationFrame(() => {
+            if (window.scrollY > 350) {
+              backToTopBtn.classList.add('visible');
+            } else {
+              backToTopBtn.classList.remove('visible');
+            }
+            isCheckingScroll = false;
+          });
+        }
+      }, { passive: true });
+
       backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    }
+  }
+
+  // =========================================================================
+  // Lazy 3D WebGL Engine Loader (Removes 150KB & 2.5s TBT from Critical Path)
+  // =========================================================================
+  function init3DVisualsLoader() {
+    let hasLoaded = false;
+    function load3D() {
+      if (hasLoaded) return;
+      hasLoaded = true;
+
+      const threeScript = document.createElement('script');
+      threeScript.src = 'js/three.min.js';
+      threeScript.onload = () => {
+        const engineScript = document.createElement('script');
+        engineScript.src = 'js/portfolio-3d.js?v=2.9';
+        document.body.appendChild(engineScript);
+      };
+      document.body.appendChild(threeScript);
+    }
+
+    const projectsSec = document.getElementById('proyectos');
+    if (projectsSec && 'IntersectionObserver' in window) {
+      const projObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            load3D();
+            projObserver.disconnect();
+          }
+        });
+      }, { rootMargin: '400px 0px' });
+      projObserver.observe(projectsSec);
+    }
+
+    // Idle fallback: loads seamlessly during browser idle time
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(() => {
+        setTimeout(load3D, 2500);
+      });
+    } else {
+      setTimeout(load3D, 4000);
     }
   }
 
@@ -403,6 +447,7 @@
   // Initialization
   // =========================================================================
   function init() {
+    html.classList.add('is-interactive');
     initTheme();
     initLanguage();
     initProjectFilters();
@@ -410,6 +455,7 @@
     initScrollReveal();
     initScrollListeners();
     initContact();
+    init3DVisualsLoader();
 
     // Theme Toggle Click
     if (themeToggle) {

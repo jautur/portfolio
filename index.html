@@ -32,13 +32,27 @@
     <link rel="apple-touch-icon" href="assets/img/jt-logo-dark.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
+    <!-- Preload Primary Font for Zero Layout Shift -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css?v=2.8">
+    <link rel="stylesheet" href="css/styles.css?v=2.9">
+
+    <!-- Early Theme Bootstrap (Zero FOUC & Zero CLS) -->
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem('jt_portfolio_theme');
+          var dark = s ? s === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.classList.add(dark ? 'theme-night' : 'theme-day');
+        } catch (e) {}
+      })();
+    </script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -70,7 +84,7 @@
     }
     </script>
   </head>
-  <body class="theme-day">
+  <body>
     <!-- Accessible Skip Link -->
     <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
@@ -719,15 +733,9 @@
     </footer>
 
     <!-- i18n Translations Dictionary -->
-    <script src="js/translations.js?v=2.8"></script>
+    <script src="js/translations.js?v=2.9" defer></script>
 
-    <!-- Core Interactive Application Script -->
-    <script src="js/app.js?v=2.8"></script>
-
-    <!-- Three.js Library -->
-    <script src="js/three.min.js"></script>
-
-    <!-- 3D WebGL Engine -->
-    <script src="js/portfolio-3d.js?v=2.8"></script>
+    <!-- Core Interactive Application Script (Lazily loads 3D Engine on demand) -->
+    <script src="js/app.js?v=2.9" defer></script>
   </body>
 </html>

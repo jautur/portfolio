@@ -4,8 +4,6 @@
    Dual Identity: Day (Israel Blue #0038b8) & Night (Deep Midnight #070b14)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
 /* ==========================================================================
    1. DESIGN TOKENS (CSS Custom Properties)
    ========================================================================== */
@@ -55,6 +53,7 @@
 }
 
 /* Color Palette — Night Mode (Electric Cyber Yellow #e5ff00 & Deep Pure Black #000000) */
+:root.theme-night,
 body.theme-night {
   --bg: #000000;
   --bg-trans: rgba(0, 0, 0, 0.90);
@@ -97,9 +96,12 @@ body.theme-night {
 }
 
 html {
-  scroll-behavior: smooth;
   font-size: 17px;
   -webkit-text-size-adjust: 100%;
+}
+
+html.is-interactive {
+  scroll-behavior: smooth;
 }
 
 body {

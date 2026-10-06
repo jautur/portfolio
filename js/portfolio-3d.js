@@ -102,6 +102,10 @@
         const container = document.querySelector(config.selector);
         if (!container) return;
 
+        // Read dimensions before DOM modifications to prevent forced reflow
+        const pWidth = container.clientWidth || 300;
+        const pHeight = container.clientHeight || 160;
+
         container.innerHTML = '';
         const c = document.createElement('canvas');
         c.className = 'project-3d-canvas';
@@ -116,10 +120,6 @@
           precision: 'mediump'
         });
         pRenderer.setPixelRatio(1.0);
-
-        const rect = container.getBoundingClientRect();
-        const pWidth = rect.width || 300;
-        const pHeight = rect.height || 160;
         pRenderer.setSize(pWidth, pHeight);
 
         const pScene = new THREE.Scene();
