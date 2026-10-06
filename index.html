@@ -34,7 +34,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css?v=2.4">
+    <link rel="stylesheet" href="css/styles.css?v=2.5">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -183,13 +183,13 @@
             </div>
 
             <h1 class="hero-headline">
-              <span data-i18n="hero.headlinePrefix">Construyo experiencias web </span>
-              <span class="hero-highlight" data-i18n="hero.headlineHighlight">rápidas, robustas</span>
-              <span data-i18n="hero.headlineSuffix"> y orientadas al rendimiento.</span>
+              <span data-i18n="hero.headlinePrefix">Desarrollo </span>
+              <span class="hero-highlight" data-i18n="hero.headlineHighlight">Frontend</span>
+              <span data-i18n="hero.headlineSuffix"> &amp; Aplicaciones Web</span>
             </h1>
 
             <p class="hero-description" data-i18n="hero.description">
-              Especializado en ingeniería frontend, interfaces reactivas y sistemas de integración continua. Combino código limpio con arquitecturas escalables que resuelven problemas reales.
+              Enfocado en crear interfaces limpias, accesibles y componentes modulares con Angular, TypeScript y buenas prácticas.
             </p>
 
             <div class="hero-actions">
@@ -199,57 +199,42 @@
             </div>
           </div>
 
-          <!-- Hero Metrics & Telemetry Card -->
-          <aside class="hero-panel tech-card" aria-label="Telemetría y resumen">
+          <!-- Hero Developer CV Profile Card -->
+          <aside class="hero-panel tech-card cv-profile-card" aria-label="Ficha de perfil profesional">
             <div class="panel-header">
-              <span class="terminal-prompt">// telemetry.overview</span>
-              <span class="terminal-status"><span class="pulse-dot"></span>LIVE</span>
+              <span class="terminal-prompt" data-i18n="hero.cvCard.title">// curriculum.profile</span>
+              <span class="terminal-status"><span class="pulse-dot"></span><span data-i18n="hero.cvCard.status">DISPONIBLE</span></span>
             </div>
 
-            <div class="metrics-stack">
-              <div class="metric-box tech-metric" data-counter="4" data-prefix="+" data-suffix="" data-bar="85">
-                <div class="metric-topline">
-                  <strong>+4</strong>
-                  <span class="metric-live-dot" aria-hidden="true"></span>
-                </div>
-                <span class="metric-label" data-i18n="hero.metrics.yearsLabel">Años de experiencia</span>
-                <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
+            <div class="cv-data-list">
+              <div class="cv-data-row">
+                <span class="cv-data-key" data-i18n="hero.cvCard.roleLabel">ROL</span>
+                <span class="cv-data-val" data-i18n="hero.cvCard.roleVal">Desarrollador Web / Frontend</span>
               </div>
-
-              <div class="metric-box tech-metric" data-counter="20" data-prefix="" data-suffix="+" data-bar="92">
-                <div class="metric-topline">
-                  <strong>20+</strong>
-                  <span class="metric-live-dot" aria-hidden="true"></span>
-                </div>
-                <span class="metric-label" data-i18n="hero.metrics.automationLabel">Automatizaciones activas</span>
-                <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
+              <div class="cv-data-row">
+                <span class="cv-data-key" data-i18n="hero.cvCard.stackLabel">STACK</span>
+                <span class="cv-data-val" data-i18n="hero.cvCard.stackVal">Angular · TypeScript · Node.js</span>
               </div>
-
-              <div class="metric-box tech-metric" data-counter="98" data-prefix="" data-suffix="%" data-bar="98">
-                <div class="metric-topline">
-                  <strong>98%</strong>
-                  <span class="metric-live-dot" aria-hidden="true"></span>
-                </div>
-                <span class="metric-label" data-i18n="hero.metrics.perfLabel">Rendimiento Lighthouse</span>
-                <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
+              <div class="cv-data-row">
+                <span class="cv-data-key" data-i18n="hero.cvCard.focusLabel">ENFOQUE</span>
+                <span class="cv-data-val" data-i18n="hero.cvCard.focusVal">Interfaces accesibles y código limpio</span>
               </div>
-
-              <div class="metric-box tech-metric" data-counter="24" data-prefix="" data-suffix="/7" data-bar="100">
-                <div class="metric-topline">
-                  <strong>24/7</strong>
-                  <span class="metric-live-dot" aria-hidden="true"></span>
-                </div>
-                <span class="metric-label" data-i18n="hero.metrics.uptimeLabel">Disponibilidad de servicios</span>
-                <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
+              <div class="cv-data-row">
+                <span class="cv-data-key" data-i18n="hero.cvCard.educationLabel">ESTUDIOS</span>
+                <span class="cv-data-val" data-i18n="hero.cvCard.educationVal">CFGS Desarrollo de Aplicaciones Web</span>
+              </div>
+              <div class="cv-data-row">
+                <span class="cv-data-key" data-i18n="hero.cvCard.locationLabel">UBICACIÓN</span>
+                <span class="cv-data-val" data-i18n="hero.cvCard.locationVal">Valencia (Híbrido / Remoto)</span>
               </div>
             </div>
 
             <div class="panel-tags">
-              <span class="code-pill">Frontend</span>
               <span class="code-pill">Angular</span>
               <span class="code-pill">TypeScript</span>
-              <span class="code-pill">CI/CD</span>
-              <span class="code-pill">Three.js</span>
+              <span class="code-pill">Node.js</span>
+              <span class="code-pill">Git &amp; CI/CD</span>
+              <span class="code-pill">HTML5 / CSS3</span>
             </div>
           </aside>
         </div>
@@ -261,55 +246,47 @@
       <section id="sobre-mi" class="section reveal">
         <div class="section-header">
           <span class="section-tag" data-i18n="about.tag">Sobre mí</span>
-          <h2 class="section-title" data-i18n="about.title">Transformando ideas complejas en interfaces limpias y arquitecturas predecibles.</h2>
+          <h2 class="section-title" data-i18n="about.title">Perfil Profesional</h2>
         </div>
 
         <div class="about-grid">
           <article class="about-card tech-card">
-            <h3 class="about-lead" data-i18n="about.lead">Soy desarrollador web enfocado en la intersección entre diseño de interacción, arquitectura frontend y automatización de procesos.</h3>
-            <p data-i18n="about.p1">Mi enfoque de trabajo se basa en principios de ingeniería de software sólidos: código modular, tipado estricto, accesibilidad (WCAG) y optimización de carga sin dependencias superfluas.</p>
-            <p data-i18n="about.p2">Me apasiona crear productos digitales donde cada interacción sea fluida y cada flujo de despliegue esté protegido por pruebas continuas y validaciones rigurosas.</p>
+            <h3 class="about-lead" data-i18n="about.lead">Desarrollador web con base sólida en desarrollo frontend moderno y buenas prácticas de ingeniería de software.</h3>
+            <p data-i18n="about.p1">Me centro en escribir código limpio, maquetación semántica accesible y flujos automatizados de prueba y despliegue continuo.</p>
 
-            <!-- Architecture Spotlight from actual README -->
+            <!-- Architecture Spotlight -->
             <div class="architecture-box">
               <div class="arch-header">
                 <span class="arch-tag">&lt;architecture /&gt;</span>
-                <h4 data-i18n="about.architectureTitle">Arquitectura de Despliegue: Disparador &amp; Ejecutor</h4>
+                <h4 data-i18n="about.architectureTitle">Arquitectura: Disparador &amp; Ejecutor</h4>
               </div>
-              <p data-i18n="about.architectureDesc">Implemento flujos de trabajo basados en eventos reactivos donde disparadores (webhooks, git push, cron) envían payloads a servicios ejecutores idempotentes que garantizan entregas seguras y sin fallos.</p>
+              <p data-i18n="about.architectureDesc">Flujos basados en eventos donde disparadores (webhooks, git push) envían datos JSON a tareas de validación y despliegue automático.</p>
               <div class="arch-diagram" aria-hidden="true">
-                <span class="arch-node">[Origen]</span>
-                <span class="arch-arrow">──(Detecta)──&gt;</span>
-                <span class="arch-node">[Disparador]</span>
+                <span class="arch-node">[Evento Git]</span>
                 <span class="arch-arrow">──(JSON)──&gt;</span>
-                <span class="arch-node">[Ejecutor]</span>
-                <span class="arch-arrow">──(Acción)──&gt;</span>
-                <span class="arch-node">[Destino]</span>
+                <span class="arch-node">[GitHub Actions]</span>
+                <span class="arch-arrow">──(Build/Test)──&gt;</span>
+                <span class="arch-node">[Despliegue]</span>
               </div>
             </div>
           </article>
 
-          <!-- 4 Pillars -->
+          <!-- 3 Pillars -->
           <div class="pillars-grid">
             <div class="pillar-card tech-card">
               <div class="pillar-num">01</div>
-              <h4 data-i18n="about.pillars.cleanCodeTitle">Código Limpio &amp; Semántico</h4>
-              <p data-i18n="about.pillars.cleanCodeDesc">Estructuras HTML5 nativas, CSS moderno sin bloat y JavaScript/TypeScript estructurado.</p>
+              <h4 data-i18n="about.pillars.cleanCodeTitle">Frontend Moderno</h4>
+              <p data-i18n="about.pillars.cleanCodeDesc">HTML5 semántico, CSS3 avanzado y aplicaciones modulares con Angular.</p>
             </div>
             <div class="pillar-card tech-card">
               <div class="pillar-num">02</div>
-              <h4 data-i18n="about.pillars.perfTitle">Alto Rendimiento</h4>
-              <p data-i18n="about.pillars.perfDesc">Cargas instantáneas, minimización de layouts forzados y gráficos WebGL ligeros.</p>
+              <h4 data-i18n="about.pillars.perfTitle">Calidad &amp; Tipado</h4>
+              <p data-i18n="about.pillars.perfDesc">Tipado estricto con TypeScript, accesibilidad WCAG y rendimiento.</p>
             </div>
             <div class="pillar-card tech-card">
               <div class="pillar-num">03</div>
               <h4 data-i18n="about.pillars.automationTitle">Integración Continua (CI/CD)</h4>
-              <p data-i18n="about.pillars.automationDesc">Pipelines automatizados de pruebas, linters y despliegues automáticos.</p>
-            </div>
-            <div class="pillar-card tech-card">
-              <div class="pillar-num">04</div>
-              <h4 data-i18n="about.pillars.uxTitle">Enfoque en Accesibilidad (a11y)</h4>
-              <p data-i18n="about.pillars.uxDesc">Navegación por teclado completa, contrastes verificados y semántica inclusiva.</p>
+              <p data-i18n="about.pillars.automationDesc">Pipelines en GitHub Actions para pruebas y publicación continua.</p>
             </div>
           </div>
         </div>
@@ -322,16 +299,16 @@
         <div class="section-header">
           <div class="header-titles">
             <span class="section-tag" data-i18n="projects.tag">Proyectos</span>
-            <h2 class="section-title" data-i18n="projects.title">Soluciones reales en producción</h2>
-            <p class="section-subtitle" data-i18n="projects.subtitle">Una selección de proyectos destacados donde diseño, código y automatización trabajan juntos.</p>
+            <h2 class="section-title" data-i18n="projects.title">Proyectos destacados</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">Trabajos prácticos desarrollados con foco en usabilidad, rendimiento y código estructurado.</p>
           </div>
 
           <!-- Category Filter Buttons -->
           <div class="filter-group" role="group" aria-label="Filtrar proyectos por categoría">
             <button type="button" class="filter-btn active" data-filter="all" data-i18n="projects.filters.all">Todos</button>
             <button type="button" class="filter-btn" data-filter="webapps" data-i18n="projects.filters.webapps">Web Apps</button>
-            <button type="button" class="filter-btn" data-filter="automation" data-i18n="projects.filters.automation">Sistemas &amp; CI/CD</button>
-            <button type="button" class="filter-btn" data-filter="graphics" data-i18n="projects.filters.graphics">3D &amp; Interfaces</button>
+            <button type="button" class="filter-btn" data-filter="automation" data-i18n="projects.filters.automation">CI/CD &amp; DevOps</button>
+            <button type="button" class="filter-btn" data-filter="graphics" data-i18n="projects.filters.graphics">3D &amp; WebGL</button>
           </div>
         </div>
 
@@ -340,7 +317,7 @@
           <!-- PROJECT 1: AVISA -->
           <article class="project-card tech-card" data-category="webapps">
             <div class="project-topline">
-              <span class="project-badge status-live">Web App en Vivo</span>
+              <span class="project-badge status-live">Web App</span>
               <span class="project-year">2025</span>
             </div>
 
@@ -350,38 +327,37 @@
             <div class="project-body">
               <h3 class="project-title">AVISA — Gestión de Incidencias</h3>
               <p class="project-desc" data-i18n="projects.items.0.description">
-                Plataforma web integral para la comunicación, seguimiento y resolución ágil de avisos e incidencias. Diseñada con arquitectura modular, retroalimentación en tiempo real y accesibilidad.
+                Plataforma web para registro, comunicación y seguimiento de incidencias en tiempo real con diseño accesible y modular.
               </p>
 
               <div class="project-details">
                 <div class="detail-row">
                   <span class="detail-label" data-i18n="projects.roleLabel">Rol:</span>
-                  <span class="detail-value" data-i18n="projects.items.0.role">Desarrollo Frontend, UX/UI y Despliegue</span>
+                  <span class="detail-value" data-i18n="projects.items.0.role">Frontend y Despliegue</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label" data-i18n="projects.impactLabel">Resultado:</span>
-                  <span class="detail-value" data-i18n="projects.items.0.impact">Interfaz ágil, accesible y completamente funcional desplegada en producción.</span>
+                  <span class="detail-label" data-i18n="projects.impactLabel">Estado:</span>
+                  <span class="detail-value" data-i18n="projects.items.0.impact">En producción (GitHub Pages)</span>
                 </div>
               </div>
 
               <div class="project-tags">
                 <span class="chip">Angular</span>
                 <span class="chip">TypeScript</span>
-                <span class="chip">UX/UI</span>
                 <span class="chip">REST API</span>
-                <span class="chip">Responsive</span>
+                <span class="chip">UX/UI</span>
               </div>
 
               <div class="project-links">
-                <a href="https://jautur.github.io/AVISA-objectiu/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" aria-label="Abrir web AVISA en producción">
-                  <span data-i18n="projects.viewLive">Ver demo en vivo</span>
+                <a href="https://jautur.github.io/AVISA-objectiu/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" aria-label="Abrir demo AVISA">
+                  <span data-i18n="projects.viewLive">Ver demo</span>
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </a>
                 <a href="https://github.com/jautur/AVISA" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="Ver código de AVISA en GitHub">
-                  <span data-i18n="projects.viewCode">Ver código en GitHub</span>
+                  <span data-i18n="projects.viewCode">Ver código</span>
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                   </svg>
@@ -393,7 +369,7 @@
           <!-- PROJECT 2: 3D TELEMETRY DASHBOARD -->
           <article class="project-card tech-card" data-category="graphics">
             <div class="project-topline">
-              <span class="project-badge">Data Visualization</span>
+              <span class="project-badge">WebGL / 3D</span>
               <span class="project-year">2024</span>
             </div>
 
@@ -401,19 +377,19 @@
             <div class="project-visual visual-one" aria-hidden="true"></div>
 
             <div class="project-body">
-              <h3 class="project-title">Panel de Métricas &amp; Telemetría 3D</h3>
+              <h3 class="project-title">Panel Interactivo Three.js</h3>
               <p class="project-desc" data-i18n="projects.items.1.description">
-                Sistema visual de monitoreo en tiempo real con renderizado acelerado por hardware mediante WebGL/Three.js. Diseñado específicamente para ejecutarse de manera fluida incluso en dispositivos de recursos limitados.
+                Visualizador interactivo con aceleración por hardware en WebGL y optimización para bajo consumo de recursos.
               </p>
 
               <div class="project-details">
                 <div class="detail-row">
                   <span class="detail-label" data-i18n="projects.roleLabel">Rol:</span>
-                  <span class="detail-value" data-i18n="projects.items.1.role">Ingeniería Gráfica y Frontend</span>
+                  <span class="detail-value" data-i18n="projects.items.1.role">Desarrollo Gráfico y Frontend</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label" data-i18n="projects.impactLabel">Resultado:</span>
-                  <span class="detail-value" data-i18n="projects.items.1.impact">60 FPS estables con bajo consumo de memoria y pausado dinámico de renderizado.</span>
+                  <span class="detail-label" data-i18n="projects.impactLabel">Estado:</span>
+                  <span class="detail-value" data-i18n="projects.items.1.impact">60 FPS estables y render dinámico</span>
                 </div>
               </div>
 
@@ -422,15 +398,14 @@
                 <span class="chip">WebGL</span>
                 <span class="chip">JavaScript ES6+</span>
                 <span class="chip">Performance</span>
-                <span class="chip">CSS Grid</span>
               </div>
 
               <div class="project-links">
-                <a href="#hero" class="btn btn-sm btn-primary" aria-label="Ver telemetría en vivo">
-                  <span data-i18n="projects.viewLive">Ver demo en vivo</span>
+                <a href="#hero" class="btn btn-sm btn-primary" aria-label="Ver panel interactivo">
+                  <span data-i18n="projects.viewLive">Ver demo</span>
                 </a>
                 <a href="https://github.com/jautur/portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="Ver código del panel en GitHub">
-                  <span data-i18n="projects.viewCode">Ver código en GitHub</span>
+                  <span data-i18n="projects.viewCode">Ver código</span>
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                   </svg>
@@ -442,7 +417,7 @@
           <!-- PROJECT 3: CI/CD PIPELINE -->
           <article class="project-card tech-card" data-category="automation">
             <div class="project-topline">
-              <span class="project-badge">DevOps &amp; CI/CD</span>
+              <span class="project-badge">CI/CD</span>
               <span class="project-year">2026</span>
             </div>
 
@@ -450,36 +425,35 @@
             <div class="project-visual visual-three" aria-hidden="true"></div>
 
             <div class="project-body">
-              <h3 class="project-title">Pipeline CI/CD: Disparador &amp; Ejecutor</h3>
+              <h3 class="project-title">Pipeline CI/CD Automatizado</h3>
               <p class="project-desc" data-i18n="projects.items.2.description">
-                Arquitectura orientada a eventos para integración y despliegue continuo. Un sistema de disparo por webhooks que procesa payloads JSON y ejecuta compilaciones, pruebas automatizadas y despliegues idempotentes.
+                Flujo automatizado con GitHub Actions que valida sintaxis, estándares de código y publica despliegues continuos.
               </p>
 
               <div class="project-details">
                 <div class="detail-row">
                   <span class="detail-label" data-i18n="projects.roleLabel">Rol:</span>
-                  <span class="detail-value" data-i18n="projects.items.2.role">Arquitectura de Automatización y CI/CD</span>
+                  <span class="detail-value" data-i18n="projects.items.2.role">Arquitectura CI/CD</span>
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label" data-i18n="projects.impactLabel">Resultado:</span>
-                  <span class="detail-value" data-i18n="projects.items.2.impact">Validación automática de calidad (HTML/CSS/JS) y entrega continua sin interrupciones.</span>
+                  <span class="detail-label" data-i18n="projects.impactLabel">Estado:</span>
+                  <span class="detail-value" data-i18n="projects.items.2.impact">Despliegues automáticos sin interrupción</span>
                 </div>
               </div>
 
               <div class="project-tags">
                 <span class="chip">GitHub Actions</span>
                 <span class="chip">CI/CD</span>
-                <span class="chip">Webhooks</span>
-                <span class="chip">JSON Payloads</span>
+                <span class="chip">Linters</span>
                 <span class="chip">Linux</span>
               </div>
 
               <div class="project-links">
                 <a href="#proceso" class="btn btn-sm btn-primary" aria-label="Ver flujo de trabajo">
-                  <span data-i18n="projects.viewLive">Ver demo en vivo</span>
+                  <span data-i18n="projects.viewLive">Ver demo</span>
                 </a>
                 <a href="https://github.com/jautur/portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="Ver configuración de CI/CD en GitHub">
-                  <span data-i18n="projects.viewCode">Ver código en GitHub</span>
+                  <span data-i18n="projects.viewCode">Ver código</span>
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                   </svg>
@@ -497,8 +471,8 @@
       <section id="skills" class="section reveal">
         <div class="section-header">
           <span class="section-tag" data-i18n="skills.tag">Habilidades</span>
-          <h2 class="section-title" data-i18n="skills.title">Stack técnico y competencias</h2>
-          <p class="section-subtitle" data-i18n="skills.subtitle">Herramientas y tecnologías que utilizo para construir soluciones duraderas y de alta calidad.</p>
+          <h2 class="section-title" data-i18n="skills.title">Stack técnico</h2>
+          <p class="section-subtitle" data-i18n="skills.subtitle">Lenguajes, frameworks y herramientas que utilizo habitualmente en desarrollo.</p>
         </div>
 
         <div class="skills-grid">
@@ -512,8 +486,8 @@
                 </svg>
               </span>
               <div>
-                <h3 class="skill-cat-title">Frontend &amp; UI Engineering</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.0.desc">Desarrollo de interfaces reactivas, modernas y de alto rendimiento.</p>
+                <h3 class="skill-cat-title">Frontend &amp; UI</h3>
+                <p class="skill-cat-desc" data-i18n="skills.categories.0.desc">Desarrollo de interfaces reactivas, modernas y accesibles.</p>
               </div>
             </div>
             <ul class="skills-list">
@@ -539,8 +513,8 @@
                 </svg>
               </span>
               <div>
-                <h3 class="skill-cat-title">Arquitectura &amp; Backend</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.1.desc">Estructuración de datos, lógica de negocio y comunicación de servicios.</p>
+                <h3 class="skill-cat-title">Backend &amp; APIs</h3>
+                <p class="skill-cat-desc" data-i18n="skills.categories.1.desc">Consumo de servicios, intercambio de datos y arquitecturas modulares.</p>
               </div>
             </div>
             <ul class="skills-list">
@@ -548,7 +522,6 @@
               <li><span class="check-mark" aria-hidden="true">✓</span> RESTful APIs</li>
               <li><span class="check-mark" aria-hidden="true">✓</span> JSON Payloads</li>
               <li><span class="check-mark" aria-hidden="true">✓</span> Arquitectura Trigger/Executor</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Microservicios</li>
               <li><span class="check-mark" aria-hidden="true">✓</span> Clean Architecture</li>
             </ul>
           </article>
@@ -564,17 +537,16 @@
                 </svg>
               </span>
               <div>
-                <h3 class="skill-cat-title">Herramientas, Git &amp; CI/CD</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.2.desc">Automatización de despliegues, control de versiones y entornos de desarrollo.</p>
+                <h3 class="skill-cat-title">Herramientas &amp; CI/CD</h3>
+                <p class="skill-cat-desc" data-i18n="skills.categories.2.desc">Control de versiones, pipelines automatizados y entornos Linux.</p>
               </div>
             </div>
             <ul class="skills-list">
               <li><span class="check-mark" aria-hidden="true">✓</span> Git &amp; GitHub</li>
               <li><span class="check-mark" aria-hidden="true">✓</span> GitHub Actions</li>
               <li><span class="check-mark" aria-hidden="true">✓</span> Pipelines CI/CD</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Webhooks de automatización</li>
               <li><span class="check-mark" aria-hidden="true">✓</span> Linux Shell / Bash</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> npm / Node tooling</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> npm / Tooling</li>
             </ul>
           </article>
 
@@ -591,16 +563,15 @@
                 </svg>
               </span>
               <div>
-                <h3 class="skill-cat-title">Calidad, SEO &amp; Rendimiento</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.3.desc">Garantía de estándares, accesibilidad y máxima velocidad de carga.</p>
+                <h3 class="skill-cat-title">Calidad &amp; Rendimiento</h3>
+                <p class="skill-cat-desc" data-i18n="skills.categories.3.desc">Estándares web, accesibilidad y optimización.</p>
               </div>
             </div>
             <ul class="skills-list">
-              <li><span class="check-mark" aria-hidden="true">✓</span> Web Performance (Core Web Vitals)</li>
               <li><span class="check-mark" aria-hidden="true">✓</span> Accesibilidad WCAG AA</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> SEO Técnico &amp; Metadatos</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> Web Performance</li>
               <li><span class="check-mark" aria-hidden="true">✓</span> html-validate / Linters</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Cross-browser Testing</li>
+              <li><span class="check-mark" aria-hidden="true">✓</span> SEO Técnico</li>
             </ul>
           </article>
         </div>
@@ -612,95 +583,45 @@
       <section id="proceso" class="section reveal">
         <div class="section-header">
           <span class="section-tag" data-i18n="process.tag">Metodología</span>
-          <h2 class="section-title" data-i18n="process.title">Un proceso estructurado orientado a resultados</h2>
-          <p class="section-subtitle" data-i18n="process.subtitle">Cada etapa está diseñada para minimizar la fricción técnica y maximizar el valor del producto.</p>
+          <h2 class="section-title" data-i18n="process.title">Flujo de desarrollo</h2>
+          <p class="section-subtitle" data-i18n="process.subtitle">Un método de trabajo ordenado para entregar software fiable y mantenible.</p>
         </div>
 
         <div class="process-grid">
           <div class="process-step-card tech-card">
             <span class="step-num">01</span>
-            <h3 class="step-title" data-i18n="process.steps.0.title">Diagnóstico &amp; Requisitos</h3>
-            <p class="step-desc" data-i18n="process.steps.0.desc">Análisis del problema, definición del alcance técnico, selección del stack óptimo y establecimiento de objetivos de rendimiento y accesibilidad.</p>
+            <h3 class="step-title" data-i18n="process.steps.0.title">Requisitos &amp; Arquitectura</h3>
+            <p class="step-desc" data-i18n="process.steps.0.desc">Definición del alcance técnico, estructura modular y selección del stack idóneo.</p>
           </div>
 
           <div class="process-step-card tech-card">
             <span class="step-num">02</span>
-            <h3 class="step-title" data-i18n="process.steps.1.title">Diseño &amp; Arquitectura</h3>
-            <p class="step-desc" data-i18n="process.steps.1.desc">Creación de la estructura visual, flujos de usuario, diseño de contratos de datos (JSON) y definición de la arquitectura de componentes.</p>
+            <h3 class="step-title" data-i18n="process.steps.1.title">Diseño &amp; Maquetación</h3>
+            <p class="step-desc" data-i18n="process.steps.1.desc">Estructura semántica, accesibilidad y diseño adaptado a todos los dispositivos.</p>
           </div>
 
           <div class="process-step-card tech-card">
             <span class="step-num">03</span>
-            <h3 class="step-title" data-i18n="process.steps.2.title">Desarrollo &amp; Pruebas</h3>
-            <p class="step-desc" data-i18n="process.steps.2.desc">Implementación con código limpio y tipado, pruebas unitarias y de validación automática en cada confirmación de código.</p>
+            <h3 class="step-title" data-i18n="process.steps.2.title">Desarrollo Frontend</h3>
+            <p class="step-desc" data-i18n="process.steps.2.desc">Implementación con TypeScript, componentes reutilizables y código limpio.</p>
           </div>
 
           <div class="process-step-card tech-card">
             <span class="step-num">04</span>
-            <h3 class="step-title" data-i18n="process.steps.3.title">CI/CD &amp; Optimización</h3>
-            <p class="step-desc" data-i18n="process.steps.3.desc">Despliegue automático mediante pipelines continuos, auditorías de Lighthouse, verificación de accesibilidad y monitorización activa.</p>
+            <h3 class="step-title" data-i18n="process.steps.3.title">Validación &amp; Despliegue</h3>
+            <p class="step-desc" data-i18n="process.steps.3.desc">Pruebas automáticas en GitHub Actions y publicación continua a producción.</p>
           </div>
         </div>
       </section>
 
       <!-- ====================================================================
-           6. INSIGHTS / TELEMETRY BANNER
-           ==================================================================== -->
-      <section class="insights-section reveal" aria-label="Resumen de rendimiento">
-        <div class="insights-banner tech-card">
-          <div class="insights-top">
-            <span class="insight-code">// telemetry.benchmarks</span>
-            <h3 data-i18n="insights.title">Rendimiento y fiabilidad medibles</h3>
-          </div>
-
-          <div class="insights-grid">
-            <div class="insight-item tech-metric" data-counter="98" data-prefix="" data-suffix="%" data-bar="98">
-              <div class="metric-topline">
-                <strong data-i18n="insights.stat1Number">98%</strong>
-                <span class="metric-live-dot" aria-hidden="true"></span>
-              </div>
-              <span class="insight-label" data-i18n="insights.stat1Label">Índice de calidad y satisfacción</span>
-              <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
-            </div>
-
-            <div class="insight-item tech-metric" data-counter="100" data-prefix="" data-suffix="%" data-bar="100">
-              <div class="metric-topline">
-                <strong data-i18n="insights.stat2Number">100%</strong>
-                <span class="metric-live-dot" aria-hidden="true"></span>
-              </div>
-              <span class="insight-label" data-i18n="insights.stat2Label">Validación de código en CI</span>
-              <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
-            </div>
-
-            <div class="insight-item tech-metric" data-counter="1" data-prefix="&lt; " data-suffix="s" data-bar="95">
-              <div class="metric-topline">
-                <strong data-i18n="insights.stat3Number">&lt; 1s</strong>
-                <span class="metric-live-dot" aria-hidden="true"></span>
-              </div>
-              <span class="insight-label" data-i18n="insights.stat3Label">Tiempo de carga inicial</span>
-              <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
-            </div>
-
-            <div class="insight-item tech-metric" data-counter="24" data-prefix="" data-suffix="/7" data-bar="100">
-              <div class="metric-topline">
-                <strong data-i18n="insights.stat4Number">24/7</strong>
-                <span class="metric-live-dot" aria-hidden="true"></span>
-              </div>
-              <span class="insight-label" data-i18n="insights.stat4Label">Disponibilidad en GitHub Pages</span>
-              <div class="metric-meter" aria-hidden="true"><span class="metric-meter-bar"></span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           7. CONTACT SECTION
+           6. CONTACT SECTION
            ==================================================================== -->
       <section id="contacto" class="section reveal">
         <div class="section-header">
           <span class="section-tag" data-i18n="contact.tag">Contacto</span>
-          <h2 class="section-title" data-i18n="contact.title">¿Tienes un proyecto en mente?</h2>
-          <p class="section-subtitle" data-i18n="contact.subtitle">Estoy disponible para colaborar en proyectos desafiantes, arquitecturas web y desarrollo frontend.</p>
+          <h2 class="section-title" data-i18n="contact.title">Contacto directo</h2>
+          <p class="section-subtitle" data-i18n="contact.subtitle">Disponible para ofertas de empleo, proyectos o colaboraciones técnicas.</p>
         </div>
 
         <div class="contact-grid">
@@ -754,22 +675,22 @@
 
           <!-- Interactive Contact Form -->
           <article class="contact-form-card tech-card">
-            <h3 class="form-card-title" data-i18n="contact.formTitle">Envíame un mensaje</h3>
+            <h3 class="form-card-title" data-i18n="contact.formTitle">Enviar mensaje</h3>
 
             <form id="contact-form" class="contact-form" novalidate>
               <div class="form-group">
-                <label for="form-name" class="form-label" data-i18n="contact.nameLabel">Tu nombre</label>
-                <input type="text" id="form-name" name="name" class="form-input" placeholder="Ej: Ana García" data-i18n-placeholder="contact.namePlaceholder" required autocomplete="name">
+                <label for="form-name" class="form-label" data-i18n="contact.nameLabel">Nombre</label>
+                <input type="text" id="form-name" name="name" class="form-input" placeholder="Tu nombre" data-i18n-placeholder="contact.namePlaceholder" required autocomplete="name">
               </div>
 
               <div class="form-group">
-                <label for="form-email" class="form-label" data-i18n="contact.emailInputLabel">Tu correo electrónico</label>
+                <label for="form-email" class="form-label" data-i18n="contact.emailInputLabel">Correo electrónico</label>
                 <input type="email" id="form-email" name="email" class="form-input" placeholder="nombre@ejemplo.com" data-i18n-placeholder="contact.emailPlaceholder" required autocomplete="email">
               </div>
 
               <div class="form-group">
                 <label for="form-message" class="form-label" data-i18n="contact.messageLabel">Mensaje</label>
-                <textarea id="form-message" name="message" class="form-textarea" rows="4" placeholder="Cuéntame los detalles de tu proyecto o idea..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+                <textarea id="form-message" name="message" class="form-textarea" rows="4" placeholder="Escribe brevemente tu propuesta o consulta..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
               </div>
 
               <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
@@ -793,10 +714,10 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <span class="footer-logo">&lt;JT/&gt;</span>
-          <p class="footer-copy" data-i18n="footer.copyright">© 2026 Jaume Tur. Todos los derechos reservados.</p>
+          <p class="footer-copy" data-i18n="footer.copyright">© 2026 Jaume Tur. Portfolio &amp; CV.</p>
         </div>
 
-        <p class="footer-tech" data-i18n="footer.builtWith">Construido con HTML5 semántico, CSS3 moderno, Vanilla JS &amp; Three.js</p>
+        <p class="footer-tech" data-i18n="footer.builtWith">Construido con HTML5, CSS3, Vanilla JS &amp; Three.js</p>
 
         <button type="button" id="back-to-top" class="back-to-top" aria-label="Volver arriba">
           <span data-i18n="footer.backToTop">Volver arriba</span>
@@ -808,15 +729,15 @@
     </footer>
 
     <!-- i18n Translations Dictionary -->
-    <script src="js/translations.js?v=2.4"></script>
+    <script src="js/translations.js?v=2.5"></script>
 
     <!-- Core Interactive Application Script -->
-    <script src="js/app.js?v=2.4"></script>
+    <script src="js/app.js?v=2.5"></script>
 
     <!-- Three.js Library -->
     <script src="js/three.min.js"></script>
 
     <!-- 3D WebGL Engine -->
-    <script src="js/portfolio-3d.js?v=2.4"></script>
+    <script src="js/portfolio-3d.js?v=2.5"></script>
   </body>
 </html>
