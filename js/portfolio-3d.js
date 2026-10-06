@@ -358,6 +358,10 @@
     isDraggingHero = false;
   });
 
+  window.addEventListener('pointercancel', function () {
+    isDraggingHero = false;
+  });
+
   /* ==========================================================================
      3. DYNAMIC DAY / NIGHT THEME
      ========================================================================== */
