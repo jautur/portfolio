@@ -118,7 +118,7 @@
       localStorage.setItem(STORAGE_KEYS.LANG, lang);
     }
 
-    html.setAttribute('lang', lang);
+    html.setAttribute('lang', lang === 'va' ? 'ca' : lang);
 
     // Update active state on language segmented controls
     const langBtns = [
