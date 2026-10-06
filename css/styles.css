@@ -105,12 +105,7 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--bg);
-  background-image:
-    radial-gradient(circle at 14% 12%, rgba(0, 85, 212, 0.12), transparent 32%),
-    radial-gradient(circle at 86% 14%, rgba(0, 56, 184, 0.10), transparent 30%),
-    radial-gradient(circle at 50% 85%, rgba(0, 85, 212, 0.06), transparent 35%),
-    linear-gradient(180deg, #ffffff 0%, #f4f8fe 100%);
-  background-attachment: fixed;
+  background-image: none;
   color: var(--text);
   font-weight: 500;
   line-height: 1.7;
@@ -122,11 +117,7 @@ body {
 
 body.theme-night {
   background-color: #000000;
-  background-image:
-    radial-gradient(circle at 15% 15%, rgba(229, 255, 0, 0.07) 0%, transparent 35%),
-    radial-gradient(circle at 85% 18%, rgba(0, 150, 255, 0.05) 0%, transparent 35%),
-    linear-gradient(180deg, #030407 0%, #000000 100%);
-  background-attachment: fixed;
+  background-image: none;
 }
 
 body.nav-open {

@@ -112,7 +112,8 @@
           canvas: c,
           antialias: false,
           alpha: true,
-          powerPreference: 'low-power'
+          powerPreference: 'low-power',
+          precision: 'mediump'
         });
         pRenderer.setPixelRatio(1.0);
 
@@ -141,10 +142,8 @@
         if (config.type === 'dashboard') {
           // Project 1: Server Screen with 3 Telemetry Columns
           const screenFrameGeo = new THREE.BoxGeometry(2.6, 1.8, 0.3);
-          const screenMat = new THREE.MeshStandardMaterial({
-            color: pPalette.corePrimary,
-            roughness: 0.3,
-            metalness: isNightMode() ? 0.8 : 0.2
+          const screenMat = new THREE.MeshLambertMaterial({
+            color: pPalette.corePrimary
           });
           const screen = new THREE.Mesh(screenFrameGeo, screenMat);
           group.add(screen);
@@ -186,10 +185,8 @@
         } else if (config.type === 'portal') {
           // Project 2: AVISA Web App - Responsive Browser Layout + Cursor
           const windowGeo = new THREE.BoxGeometry(2.8, 1.9, 0.15);
-          const windowMat = new THREE.MeshStandardMaterial({
-            color: pPalette.corePrimary,
-            roughness: 0.2,
-            metalness: isNightMode() ? 0.85 : 0.2
+          const windowMat = new THREE.MeshLambertMaterial({
+            color: pPalette.corePrimary
           });
           const browserWin = new THREE.Mesh(windowGeo, windowMat);
           group.add(browserWin);
@@ -272,9 +269,8 @@
           ];
 
           commitPositions.forEach((pos, i) => {
-            const cMat = new THREE.MeshStandardMaterial({
-              color: i === 2 ? pPalette.coreAccent : pPalette.corePrimary,
-              roughness: 0.3
+            const cMat = new THREE.MeshLambertMaterial({
+              color: i === 2 ? pPalette.coreAccent : pPalette.corePrimary
             });
             const cMesh = new THREE.Mesh(commitGeo, cMat);
             cMesh.position.set(...pos);
@@ -323,7 +319,6 @@
 
         if (item.type === 'dashboard') {
           item.animData.screen.material.color.setHex(p.corePrimary);
-          item.animData.screen.material.metalness = isNight ? 0.85 : 0.2;
           item.animData.wire.material.color.setHex(p.wireframe);
           item.animData.scanRing.material.color.setHex(p.ring1);
           item.animData.cols.forEach((col, idx) => {
