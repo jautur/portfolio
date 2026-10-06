@@ -15,6 +15,7 @@ const translations = {
       skills: "Habilidades",
       process: "Metodología",
       contact: "Contacto",
+      cv: "CV ↗",
       themeLight: "Modo Día",
       themeDark: "Modo Noche",
       menuOpen: "Abrir menú de navegación",
@@ -29,6 +30,7 @@ const translations = {
       headlineSuffix: " & Aplicaciones Web",
       description: "Enfocado en crear interfaces limpias, accesibles y componentes modulares con Angular, TypeScript y buenas prácticas.",
       ctaProjects: "Ver proyectos",
+      ctaCv: "Descargar CV",
       ctaContact: "Contactar",
       ctaLinkedIn: "LinkedIn",
       cvCard: {
@@ -214,6 +216,7 @@ const translations = {
       skills: "Skills",
       process: "Workflow",
       contact: "Contact",
+      cv: "CV ↗",
       themeLight: "Light Mode",
       themeDark: "Dark Mode",
       menuOpen: "Open navigation menu",
@@ -228,6 +231,7 @@ const translations = {
       headlineSuffix: " & Web Applications",
       description: "Focused on building clean, accessible interfaces and modular components with Angular, TypeScript, and engineering best practices.",
       ctaProjects: "View projects",
+      ctaCv: "Download CV",
       ctaContact: "Get in touch",
       ctaLinkedIn: "LinkedIn",
       cvCard: {
@@ -413,6 +417,7 @@ const translations = {
       skills: "Habilitats",
       process: "Metodologia",
       contact: "Contacte",
+      cv: "CV ↗",
       themeLight: "Mode Dia",
       themeDark: "Mode Nit",
       menuOpen: "Obrir menú de navegació",
@@ -427,6 +432,7 @@ const translations = {
       headlineSuffix: " & Aplicacions Web",
       description: "Enfocat a crear interfícies netes, accessibles i components modulars amb Angular, TypeScript i bones pràctiques.",
       ctaProjects: "Veure projectes",
+      ctaCv: "Descarregar CV",
       ctaContact: "Contactar",
       ctaLinkedIn: "LinkedIn",
       cvCard: {

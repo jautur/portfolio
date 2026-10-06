@@ -525,6 +525,17 @@ body.theme-night .custom-cursor-ring.cursor-hover {
   font-weight: 700;
 }
 
+.nav-link-cv {
+  border: 1px solid var(--border-strong);
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.nav-link-cv:hover {
+  background: var(--accent-strong);
+  color: #ffffff;
+}
+
 /* Navigation Controls */
 .nav-controls {
   display: flex;
