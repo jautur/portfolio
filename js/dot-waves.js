@@ -41,8 +41,8 @@
   const PALETAS = {
     bone: {
       fondo: hexToRgb('faf8f5'),
-      valle: hexToRgb('19adb8'), // Cian / turquesa vibrante
-      cresta: hexToRgb('d723b6') // Magenta / violeta eléctrico
+      valle: hexToRgb('000000'), // Puntos base negros
+      cresta: hexToRgb('ff3ac6') // Cresta rosa neón
     }
   };
 
