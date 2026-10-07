@@ -1,42 +1,50 @@
 /* ==========================================================================
    JAUME TUR — PORTFOLIO DESIGN SYSTEM & STYLESHEET
-   Creative Direction: Premium, Modern, Minimalist & High-Performance
-   Dual Identity: Day (Israel Blue #0038b8) & Night (Deep Midnight #070b14)
+   Creative Direction: Simple, Clean, Minimalist & High-Performance
+   Aesthetic: Warm Bone White Canvas (#faf8f5) with Vibrant Liquid Waves & Lines
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 /* ==========================================================================
    1. DESIGN TOKENS (CSS Custom Properties)
    ========================================================================== */
 :root {
-  /* Color Palette — Day Mode (Luminous, Crisp Israel Blue #0038b8) */
-  --bg: #f8faff;
-  --bg-trans: rgba(248, 250, 255, 0.88);
-  --bg-strong: #edf2fc;
+  /* Color Palette — Clean Bone White (#faf8f5) */
+  --bg: #faf8f5;
+  --bg-trans: rgba(250, 248, 245, 0.88);
+  --bg-strong: #f3efe8;
   --panel: #ffffff;
   --panel-hover: #ffffff;
-  --panel-header: rgba(0, 56, 184, 0.04);
-  --border: rgba(0, 56, 184, 0.12);
-  --border-strong: rgba(0, 56, 184, 0.28);
-  --border-focus: #0038b8;
+  --panel-header: rgba(0, 0, 0, 0.02);
+  --border: rgba(30, 41, 59, 0.08);
+  --border-strong: rgba(30, 41, 59, 0.16);
+  --border-focus: #0066ff;
 
-  --text: #090e1d;
-  --text-muted: #2d3748;
-  --text-soft: #4a5568;
-  --text-dim: #718096;
+  --text: #121826;
+  --text-muted: #374151;
+  --text-soft: #4b5563;
+  --text-dim: #6b7280;
 
-  --accent: #0055d4;
-  --accent-strong: #0038b8; /* Authentic Israel Blue */
-  --accent-deep: #002787;
-  --accent-soft: rgba(0, 56, 184, 0.07);
-  --accent-glow: rgba(0, 85, 212, 0.20);
-  --accent-gradient: linear-gradient(135deg, #0055d4 0%, #0038b8 100%);
+  /* Vivid Colors for Waves, Lines & Primary Accents */
+  --accent: #0066ff;
+  --accent-strong: #0052cc;
+  --accent-deep: #003d99;
+  --accent-soft: rgba(0, 102, 255, 0.08);
+  --accent-glow: rgba(0, 102, 255, 0.28);
+  --accent-gradient: linear-gradient(135deg, #0066ff 0%, #8a2be2 50%, #ff007f 100%);
 
-  --shadow-sm: 0 2px 8px rgba(0, 40, 120, 0.05);
-  --shadow-md: 0 8px 24px rgba(0, 40, 120, 0.08);
-  --shadow-lg: 0 16px 40px rgba(0, 40, 120, 0.12);
-  --shadow-glow: 0 0 24px rgba(0, 85, 212, 0.20);
+  /* Vivid Palette Tokens */
+  --vivid-cyan: #00f2fe;
+  --vivid-blue: #0066ff;
+  --vivid-pink: #ff007f;
+  --vivid-purple: #8a2be2;
+  --vivid-coral: #ff4e50;
+  --vivid-amber: #f59e0b;
+  --vivid-emerald: #05df72;
+
+  --shadow-sm: 0 2px 10px rgba(18, 24, 38, 0.04);
+  --shadow-md: 0 8px 28px rgba(18, 24, 38, 0.06);
+  --shadow-lg: 0 16px 44px rgba(18, 24, 38, 0.08);
+  --shadow-glow: 0 0 28px rgba(0, 102, 255, 0.24);
 
   /* Typography */
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -54,38 +62,6 @@
   --transition-slow: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Color Palette — Night Mode (Electric Cyber Yellow #e5ff00 & Deep Pure Black #000000) */
-body.theme-night {
-  --bg: #000000;
-  --bg-trans: rgba(0, 0, 0, 0.90);
-  --bg-strong: #07090e;
-  --panel: rgba(12, 15, 22, 0.94);
-  --panel-hover: rgba(18, 22, 32, 0.98);
-  --panel-header: rgba(229, 255, 0, 0.06);
-  --border: rgba(229, 255, 0, 0.22);
-  --border-strong: rgba(229, 255, 0, 0.45);
-  --border-focus: #e5ff00;
-
-  --text: #f8fafc;
-  --text-muted: #cbd5e1;
-  --text-soft: #94a3b8;
-  --text-dim: #64748b;
-
-  --accent: #e5ff00;
-  --accent-strong: #e5ff00;
-  --accent-deep: #d4eb00;
-  --accent-soft: rgba(229, 255, 0, 0.10);
-  --accent-glow: rgba(229, 255, 0, 0.32);
-  --accent-gradient: linear-gradient(135deg, #e5ff00 0%, #ffffff 85%);
-
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.85);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.90);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.95);
-  --shadow-glow: 0 0 24px rgba(229, 255, 0, 0.35);
-
-  color: #f8fafc;
-  background-color: #000000;
-}
 
 /* ==========================================================================
    2. GLOBAL RESET & BASE STYLES
@@ -97,9 +73,12 @@ body.theme-night {
 }
 
 html {
-  scroll-behavior: smooth;
   font-size: 17px;
   -webkit-text-size-adjust: 100%;
+}
+
+html.is-interactive {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -115,9 +94,112 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-body.theme-night {
-  background-color: #000000;
-  background-image: none;
+/* ==========================================================================
+   2.1. ANIMATED VIVID WAVE OF DOTS BACKGROUND
+   Clean Bone White canvas with fluid, GPU-accelerated vibrant wave of dots.
+   Zero JavaScript, Zero forced reflows, Zero blocking time (0 ms TBT).
+   ========================================================================== */
+.waves-bg-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  contain: strict;
+}
+
+.waves-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: translateZ(0);
+}
+
+.dot-wave {
+  fill: none;
+  stroke-linecap: round;
+  will-change: stroke-dashoffset, transform;
+}
+
+/* Fluid Independent Harmonic Motions for Waves of Dots */
+.dw-stream-1 {
+  animation: dotStream1 22s linear infinite, dotFloat1 15s ease-in-out infinite alternate;
+}
+
+.dw-stream-2 {
+  animation: dotStream2 26s linear infinite, dotFloat2 19s ease-in-out infinite alternate-reverse;
+}
+
+.dw-stream-3 {
+  animation: dotStream3 24s linear infinite, dotFloat3 17s ease-in-out infinite alternate;
+}
+
+.dw-stream-4 {
+  animation: dotStream4 30s linear infinite, dotFloat4 21s ease-in-out infinite alternate-reverse;
+}
+
+.wave-line {
+  filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.35));
+}
+
+.wave-line-pink {
+  filter: drop-shadow(0 0 8px rgba(255, 0, 127, 0.30));
+}
+
+.wave-line-coral {
+  filter: drop-shadow(0 0 8px rgba(255, 78, 80, 0.30));
+}
+
+.wave-line-teal {
+  filter: drop-shadow(0 0 8px rgba(5, 223, 114, 0.30));
+}
+
+/* Moving Dots Along Wave Trajectory */
+@keyframes dotStream1 {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 800; }
+}
+
+@keyframes dotStream2 {
+  from { stroke-dashoffset: 800; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes dotStream3 {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 700; }
+}
+
+@keyframes dotStream4 {
+  from { stroke-dashoffset: 600; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Undulating Wave Floats */
+@keyframes dotFloat1 {
+  0% { transform: translate3d(-2%, -15px, 0) scaleY(1); }
+  50% { transform: translate3d(2%, 20px, 0) scaleY(1.08); }
+  100% { transform: translate3d(3%, -10px, 0) scaleY(0.95); }
+}
+
+@keyframes dotFloat2 {
+  0% { transform: translate3d(2%, 15px, 0) scaleY(0.96); }
+  50% { transform: translate3d(-3%, -20px, 0) scaleY(1.05); }
+  100% { transform: translate3d(1%, 10px, 0) scaleY(1); }
+}
+
+@keyframes dotFloat3 {
+  0% { transform: translate3d(-1%, 20px, 0) scaleY(1.04); }
+  50% { transform: translate3d(3%, -15px, 0) scaleY(0.94); }
+  100% { transform: translate3d(2%, 5px, 0) scaleY(1.02); }
+}
+
+@keyframes dotFloat4 {
+  0% { transform: translate3d(2%, -10px, 0); }
+  50% { transform: translate3d(-2%, 15px, 0); }
+  100% { transform: translate3d(1%, -5px, 0); }
 }
 
 body.nav-open {
@@ -260,6 +342,7 @@ body.nav-open {
   font-size: 0.88rem;
   font-weight: 600;
   transition: all var(--transition-fast);
+  transition: opacity var(--transition-fast);
 }
 
 .nav-link:hover,
@@ -313,6 +396,7 @@ body.nav-open {
   color: var(--text-muted);
   cursor: pointer;
   transition: all var(--transition-fast);
+  transition: opacity var(--transition-fast);
 }
 
 .lang-btn.active {
@@ -325,47 +409,6 @@ body.nav-open {
   font-size: 0.65rem;
   color: var(--text-dim);
   opacity: 0.6;
-}
-
-/* Theme Toggle Button */
-.theme-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  border: 1px solid var(--border);
-  color: var(--text);
-  cursor: pointer;
-  position: relative;
-  transition: all var(--transition-fast);
-}
-
-.theme-toggle-btn:hover {
-  background: var(--panel-hover);
-  border-color: var(--border-strong);
-  transform: rotate(15deg);
-}
-
-.theme-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--transition-normal), opacity var(--transition-normal);
-}
-
-.icon-moon {
-  display: none;
-}
-
-body.theme-night .icon-sun {
-  display: none;
-}
-
-body.theme-night .icon-moon {
-  display: flex;
 }
 
 /* Mobile Hamburger Menu */
@@ -424,6 +467,7 @@ body.theme-night .icon-moon {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  transition: transform var(--transition-fast);
 }
 
 .tech-card:hover {
@@ -446,6 +490,7 @@ body.theme-night .icon-moon {
   cursor: pointer;
   border: 1px solid transparent;
   transition: all var(--transition-fast);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 .btn:hover {
@@ -548,6 +593,7 @@ body.theme-night .icon-moon {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s ease;
 }
 
 .reveal.visible {
@@ -964,6 +1010,7 @@ body.theme-night .icon-moon {
   border-radius: var(--radius-pill);
   cursor: pointer;
   transition: all var(--transition-fast);
+  transition: opacity var(--transition-fast);
 }
 
 .filter-btn:hover {
@@ -989,6 +1036,7 @@ body.theme-night .icon-moon {
   flex-direction: column;
   overflow: hidden;
   transition: all var(--transition-normal);
+  transition: transform var(--transition-fast);
 }
 
 .project-card.hidden {
@@ -999,7 +1047,7 @@ body.theme-night .icon-moon {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px 10px;
+  padding: 24px 24px 10px;
 }
 
 .project-badge {
@@ -1025,74 +1073,11 @@ body.theme-night .icon-moon {
   color: var(--text-dim);
 }
 
-/* 3D Visual Viewport inside Project Cards */
-.project-visual {
-  position: relative;
-  height: 160px;
-  margin: 0 16px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), var(--accent-soft));
-  border: 1px solid var(--border);
-}
 
-body.theme-night .project-visual {
-  background: linear-gradient(135deg, rgba(14, 21, 38, 0.95), rgba(59, 130, 246, 0.12));
-}
-
-.project-visual canvas {
-  position: absolute;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-  pointer-events: none;
-}
-
-/* macOS Window Header on 3D Viewport */
-.project-visual::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 12px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #ff5f56;
-  box-shadow: 11px 0 0 #ffbd2e, 22px 0 0 #27c93f;
-  z-index: 2;
-  opacity: 0.85;
-}
-
-.project-visual::after {
-  content: "dev.viewport";
-  position: absolute;
-  top: 8px;
-  left: 48px;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.06em;
-  color: var(--accent-strong);
-  opacity: 0.75;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.visual-one::after {
-  content: "metrics.service // :3000";
-}
-
-.visual-two::after {
-  content: "avisa.app // browser";
-}
-
-.visual-three::after {
-  content: "git // ci-cd.pipeline";
-}
 
 /* Project Body */
 .project-body {
-  padding: 18px 20px 20px;
+  padding: 10px 24px 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1403,6 +1388,7 @@ body.theme-night .project-visual {
   cursor: pointer;
   position: relative;
   transition: all var(--transition-fast);
+  transition: opacity var(--transition-fast);
 }
 
 .copy-btn:hover {
@@ -1426,6 +1412,7 @@ body.theme-night .project-visual {
   opacity: 0;
   transform: translateY(4px);
   transition: all var(--transition-fast);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
 .copy-tooltip.active {
@@ -1508,6 +1495,8 @@ body.theme-night .project-visual {
    12. FOOTER & BACK TO TOP
    ========================================================================== */
 .footer {
+  position: relative;
+  z-index: 1;
   border-top: 1px solid var(--border);
   background: var(--bg-trans);
   backdrop-filter: blur(12px);
@@ -1568,6 +1557,7 @@ body.theme-night .project-visual {
   opacity: 0;
   pointer-events: none;
   transition: all var(--transition-fast);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
 .back-to-top.visible {
@@ -1727,6 +1717,7 @@ body.theme-night .project-visual {
     font-weight: 700;
     border: 1px solid transparent;
     transition: all var(--transition-fast);
+    transition: opacity var(--transition-fast);
   }
   .mobile-nav-link:hover,
   .mobile-nav-link:focus,
@@ -1857,10 +1848,7 @@ body.theme-night .project-visual {
   .project-topline {
     padding: 12px 14px 8px;
   }
-  .project-visual {
-    height: 145px;
-    margin: 0 12px;
-  }
+
   .project-body {
     padding: 14px 14px 16px;
     gap: 10px;
@@ -2046,7 +2034,6 @@ body.theme-night .project-visual {
     padding: 3px 6px;
     font-size: 0.68rem;
   }
-  .theme-toggle-btn,
   .mobile-menu-btn {
     width: 34px;
     height: 34px;
@@ -2089,440 +2076,25 @@ body.theme-night .project-visual {
 }
 
 /* ==========================================================================
-   14. ACCESSIBILITY & PREFERS-REDUCED-MOTION
+   14. ACCESSIBILITY — PREFERS-REDUCED-MOTION
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .dw-stream-1,
+  .dw-stream-2,
+  .dw-stream-3,
+  .dw-stream-4 {
+    animation: none !important;
+  }
   .reveal {
     opacity: 1 !important;
     transform: none !important;
   }
-}
-
-/* ==========================================================================
-   15. NIGHT MODE OPTIMIZED COLOR ARCHITECTURE & WCAG AAA ACCESSIBILITY
-   Harmonious balance: Deep pitch black (#000000), crisp high-contrast white
-   headings (#f8fafc), comfortable silver-slate body text (#cbd5e1), and
-   vibrant electric cyber yellow (#e5ff00) accents & primary CTA actions.
-   ========================================================================== */
-body.theme-night {
-  color: #f8fafc;
-  background-color: #000000;
-}
-
-body.theme-night h1,
-body.theme-night h2,
-body.theme-night h3,
-body.theme-night h4 {
-  color: #f8fafc;
-}
-
-body.theme-night p,
-body.theme-night li {
-  color: #cbd5e1;
-}
-
-body.theme-night small,
-body.theme-night .section-subtitle,
-body.theme-night .hero-description {
-  color: #cbd5e1;
-}
-
-body.theme-night strong {
-  color: #ffffff;
-}
-
-body.theme-night .hero-highlight {
-  background: linear-gradient(135deg, #e5ff00 0%, #ffffff 85%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline;
-}
-
-/* Header & Navigation in Night Mode */
-body.theme-night .header {
-  background: rgba(0, 0, 0, 0.92);
-  border-bottom-color: rgba(229, 255, 0, 0.22);
-}
-
-body.theme-night .brand-mark {
-  background: rgba(229, 255, 0, 0.12);
-  border-color: rgba(229, 255, 0, 0.50);
-  color: #e5ff00;
-  box-shadow: inset 0 0 14px rgba(229, 255, 0, 0.20);
-}
-
-body.theme-night .brand-name {
-  color: #f8fafc;
-}
-
-body.theme-night .nav-link {
-  color: #cbd5e1;
-}
-
-body.theme-night .nav-link:hover,
-body.theme-night .nav-link:focus {
-  background: rgba(229, 255, 0, 0.10);
-  color: #e5ff00;
-}
-
-body.theme-night .nav-link.active {
-  background: rgba(229, 255, 0, 0.16);
-  color: #e5ff00;
-  border-color: rgba(229, 255, 0, 0.40);
-}
-
-body.theme-night .lang-switch {
-  background: rgba(229, 255, 0, 0.08);
-  border-color: rgba(229, 255, 0, 0.28);
-}
-
-body.theme-night .lang-btn {
-  color: #cbd5e1;
-}
-
-body.theme-night .lang-btn.active {
-  background: #e5ff00 !important;
-  color: #000000 !important;
-  font-weight: 800 !important;
-}
-
-body.theme-night .theme-toggle-btn,
-body.theme-night .mobile-menu-btn {
-  background: rgba(229, 255, 0, 0.10);
-  border-color: rgba(229, 255, 0, 0.35);
-  color: #e5ff00;
-}
-
-body.theme-night .mobile-drawer {
-  background: rgba(0, 0, 0, 0.98);
-  border-bottom-color: rgba(229, 255, 0, 0.35);
-}
-
-/* Cards & Panels in Night Mode */
-body.theme-night .tech-card {
-  background: rgba(12, 15, 22, 0.94);
-  border-color: rgba(229, 255, 0, 0.22);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.85), inset 0 0 0 1px rgba(229, 255, 0, 0.08);
-}
-
-body.theme-night .tech-card:hover {
-  border-color: #e5ff00;
-  box-shadow: 0 0 28px rgba(229, 255, 0, 0.18);
-}
-
-/* BUTTONS IN NIGHT MODE — Perfect Hierarchy & Contrast */
-/* Primary Buttons: High-impact Yellow with crisp Black text */
-body.theme-night .btn-primary,
-body.theme-night .btn-submit {
-  background: #e5ff00 !important;
-  color: #000000 !important;
-  font-weight: 800 !important;
-  border-color: #e5ff00 !important;
-  box-shadow: 0 0 18px rgba(229, 255, 0, 0.38) !important;
-}
-
-body.theme-night .btn-primary:hover,
-body.theme-night .btn-submit:hover {
-  background: #ffffff !important;
-  color: #000000 !important;
-  border-color: #ffffff !important;
-  box-shadow: 0 0 28px rgba(255, 255, 255, 0.70) !important;
-  transform: translateY(-2px);
-}
-
-body.theme-night .btn-primary *,
-body.theme-night .btn-submit * {
-  color: #000000 !important;
-  stroke: #000000 !important;
-}
-
-/* Secondary & Outline Buttons: Refined Dark/Ghost with Yellow accent */
-body.theme-night .btn-secondary,
-body.theme-night .btn-outline {
-  background: rgba(229, 255, 0, 0.08) !important;
-  color: #e5ff00 !important;
-  font-weight: 700 !important;
-  border-color: rgba(229, 255, 0, 0.45) !important;
-  box-shadow: none !important;
-}
-
-body.theme-night .btn-secondary:hover,
-body.theme-night .btn-outline:hover {
-  background: #e5ff00 !important;
-  color: #000000 !important;
-  border-color: #e5ff00 !important;
-  box-shadow: 0 0 20px rgba(229, 255, 0, 0.35) !important;
-  transform: translateY(-2px);
-}
-
-body.theme-night .btn-secondary *,
-body.theme-night .btn-outline * {
-  color: #e5ff00 !important;
-  stroke: #e5ff00 !important;
-}
-
-body.theme-night .btn-secondary:hover *,
-body.theme-night .btn-outline:hover * {
-  color: #000000 !important;
-  stroke: #000000 !important;
-}
-
-/* Filter Buttons */
-body.theme-night .filter-btn {
-  background: rgba(229, 255, 0, 0.08);
-  border-color: rgba(229, 255, 0, 0.30);
-  color: #cbd5e1;
-}
-
-body.theme-night .filter-btn:hover {
-  background: rgba(229, 255, 0, 0.16);
-  border-color: #e5ff00;
-  color: #e5ff00;
-}
-
-body.theme-night .filter-btn.active {
-  background: #e5ff00 !important;
-  color: #000000 !important;
-  border-color: #e5ff00 !important;
-  font-weight: 800 !important;
-  box-shadow: 0 0 16px rgba(229, 255, 0, 0.35) !important;
-}
-
-body.theme-night .filter-btn.active * {
-  color: #000000 !important;
-}
-
-/* Badges & Chips */
-body.theme-night .section-tag,
-body.theme-night .hero-badge,
-body.theme-night .project-badge {
-  background: rgba(229, 255, 0, 0.10);
-  border-color: rgba(229, 255, 0, 0.40);
-  color: #e5ff00;
-}
-
-body.theme-night .project-badge.status-live {
-  background: rgba(229, 255, 0, 0.16);
-  border-color: #e5ff00;
-  color: #e5ff00;
-}
-
-body.theme-night .chip,
-body.theme-night .code-pill {
-  background: rgba(229, 255, 0, 0.06);
-  border-color: rgba(229, 255, 0, 0.28);
-  color: #e5ff00;
-}
-
-/* Metrics & Telemetry */
-body.theme-night .metric-box,
-body.theme-night .insight-item {
-  background: rgba(229, 255, 0, 0.05);
-  border-color: rgba(229, 255, 0, 0.25);
-}
-
-body.theme-night .metric-box strong,
-body.theme-night .insight-item strong {
-  color: #e5ff00;
-  text-shadow: 0 0 12px rgba(229, 255, 0, 0.35);
-}
-
-body.theme-night .metric-label,
-body.theme-night .insight-label {
-  color: #94a3b8;
-}
-
-body.theme-night .metric-meter {
-  background: rgba(229, 255, 0, 0.16);
-}
-
-body.theme-night .metric-meter-bar {
-  background: #e5ff00;
-  box-shadow: 0 0 10px #e5ff00;
-}
-
-body.theme-night .status-dot,
-body.theme-night .pulse-dot,
-body.theme-night .metric-live-dot {
-  background: #e5ff00;
-  box-shadow: 0 0 10px #e5ff00;
-}
-
-body.theme-night .check-mark {
-  color: #e5ff00;
-  text-shadow: 0 0 8px rgba(229, 255, 0, 0.5);
-}
-
-/* Architecture Spotlight */
-body.theme-night .architecture-box {
-  background: rgba(229, 255, 0, 0.05);
-  border-color: rgba(229, 255, 0, 0.25);
-}
-
-body.theme-night .arch-tag {
-  color: #e5ff00;
-}
-
-body.theme-night .arch-diagram {
-  background: rgba(0, 0, 0, 0.85);
-  border-color: rgba(229, 255, 0, 0.35);
-  color: #e5ff00;
-}
-
-body.theme-night .arch-node {
-  background: rgba(229, 255, 0, 0.12);
-  color: #e5ff00;
-}
-
-body.theme-night .arch-arrow {
-  color: rgba(229, 255, 0, 0.6);
-}
-
-/* Project Visuals & Details */
-body.theme-night .project-visual {
-  background: rgba(6, 8, 12, 0.98);
-  border-color: rgba(229, 255, 0, 0.28);
-}
-
-body.theme-night .project-visual::after {
-  color: #e5ff00;
-  opacity: 0.85;
-}
-
-body.theme-night .project-details {
-  background: rgba(229, 255, 0, 0.06);
-  border: 1px solid rgba(229, 255, 0, 0.20);
-}
-
-/* Skills */
-body.theme-night .skill-icon {
-  background: rgba(229, 255, 0, 0.10);
-  border-color: rgba(229, 255, 0, 0.35);
-  color: #e5ff00;
-  box-shadow: 0 0 14px rgba(229, 255, 0, 0.12);
-}
-
-/* Contact */
-body.theme-night .channel-box {
-  background: rgba(229, 255, 0, 0.06);
-  border-color: rgba(229, 255, 0, 0.28);
-}
-
-body.theme-night .channel-label {
-  color: #94a3b8;
-}
-
-body.theme-night .channel-link {
-  color: #f8fafc;
-}
-
-body.theme-night .channel-link:hover {
-  color: #e5ff00;
-}
-
-body.theme-night .copy-btn {
-  background: rgba(229, 255, 0, 0.10);
-  border-color: rgba(229, 255, 0, 0.35);
-  color: #e5ff00;
-}
-
-body.theme-night .copy-btn:hover {
-  background: #e5ff00;
-  color: #000000;
-}
-
-body.theme-night .copy-btn:hover * {
-  color: #000000;
-  stroke: #000000;
-}
-
-body.theme-night .copy-tooltip {
-  background: #e5ff00;
-  color: #000000;
-  font-weight: 800;
-}
-
-body.theme-night .form-label {
-  color: #cbd5e1;
-}
-
-body.theme-night .form-input,
-body.theme-night .form-textarea {
-  background: rgba(8, 11, 17, 0.95);
-  border-color: rgba(229, 255, 0, 0.35);
-  color: #f8fafc;
-}
-
-body.theme-night .form-input:focus,
-body.theme-night .form-textarea:focus {
-  border-color: #e5ff00;
-  box-shadow: 0 0 0 3px rgba(229, 255, 0, 0.28);
-}
-
-body.theme-night .form-input::placeholder,
-body.theme-night .form-textarea::placeholder {
-  color: #64748b;
-}
-
-body.theme-night .form-feedback.error {
-  background: rgba(239, 68, 68, 0.18);
-  border-color: #ef4444;
-  color: #fca5a5;
-}
-
-body.theme-night .form-feedback.success {
-  background: rgba(229, 255, 0, 0.12);
-  border-color: #e5ff00;
-  color: #e5ff00;
-}
-
-/* Footer & Back to top */
-body.theme-night .footer {
-  background: rgba(0, 0, 0, 0.98);
-  border-top-color: rgba(229, 255, 0, 0.25);
-}
-
-body.theme-night .footer-copy,
-body.theme-night .footer-tech {
-  color: #94a3b8;
-}
-
-body.theme-night .footer-logo {
-  background: rgba(229, 255, 0, 0.10);
-  border: 1px solid rgba(229, 255, 0, 0.35);
-  color: #e5ff00;
-}
-
-body.theme-night .back-to-top {
-  background: rgba(229, 255, 0, 0.10);
-  border-color: rgba(229, 255, 0, 0.35);
-  color: #e5ff00;
-}
-
-body.theme-night .back-to-top:hover {
-  background: #e5ff00;
-  color: #000000;
-}
-
-body.theme-night .back-to-top:hover * {
-  color: #000000;
-  stroke: #000000;
-}
-
-body.theme-night .page-glow.glow-1,
-body.theme-night .page-glow.glow-2 {
-  background: #e5ff00;
-  opacity: 0.08;
-}
-
-body.theme-night .orb-1,
-body.theme-night .orb-2,
-body.theme-night .orb-3 {
-  background: radial-gradient(circle, rgba(229, 255, 0, 0.12), transparent 70%);
 }

@@ -1,7 +1,6 @@
 /**
  * Jaume Tur Portfolio — Core Interactive Application
  * - i18n Multi-language system (ES / EN)
- * - Light / Dark Theme system with localStorage and prefers-color-scheme
  * - Responsive navigation and mobile drawer
  * - Project filtering
  * - Animated data metrics and telemetry
@@ -13,18 +12,15 @@
 
   // State Management
   const STORAGE_KEYS = {
-    THEME: 'jt_portfolio_theme',
     LANG: 'jt_portfolio_lang'
   };
 
   let currentLang = 'es';
-  let currentTheme = 'light';
-
+  
   // DOM Elements
   const html = document.documentElement;
   const body = document.body;
-  const themeToggle = document.getElementById('theme-toggle');
-  const langToggleEs = document.getElementById('lang-es');
+    const langToggleEs = document.getElementById('lang-es');
   const langToggleVa = document.getElementById('lang-va');
   const langToggleEn = document.getElementById('lang-en');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -35,59 +31,6 @@
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
-  // =========================================================================
-  // Theme Management (Light / Dark)
-  // =========================================================================
-  function initTheme() {
-    const savedTheme = localStorage.getItem(STORAGE_KEYS.THEME);
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-      currentTheme = savedTheme;
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      currentTheme = prefersDark ? 'dark' : 'light';
-    }
-    applyTheme(currentTheme, false);
-
-    // Listen for OS theme changes if user has no saved preference
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem(STORAGE_KEYS.THEME)) {
-        applyTheme(e.matches ? 'dark' : 'light', true);
-      }
-    });
-  }
-
-  function applyTheme(theme, save = true) {
-    currentTheme = theme;
-    if (save) {
-      localStorage.setItem(STORAGE_KEYS.THEME, theme);
-    }
-
-    if (theme === 'dark') {
-      body.classList.add('theme-night');
-      body.classList.remove('theme-day');
-      if (themeToggle) {
-        themeToggle.setAttribute('aria-pressed', 'true');
-        themeToggle.setAttribute('title', translations[currentLang]?.nav?.themeLight || 'Cambiar a modo día');
-      }
-    } else {
-      body.classList.add('theme-day');
-      body.classList.remove('theme-night');
-      if (themeToggle) {
-        themeToggle.setAttribute('aria-pressed', 'false');
-        themeToggle.setAttribute('title', translations[currentLang]?.nav?.themeDark || 'Cambiar a modo noche');
-      }
-    }
-
-    // Notify 3D canvas if available
-    if (window.portfolio3D && typeof window.portfolio3D.setTheme === 'function') {
-      window.portfolio3D.setTheme(theme);
-    }
-  }
-
-  function toggleTheme() {
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(newTheme, true);
-  }
 
   // =========================================================================
   // Internationalization (i18n)
@@ -120,7 +63,7 @@
       localStorage.setItem(STORAGE_KEYS.LANG, lang);
     }
 
-    html.setAttribute('lang', lang);
+    html.setAttribute('lang', lang === 'va' ? 'ca' : lang);
 
     // Update active state on language segmented controls
     const langBtns = [
@@ -143,6 +86,9 @@
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute('content', metaTrans.description);
     }
+
+    // If initial load and default language is Spanish, HTML is already prerendered
+    if (!save && lang === 'es') return;
 
     // Update all elements with data-i18n
     const elements = document.querySelectorAll('[data-i18n]');
@@ -174,10 +120,6 @@
       if (text) el.setAttribute('aria-label', text);
     });
 
-    // Update theme toggle tooltip/title
-    if (themeToggle) {
-      themeToggle.setAttribute('title', currentTheme === 'dark' ? translations[lang].nav.themeLight : translations[lang].nav.themeDark);
-    }
   }
 
   // =========================================================================
@@ -288,57 +230,59 @@
   }
 
   // =========================================================================
-  // Back to Top & Active Nav Indicators
+  // Back to Top & Active Nav Indicators (Zero Forced Reflow)
   // =========================================================================
   function initScrollListeners() {
-    let scrollTimeout;
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
     const sections = document.querySelectorAll('section[id]');
 
-    window.addEventListener('scroll', () => {
-      const scrollY = window.pageYOffset;
+    // IntersectionObserver tracks active sections without forced reflow
+    if ('IntersectionObserver' in window && sections.length > 0) {
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach((link) => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+                link.setAttribute('aria-current', 'page');
+              } else {
+                link.classList.remove('active');
+                link.removeAttribute('aria-current');
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -70% 0px'
+      });
 
-      // Back to top button
-      if (backToTopBtn) {
-        if (scrollY > 350) {
-          backToTopBtn.classList.add('visible');
-        } else {
-          backToTopBtn.classList.remove('visible');
-        }
-      }
+      sections.forEach((s) => sectionObserver.observe(s));
+    }
 
-      // Active nav link highlight
-      if (!scrollTimeout) {
-        scrollTimeout = setTimeout(() => {
-          sections.forEach((section) => {
-            const sectionTop = section.offsetTop - 120;
-            const sectionHeight = section.offsetHeight;
-            const id = section.getAttribute('id');
-
-            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-              navLinks.forEach((link) => {
-                const href = link.getAttribute('href');
-                if (href === `#${id}`) {
-                  link.classList.add('active');
-                  link.setAttribute('aria-current', 'page');
-                } else {
-                  link.classList.remove('active');
-                  link.removeAttribute('aria-current');
-                }
-              });
-            }
-          });
-          scrollTimeout = null;
-        }, 50);
-      }
-    }, { passive: true });
-
+    // Back to top button throttled with requestAnimationFrame
     if (backToTopBtn) {
+      let isCheckingScroll = false;
+      window.addEventListener('scroll', () => {
+        if (!isCheckingScroll) {
+          isCheckingScroll = true;
+          window.requestAnimationFrame(() => {
+            if (window.scrollY > 350) {
+              backToTopBtn.classList.add('visible');
+            } else {
+              backToTopBtn.classList.remove('visible');
+            }
+            isCheckingScroll = false;
+          });
+        }
+      }, { passive: true });
+
       backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
   }
+
 
   // =========================================================================
   // Interactive Contact Actions & Form
@@ -403,18 +347,13 @@
   // Initialization
   // =========================================================================
   function init() {
-    initTheme();
+    html.classList.add('is-interactive');
     initLanguage();
     initProjectFilters();
     initMetrics();
     initScrollReveal();
     initScrollListeners();
     initContact();
-
-    // Theme Toggle Click
-    if (themeToggle) {
-      themeToggle.addEventListener('click', toggleTheme);
-    }
 
     // Language Segmented Control Clicks
     if (langToggleEs) {
