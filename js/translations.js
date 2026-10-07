@@ -16,8 +16,6 @@ const translations = {
       process: "Metodología",
       contact: "Contacto",
       cv: "CV ↗",
-      themeLight: "Modo Día",
-      themeDark: "Modo Noche",
       menuOpen: "Abrir menú de navegación",
       menuClose: "Cerrar menú",
       availableStatus: "Disponible para proyectos"
@@ -199,7 +197,7 @@ const translations = {
     },
     footer: {
       copyright: "© 2026 Jaume Tur. Portfolio & CV.",
-      builtWith: "Construido con HTML5, CSS3, Vanilla JS & Three.js",
+      builtWith: "Construido con HTML5, CSS3 y Vanilla JavaScript",
       backToTop: "Volver arriba"
     }
   },
@@ -217,8 +215,6 @@ const translations = {
       process: "Workflow",
       contact: "Contact",
       cv: "CV ↗",
-      themeLight: "Light Mode",
-      themeDark: "Dark Mode",
       menuOpen: "Open navigation menu",
       menuClose: "Close menu",
       availableStatus: "Available for projects"
@@ -400,7 +396,7 @@ const translations = {
     },
     footer: {
       copyright: "© 2026 Jaume Tur. Portfolio & CV.",
-      builtWith: "Built with HTML5, CSS3, Vanilla JS & Three.js",
+      builtWith: "Built with HTML5, CSS3 and Vanilla JavaScript",
       backToTop: "Back to top"
     }
   },
@@ -418,8 +414,6 @@ const translations = {
       process: "Metodologia",
       contact: "Contacte",
       cv: "CV ↗",
-      themeLight: "Mode Dia",
-      themeDark: "Mode Nit",
       menuOpen: "Obrir menú de navegació",
       menuClose: "Tancar menú",
       availableStatus: "Disponible per a projectes"
@@ -601,7 +595,7 @@ const translations = {
     },
     footer: {
       copyright: "© 2026 Jaume Tur. Portfolio & CV.",
-      builtWith: "Construït amb HTML5, CSS3, Vanilla JS & Three.js",
+      builtWith: "Construït amb HTML5, CSS3 i Vanilla JavaScript",
       backToTop: "Tornar a dalt"
     }
   }

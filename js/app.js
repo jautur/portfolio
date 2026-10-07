@@ -1,7 +1,6 @@
 /**
  * Jaume Tur Portfolio — Core Interactive Application
  * - i18n Multi-language system (ES / EN)
- * - Light / Dark Theme system with localStorage and prefers-color-scheme
  * - Responsive navigation and mobile drawer
  * - Project filtering
  * - Animated data metrics and telemetry
@@ -13,18 +12,15 @@
 
   // State Management
   const STORAGE_KEYS = {
-    THEME: 'jt_portfolio_theme',
     LANG: 'jt_portfolio_lang'
   };
 
   let currentLang = 'es';
-  let currentTheme = 'light';
-
+  
   // DOM Elements
   const html = document.documentElement;
   const body = document.body;
-  const themeToggle = document.getElementById('theme-toggle');
-  const langToggleEs = document.getElementById('lang-es');
+    const langToggleEs = document.getElementById('lang-es');
   const langToggleVa = document.getElementById('lang-va');
   const langToggleEn = document.getElementById('lang-en');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -35,57 +31,6 @@
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
-  // =========================================================================
-  // Theme Management (Light / Dark)
-  // =========================================================================
-  function initTheme() {
-    const savedTheme = localStorage.getItem(STORAGE_KEYS.THEME);
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-      currentTheme = savedTheme;
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      currentTheme = prefersDark ? 'dark' : 'light';
-    }
-    applyTheme(currentTheme, false);
-
-    // Listen for OS theme changes if user has no saved preference
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem(STORAGE_KEYS.THEME)) {
-        applyTheme(e.matches ? 'dark' : 'light', true);
-      }
-    });
-  }
-
-  function applyTheme(theme, save = true) {
-    currentTheme = theme;
-    if (save) {
-      localStorage.setItem(STORAGE_KEYS.THEME, theme);
-    }
-
-    const isDark = theme === 'dark';
-    html.classList.toggle('theme-night', isDark);
-    html.classList.toggle('theme-day', !isDark);
-    body.classList.toggle('theme-night', isDark);
-    body.classList.toggle('theme-day', !isDark);
-
-    if (themeToggle) {
-      themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      themeToggle.setAttribute('title', isDark
-        ? (translations[currentLang]?.nav?.themeLight || 'Cambiar a modo día')
-        : (translations[currentLang]?.nav?.themeDark || 'Cambiar a modo noche')
-      );
-    }
-
-    // Notify 3D canvas if available
-    if (window.portfolio3D && typeof window.portfolio3D.setTheme === 'function') {
-      window.portfolio3D.setTheme(theme);
-    }
-  }
-
-  function toggleTheme() {
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(newTheme, true);
-  }
 
   // =========================================================================
   // Internationalization (i18n)
@@ -175,10 +120,6 @@
       if (text) el.setAttribute('aria-label', text);
     });
 
-    // Update theme toggle tooltip/title
-    if (themeToggle) {
-      themeToggle.setAttribute('title', currentTheme === 'dark' ? translations[lang].nav.themeLight : translations[lang].nav.themeDark);
-    }
   }
 
   // =========================================================================
@@ -342,47 +283,6 @@
     }
   }
 
-  // =========================================================================
-  // Lazy 3D WebGL Engine Loader (Removes 150KB & 2.5s TBT from Critical Path)
-  // =========================================================================
-  function init3DVisualsLoader() {
-    let hasLoaded = false;
-    function load3D() {
-      if (hasLoaded) return;
-      hasLoaded = true;
-
-      const threeScript = document.createElement('script');
-      threeScript.src = 'js/three.min.js';
-      threeScript.onload = () => {
-        const engineScript = document.createElement('script');
-        engineScript.src = 'js/portfolio-3d.js?v=3.0';
-        document.body.appendChild(engineScript);
-      };
-      document.body.appendChild(threeScript);
-    }
-
-    const projectsSec = document.getElementById('proyectos');
-    if (projectsSec && 'IntersectionObserver' in window) {
-      const projObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            load3D();
-            projObserver.disconnect();
-          }
-        });
-      }, { rootMargin: '400px 0px' });
-      projObserver.observe(projectsSec);
-    }
-
-    // Idle fallback: loads seamlessly during browser idle time
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(() => {
-        setTimeout(load3D, 2500);
-      });
-    } else {
-      setTimeout(load3D, 4000);
-    }
-  }
 
   // =========================================================================
   // Interactive Contact Actions & Form
@@ -448,19 +348,12 @@
   // =========================================================================
   function init() {
     html.classList.add('is-interactive');
-    initTheme();
     initLanguage();
     initProjectFilters();
     initMetrics();
     initScrollReveal();
     initScrollListeners();
     initContact();
-    init3DVisualsLoader();
-
-    // Theme Toggle Click
-    if (themeToggle) {
-      themeToggle.addEventListener('click', toggleTheme);
-    }
 
     // Language Segmented Control Clicks
     if (langToggleEs) {
