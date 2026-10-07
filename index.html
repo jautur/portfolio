@@ -76,78 +76,8 @@
     <!-- Accessible Skip Link -->
     <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
-    <!-- Animated Waves of Dots Background (Pure GPU-accelerated CSS) -->
-    <div class="waves-bg-container" aria-hidden="true">
-      <svg class="waves-svg" viewBox="0 0 1600 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <!-- Vivid Gradient 1: Cyan to Electric Blue & Purple -->
-          <linearGradient id="grad-cyan-blue" x1="0%" y1="0%" x2="100%" y2="50%">
-            <stop offset="0%" stop-color="#00f2fe" />
-            <stop offset="50%" stop-color="#0066ff" />
-            <stop offset="100%" stop-color="#7928ca" />
-          </linearGradient>
-
-          <!-- Vivid Gradient 2: Magenta to Violet -->
-          <linearGradient id="grad-pink-purple" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#ff007f" />
-            <stop offset="50%" stop-color="#b800ff" />
-            <stop offset="100%" stop-color="#0055ff" />
-          </linearGradient>
-
-          <!-- Vivid Gradient 3: Amber to Coral Sunset -->
-          <linearGradient id="grad-coral-amber" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#ff0844" />
-            <stop offset="50%" stop-color="#ff4e50" />
-            <stop offset="100%" stop-color="#f59e0b" />
-          </linearGradient>
-
-          <!-- Vivid Gradient 4: Emerald to Teal -->
-          <linearGradient id="grad-emerald-teal" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#05df72" />
-            <stop offset="50%" stop-color="#00c6ff" />
-            <stop offset="100%" stop-color="#0072ff" />
-          </linearGradient>
-        </defs>
-
-        <!-- Wave of Dots Stream 1: Cyan / Electric Blue -->
-        <g class="dw-stream-1 wave-line">
-          <path class="dot-wave" stroke="url(#grad-cyan-blue)" stroke-width="6" stroke-dasharray="0 24"
-                d="M -150,220 C 220,90 480,360 820,210 C 1160,70 1420,300 1750,160" />
-          <path class="dot-wave" stroke="url(#grad-cyan-blue)" stroke-width="4.5" stroke-dasharray="0 20" opacity="0.8"
-                d="M -150,250 C 220,120 480,390 820,240 C 1160,100 1420,330 1750,190" />
-          <path class="dot-wave" stroke="url(#grad-cyan-blue)" stroke-width="3" stroke-dasharray="0 16" opacity="0.6"
-                d="M -150,280 C 220,150 480,420 820,270 C 1160,130 1420,360 1750,220" />
-        </g>
-
-        <!-- Wave of Dots Stream 2: Magenta / Violet -->
-        <g class="dw-stream-2 wave-line-pink">
-          <path class="dot-wave" stroke="url(#grad-pink-purple)" stroke-width="5.5" stroke-dasharray="0 22"
-                d="M -150,380 C 280,550 620,270 980,440 C 1340,610 1520,340 1750,420" />
-          <path class="dot-wave" stroke="url(#grad-pink-purple)" stroke-width="4" stroke-dasharray="0 18" opacity="0.75"
-                d="M -150,410 C 280,580 620,300 980,470 C 1340,640 1520,370 1750,450" />
-          <path class="dot-wave" stroke="url(#grad-pink-purple)" stroke-width="3" stroke-dasharray="0 16" opacity="0.55"
-                d="M -150,440 C 280,610 620,330 980,500 C 1340,670 1520,400 1750,480" />
-        </g>
-
-        <!-- Wave of Dots Stream 3: Coral Sunset / Amber -->
-        <g class="dw-stream-3 wave-line-coral">
-          <path class="dot-wave" stroke="url(#grad-coral-amber)" stroke-width="6" stroke-dasharray="0 24"
-                d="M -150,540 C 200,370 560,650 920,480 C 1280,310 1500,570 1750,440" />
-          <path class="dot-wave" stroke="url(#grad-coral-amber)" stroke-width="4.5" stroke-dasharray="0 20" opacity="0.75"
-                d="M -150,570 C 200,400 560,680 920,510 C 1280,340 1500,600 1750,470" />
-          <path class="dot-wave" stroke="url(#grad-coral-amber)" stroke-width="3" stroke-dasharray="0 18" opacity="0.55"
-                d="M -150,600 C 200,430 560,710 920,540 C 1280,370 1500,630 1750,500" />
-        </g>
-
-        <!-- Wave of Dots Stream 4: Emerald / Teal -->
-        <g class="dw-stream-4 wave-line-teal">
-          <path class="dot-wave" stroke="url(#grad-emerald-teal)" stroke-width="5" stroke-dasharray="0 20"
-                d="M -150,690 C 350,560 680,820 1040,630 C 1400,440 1560,720 1750,590" />
-          <path class="dot-wave" stroke="url(#grad-emerald-teal)" stroke-width="3.5" stroke-dasharray="0 16" opacity="0.65"
-                d="M -150,720 C 350,590 680,850 1040,660 C 1400,470 1560,750 1750,620" />
-        </g>
-      </svg>
-    </div>
+    <!-- Animated Wave of Dots Background (Ultra-optimized WebGL, Low-Power, Interactive) -->
+    <canvas id="bg-canvas" class="waves-bg-container" aria-hidden="true"></canvas>
 
     <!-- Main Navigation Header -->
     <header class="header">
@@ -508,105 +438,48 @@
           <p class="section-subtitle" data-i18n="skills.subtitle">Lenguajes, frameworks y herramientas que utilizo habitualmente en desarrollo.</p>
         </div>
 
-        <div class="skills-grid">
-          <!-- Skill Category 1 -->
-          <article class="skill-category-card tech-card">
-            <div class="skill-cat-header">
-              <span class="skill-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </span>
-              <div>
-                <h3 class="skill-cat-title">Frontend &amp; UI</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.0.desc">Desarrollo de interfaces reactivas, modernas y accesibles.</p>
-              </div>
+        <div class="skill-tag-groups">
+          <div class="skill-tag-group tech-card">
+            <h3>Uso a diario</h3>
+            <div class="skill-tag-list">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">GitHub Actions</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Spring Boot</span>
             </div>
-            <ul class="skills-list">
-              <li><span class="check-mark" aria-hidden="true">✓</span> HTML5 Semántico</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> CSS3 / Flexbox / Grid</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> JavaScript (ES6+)</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> TypeScript</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Angular</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Componentes &amp; UI</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Responsive Web Design</li>
-            </ul>
-          </article>
+          </div>
 
-          <!-- Skill Category 2 -->
-          <article class="skill-category-card tech-card">
-            <div class="skill-cat-header">
-              <span class="skill-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                </svg>
-              </span>
-              <div>
-                <h3 class="skill-cat-title">Backend &amp; APIs</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.1.desc">Consumo de servicios, intercambio de datos y arquitecturas modulares.</p>
-              </div>
+          <div class="skill-tag-group tech-card">
+            <h3>Con base sólida</h3>
+            <div class="skill-tag-list">
+              <span class="skill-tag">JSON</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Vitest</span>
+              <span class="skill-tag">Google Cloud</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Azure</span>
             </div>
-            <ul class="skills-list">
-              <li><span class="check-mark" aria-hidden="true">✓</span> Node.js</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> RESTful APIs</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> JSON Payloads</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Arquitectura Trigger/Executor</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Clean Architecture</li>
-            </ul>
-          </article>
+          </div>
 
-          <!-- Skill Category 3 -->
-          <article class="skill-category-card tech-card">
-            <div class="skill-cat-header">
-              <span class="skill-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 20V10"></path>
-                  <path d="M12 20V4"></path>
-                  <path d="M6 20v-6"></path>
-                </svg>
-              </span>
-              <div>
-                <h3 class="skill-cat-title">Herramientas &amp; CI/CD</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.2.desc">Control de versiones, pipelines automatizados y entornos Linux.</p>
-              </div>
+          <div class="skill-tag-group tech-card">
+            <h3>Aprendiendo</h3>
+            <div class="skill-tag-list">
+              <span class="skill-tag">Angular</span>
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">Kotlin</span>
+              <span class="skill-tag">Symfony</span>
+              <span class="skill-tag">SEO</span>
+              <span class="skill-tag">Automatizaciones con IA</span>
             </div>
-            <ul class="skills-list">
-              <li><span class="check-mark" aria-hidden="true">✓</span> Git &amp; GitHub</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> GitHub Actions</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Pipelines CI/CD</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Linux Shell / Bash</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> npm / Tooling</li>
-            </ul>
-          </article>
-
-          <!-- Skill Category 4 -->
-          <article class="skill-category-card tech-card">
-            <div class="skill-cat-header">
-              <span class="skill-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="m4.93 4.93 4.24 4.24"></path>
-                  <path d="m14.83 9.17 4.24-4.24"></path>
-                  <path d="m14.83 14.83 4.24 4.24"></path>
-                  <path d="m9.17 14.83-4.24 4.24"></path>
-                </svg>
-              </span>
-              <div>
-                <h3 class="skill-cat-title">Calidad &amp; Rendimiento</h3>
-                <p class="skill-cat-desc" data-i18n="skills.categories.3.desc">Estándares web, accesibilidad y optimización.</p>
-              </div>
-            </div>
-            <ul class="skills-list">
-              <li><span class="check-mark" aria-hidden="true">✓</span> Accesibilidad WCAG AA</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> Web Performance</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> html-validate / Linters</li>
-              <li><span class="check-mark" aria-hidden="true">✓</span> SEO Técnico</li>
-            </ul>
-          </article>
+          </div>
         </div>
       </section>
 
@@ -765,6 +638,9 @@
     <script src="js/translations.js?v=3.4" defer></script>
 
     <!-- Core Interactive Application Script -->
-    <script src="js/app.js?v=3.4" defer></script>
+    <script src="js/app.js?v=3.5" defer></script>
+
+    <!-- Ultra-lightweight WebGL Point-Wave Background -->
+    <script src="js/dot-waves.js?v=1.0" defer></script>
   </body>
 </html>

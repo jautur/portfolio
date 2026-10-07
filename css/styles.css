@@ -95,9 +95,9 @@ body {
 }
 
 /* ==========================================================================
-   2.1. ANIMATED VIVID WAVE OF DOTS BACKGROUND
-   Clean Bone White canvas with fluid, GPU-accelerated vibrant wave of dots.
-   Zero JavaScript, Zero forced reflows, Zero blocking time (0 ms TBT).
+   2.1. ANIMATED WAVE OF LIGHT DOTS (WebGL Point-Wave Background)
+   Ultra-optimized, low-consumption WebGL canvas undulating field.
+   Capped DPR, reduced vertex count, passive pointer wave-bursts.
    ========================================================================== */
 .waves-bg-container {
   position: fixed;
@@ -106,100 +106,10 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 0;
-  overflow: hidden;
-  contain: strict;
-}
-
-.waves-svg {
-  width: 100%;
-  height: 100%;
   display: block;
+  opacity: 0.92;
+  contain: strict;
   transform: translateZ(0);
-}
-
-.dot-wave {
-  fill: none;
-  stroke-linecap: round;
-  will-change: stroke-dashoffset, transform;
-}
-
-/* Fluid Independent Harmonic Motions for Waves of Dots */
-.dw-stream-1 {
-  animation: dotStream1 22s linear infinite, dotFloat1 15s ease-in-out infinite alternate;
-}
-
-.dw-stream-2 {
-  animation: dotStream2 26s linear infinite, dotFloat2 19s ease-in-out infinite alternate-reverse;
-}
-
-.dw-stream-3 {
-  animation: dotStream3 24s linear infinite, dotFloat3 17s ease-in-out infinite alternate;
-}
-
-.dw-stream-4 {
-  animation: dotStream4 30s linear infinite, dotFloat4 21s ease-in-out infinite alternate-reverse;
-}
-
-.wave-line {
-  filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.35));
-}
-
-.wave-line-pink {
-  filter: drop-shadow(0 0 8px rgba(255, 0, 127, 0.30));
-}
-
-.wave-line-coral {
-  filter: drop-shadow(0 0 8px rgba(255, 78, 80, 0.30));
-}
-
-.wave-line-teal {
-  filter: drop-shadow(0 0 8px rgba(5, 223, 114, 0.30));
-}
-
-/* Moving Dots Along Wave Trajectory */
-@keyframes dotStream1 {
-  from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: 800; }
-}
-
-@keyframes dotStream2 {
-  from { stroke-dashoffset: 800; }
-  to { stroke-dashoffset: 0; }
-}
-
-@keyframes dotStream3 {
-  from { stroke-dashoffset: 0; }
-  to { stroke-dashoffset: 700; }
-}
-
-@keyframes dotStream4 {
-  from { stroke-dashoffset: 600; }
-  to { stroke-dashoffset: 0; }
-}
-
-/* Undulating Wave Floats */
-@keyframes dotFloat1 {
-  0% { transform: translate3d(-2%, -15px, 0) scaleY(1); }
-  50% { transform: translate3d(2%, 20px, 0) scaleY(1.08); }
-  100% { transform: translate3d(3%, -10px, 0) scaleY(0.95); }
-}
-
-@keyframes dotFloat2 {
-  0% { transform: translate3d(2%, 15px, 0) scaleY(0.96); }
-  50% { transform: translate3d(-3%, -20px, 0) scaleY(1.05); }
-  100% { transform: translate3d(1%, 10px, 0) scaleY(1); }
-}
-
-@keyframes dotFloat3 {
-  0% { transform: translate3d(-1%, 20px, 0) scaleY(1.04); }
-  50% { transform: translate3d(3%, -15px, 0) scaleY(0.94); }
-  100% { transform: translate3d(2%, 5px, 0) scaleY(1.02); }
-}
-
-@keyframes dotFloat4 {
-  0% { transform: translate3d(2%, -10px, 0); }
-  50% { transform: translate3d(-2%, 15px, 0); }
-  100% { transform: translate3d(1%, -5px, 0); }
 }
 
 body.nav-open {
@@ -1148,72 +1058,53 @@ body.nav-open {
 /* ==========================================================================
    8. SKILLS SECTION
    ========================================================================== */
-.skills-grid {
+.skill-tag-groups {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.skill-category-card {
-  padding: 26px;
+.skill-tag-group {
+  padding: 24px 22px;
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.skill-cat-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
+.skill-tag-group h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin: 0;
 }
 
-.skill-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  background: var(--accent-soft);
-  border: 1px solid var(--border-strong);
-  color: var(--accent-strong);
+.skill-tag-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tag {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-}
-
-.skill-cat-title {
-  font-size: 1.15rem;
-  font-weight: 700;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: rgba(148, 163, 184, 0.08);
   color: var(--text);
-  line-height: 1.3;
-}
-
-.skill-cat-desc {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
-
-.skills-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.skills-list li {
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.check-mark {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: #10b981;
-  font-weight: 700;
+.skill-tag:hover {
+  transform: translateY(-1px);
+  border-color: rgba(96, 165, 250, 0.7);
+  background: rgba(96, 165, 250, 0.08);
 }
 
 /* ==========================================================================
@@ -1878,31 +1769,24 @@ body.nav-open {
   }
 
   /* Skills Section */
-  .skills-grid {
+  .skill-tag-groups {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
-  .skill-category-card {
+  .skill-tag-group {
     padding: 18px 14px;
-    gap: 14px;
+    gap: 12px;
   }
-  .skill-icon {
-    width: 38px;
-    height: 38px;
+  .skill-tag-group h3 {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
   }
-  .skill-cat-header h4 {
-    font-size: 0.98rem;
+  .skill-tag-list {
+    gap: 10px;
   }
-  .skill-cat-header p {
-    font-size: 0.84rem;
-  }
-  .skills-list {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-  .skill-item {
-    padding: 8px 10px;
-    font-size: 0.84rem;
+  .skill-tag {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.76rem;
   }
 
   /* Process Section */
