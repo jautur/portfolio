@@ -6,7 +6,7 @@
     <title>Jaume Tur — Desarrollador Web · Arquitectura Frontend · CI/CD</title>
     <meta name="description" content="Portfolio profesional de Jaume Tur. Desarrollo web moderno, arquitecturas reactivas, optimización de rendimiento y automatización de despliegues.">
     <meta name="author" content="Jaume Tur">
-    <meta name="theme-color" content="#0038b8">
+    <meta name="theme-color" content="#faf8f5">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://jautur.github.io/portfolio/">
@@ -40,7 +40,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css?v=3.2">
+    <link rel="stylesheet" href="css/styles.css?v=3.3">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -75,6 +75,81 @@
   <body>
     <!-- Accessible Skip Link -->
     <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+    <!-- Animated Waves & Vivid Lines Background (Pure GPU-accelerated CSS) -->
+    <div class="waves-bg-container" aria-hidden="true">
+      <svg class="waves-svg" viewBox="0 0 1600 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Vivid Gradient 1: Cyan to Electric Blue & Purple -->
+          <linearGradient id="grad-cyan-blue" x1="0%" y1="0%" x2="100%" y2="50%">
+            <stop offset="0%" stop-color="#00f2fe" />
+            <stop offset="50%" stop-color="#0066ff" />
+            <stop offset="100%" stop-color="#7928ca" />
+          </linearGradient>
+
+          <!-- Vivid Gradient 2: Magenta to Violet -->
+          <linearGradient id="grad-pink-purple" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ff007f" />
+            <stop offset="50%" stop-color="#b800ff" />
+            <stop offset="100%" stop-color="#0055ff" />
+          </linearGradient>
+
+          <!-- Vivid Gradient 3: Amber to Coral Sunset -->
+          <linearGradient id="grad-coral-amber" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ff0844" />
+            <stop offset="50%" stop-color="#ff4e50" />
+            <stop offset="100%" stop-color="#f59e0b" />
+          </linearGradient>
+
+          <!-- Vivid Gradient 4: Emerald to Teal -->
+          <linearGradient id="grad-emerald-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#05df72" />
+            <stop offset="50%" stop-color="#00c6ff" />
+            <stop offset="100%" stop-color="#0072ff" />
+          </linearGradient>
+        </defs>
+
+        <!-- Wave Ribbon 1 (Soft Filled Backdrop) -->
+        <g class="wave-layer wave-1" opacity="0.10">
+          <path fill="url(#grad-cyan-blue)" d="M -100,250 C 250,120 480,380 820,240 C 1160,100 1420,320 1750,190 L 1750,950 L -100,950 Z" />
+        </g>
+
+        <!-- Wave Ribbon 2 (Warm Sunset Flow) -->
+        <g class="wave-layer wave-2" opacity="0.08">
+          <path fill="url(#grad-coral-amber)" d="M -100,420 C 300,580 620,310 980,480 C 1340,650 1520,380 1750,460 L 1750,950 L -100,950 Z" />
+        </g>
+
+        <!-- Wave Ribbon 3 (Violet/Pink Flow) -->
+        <g class="wave-layer wave-3" opacity="0.07">
+          <path fill="url(#grad-pink-purple)" d="M -100,560 C 220,400 580,680 920,510 C 1260,340 1500,600 1750,480 L 1750,950 L -100,950 Z" />
+        </g>
+
+        <!-- Vivid Wave Lines (Crisp Vector Strokes) -->
+        <g class="wave-layer wave-1 wave-line">
+          <path fill="none" stroke="url(#grad-cyan-blue)" stroke-width="3" stroke-linecap="round"
+                d="M -100,250 C 250,120 480,380 820,240 C 1160,100 1420,320 1750,190" />
+          <path fill="none" stroke="url(#grad-cyan-blue)" stroke-width="1.5" stroke-dasharray="6,8" opacity="0.6"
+                d="M -100,270 C 250,140 480,400 820,260 C 1160,120 1420,340 1750,210" />
+        </g>
+
+        <g class="wave-layer wave-2 wave-line wave-line-pink">
+          <path fill="none" stroke="url(#grad-pink-purple)" stroke-width="2.8" stroke-linecap="round"
+                d="M -100,420 C 300,580 620,310 980,480 C 1340,650 1520,380 1750,460" />
+          <path fill="none" stroke="url(#grad-pink-purple)" stroke-width="1.2" opacity="0.5"
+                d="M -100,440 C 300,600 620,330 980,500 C 1340,670 1520,400 1750,480" />
+        </g>
+
+        <g class="wave-layer wave-3 wave-line wave-line-coral">
+          <path fill="none" stroke="url(#grad-coral-amber)" stroke-width="2.5" stroke-linecap="round"
+                d="M -100,560 C 220,400 580,680 920,510 C 1260,340 1500,600 1750,480" />
+        </g>
+
+        <g class="wave-layer wave-4 wave-line wave-line-teal">
+          <path fill="none" stroke="url(#grad-emerald-teal)" stroke-width="2" stroke-linecap="round" stroke-dasharray="10,12" opacity="0.75"
+                d="M -100,340 C 380,220 700,520 1060,320 C 1420,120 1580,420 1750,300" />
+        </g>
+      </svg>
+    </div>
 
     <!-- Main Navigation Header -->
     <header class="header">
@@ -699,9 +774,9 @@
     </footer>
 
     <!-- i18n Translations Dictionary -->
-    <script src="js/translations.js?v=3.2" defer></script>
+    <script src="js/translations.js?v=3.3" defer></script>
 
     <!-- Core Interactive Application Script -->
-    <script src="js/app.js?v=3.2" defer></script>
+    <script src="js/app.js?v=3.3" defer></script>
   </body>
 </html>

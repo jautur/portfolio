@@ -1,40 +1,50 @@
 /* ==========================================================================
    JAUME TUR — PORTFOLIO DESIGN SYSTEM & STYLESHEET
-   Creative Direction: Premium, Modern, Minimalist & High-Performance
-   Dual Identity: Day (Israel Blue #0038b8) & Night (Deep Midnight #070b14)
+   Creative Direction: Simple, Clean, Minimalist & High-Performance
+   Aesthetic: Warm Bone White Canvas (#faf8f5) with Vibrant Liquid Waves & Lines
    ========================================================================== */
 
 /* ==========================================================================
    1. DESIGN TOKENS (CSS Custom Properties)
    ========================================================================== */
 :root {
-  /* Color Palette — Day Mode (Luminous, Crisp Israel Blue #0038b8) */
-  --bg: #f8faff;
-  --bg-trans: rgba(248, 250, 255, 0.88);
-  --bg-strong: #edf2fc;
+  /* Color Palette — Clean Bone White (#faf8f5) */
+  --bg: #faf8f5;
+  --bg-trans: rgba(250, 248, 245, 0.88);
+  --bg-strong: #f3efe8;
   --panel: #ffffff;
   --panel-hover: #ffffff;
-  --panel-header: rgba(0, 56, 184, 0.04);
-  --border: rgba(0, 56, 184, 0.12);
-  --border-strong: rgba(0, 56, 184, 0.28);
-  --border-focus: #0038b8;
+  --panel-header: rgba(0, 0, 0, 0.02);
+  --border: rgba(30, 41, 59, 0.08);
+  --border-strong: rgba(30, 41, 59, 0.16);
+  --border-focus: #0066ff;
 
-  --text: #090e1d;
-  --text-muted: #2d3748;
-  --text-soft: #4a5568;
-  --text-dim: #718096;
+  --text: #121826;
+  --text-muted: #374151;
+  --text-soft: #4b5563;
+  --text-dim: #6b7280;
 
-  --accent: #0055d4;
-  --accent-strong: #0038b8; /* Authentic Israel Blue */
-  --accent-deep: #002787;
-  --accent-soft: rgba(0, 56, 184, 0.07);
-  --accent-glow: rgba(0, 85, 212, 0.20);
-  --accent-gradient: linear-gradient(135deg, #0055d4 0%, #0038b8 100%);
+  /* Vivid Colors for Waves, Lines & Primary Accents */
+  --accent: #0066ff;
+  --accent-strong: #0052cc;
+  --accent-deep: #003d99;
+  --accent-soft: rgba(0, 102, 255, 0.08);
+  --accent-glow: rgba(0, 102, 255, 0.28);
+  --accent-gradient: linear-gradient(135deg, #0066ff 0%, #8a2be2 50%, #ff007f 100%);
 
-  --shadow-sm: 0 2px 8px rgba(0, 40, 120, 0.05);
-  --shadow-md: 0 8px 24px rgba(0, 40, 120, 0.08);
-  --shadow-lg: 0 16px 40px rgba(0, 40, 120, 0.12);
-  --shadow-glow: 0 0 24px rgba(0, 85, 212, 0.20);
+  /* Vivid Palette Tokens */
+  --vivid-cyan: #00f2fe;
+  --vivid-blue: #0066ff;
+  --vivid-pink: #ff007f;
+  --vivid-purple: #8a2be2;
+  --vivid-coral: #ff4e50;
+  --vivid-amber: #f59e0b;
+  --vivid-emerald: #05df72;
+
+  --shadow-sm: 0 2px 10px rgba(18, 24, 38, 0.04);
+  --shadow-md: 0 8px 28px rgba(18, 24, 38, 0.06);
+  --shadow-lg: 0 16px 44px rgba(18, 24, 38, 0.08);
+  --shadow-glow: 0 0 28px rgba(0, 102, 255, 0.24);
 
   /* Typography */
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -82,6 +92,115 @@ body {
   position: relative;
   min-height: 100vh;
   transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* ==========================================================================
+   2.1. ANIMATED VIVID WAVES & LINES BACKGROUND
+   Clean Bone White canvas with fluid, GPU-accelerated vibrant lines & waves.
+   Zero JavaScript, Zero forced reflows, Zero blocking time (0 ms TBT).
+   ========================================================================== */
+.waves-bg-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  contain: strict;
+}
+
+.waves-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: translateZ(0);
+}
+
+.wave-layer {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Fluid Independent Harmonic Motions */
+.wave-1 {
+  animation: waveMotion1 16s ease-in-out infinite alternate;
+}
+
+.wave-2 {
+  animation: waveMotion2 22s ease-in-out infinite alternate-reverse;
+}
+
+.wave-3 {
+  animation: waveMotion3 18s ease-in-out infinite alternate;
+}
+
+.wave-4 {
+  animation: waveMotion4 25s ease-in-out infinite alternate-reverse;
+}
+
+.wave-line {
+  filter: drop-shadow(0 0 10px rgba(0, 102, 255, 0.35));
+}
+
+.wave-line-pink {
+  filter: drop-shadow(0 0 10px rgba(255, 0, 127, 0.30));
+}
+
+.wave-line-coral {
+  filter: drop-shadow(0 0 10px rgba(255, 78, 80, 0.30));
+}
+
+.wave-line-teal {
+  filter: drop-shadow(0 0 10px rgba(5, 223, 114, 0.30));
+}
+
+@keyframes waveMotion1 {
+  0% {
+    transform: translate3d(-3%, -2%, 0) scaleY(1);
+  }
+  50% {
+    transform: translate3d(2%, 3%, 0) scaleY(1.06);
+  }
+  100% {
+    transform: translate3d(4%, -1%, 0) scaleY(0.96);
+  }
+}
+
+@keyframes waveMotion2 {
+  0% {
+    transform: translate3d(3%, 2%, 0) scaleY(0.97) rotate(-0.5deg);
+  }
+  50% {
+    transform: translate3d(-2%, -3%, 0) scaleY(1.05) rotate(0.5deg);
+  }
+  100% {
+    transform: translate3d(1%, 2%, 0) scaleY(1) rotate(-0.2deg);
+  }
+}
+
+@keyframes waveMotion3 {
+  0% {
+    transform: translate3d(-2%, 3%, 0) scaleY(1.04);
+  }
+  50% {
+    transform: translate3d(3%, -2%, 0) scaleY(0.94);
+  }
+  100% {
+    transform: translate3d(-1%, -1%, 0) scaleY(1.02);
+  }
+}
+
+@keyframes waveMotion4 {
+  0% {
+    transform: translate3d(2%, -3%, 0);
+  }
+  50% {
+    transform: translate3d(-3%, 2%, 0);
+  }
+  100% {
+    transform: translate3d(1%, 1%, 0);
+  }
 }
 
 body.nav-open {
@@ -1436,6 +1555,8 @@ body.nav-open {
    12. FOOTER & BACK TO TOP
    ========================================================================== */
 .footer {
+  position: relative;
+  z-index: 1;
   border-top: 1px solid var(--border);
   background: var(--bg-trans);
   backdrop-filter: blur(12px);
@@ -2014,5 +2135,29 @@ body.nav-open {
   .lang-btn {
     padding: 2px 4px;
     font-size: 0.64rem;
+  }
+}
+
+/* ==========================================================================
+   14. ACCESSIBILITY — PREFERS-REDUCED-MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .wave-1,
+  .wave-2,
+  .wave-3,
+  .wave-4 {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
