@@ -95,8 +95,8 @@ body {
 }
 
 /* ==========================================================================
-   2.1. ANIMATED VIVID WAVES & LINES BACKGROUND
-   Clean Bone White canvas with fluid, GPU-accelerated vibrant lines & waves.
+   2.1. ANIMATED VIVID WAVE OF DOTS BACKGROUND
+   Clean Bone White canvas with fluid, GPU-accelerated vibrant wave of dots.
    Zero JavaScript, Zero forced reflows, Zero blocking time (0 ms TBT).
    ========================================================================== */
 .waves-bg-container {
@@ -117,90 +117,89 @@ body {
   transform: translateZ(0);
 }
 
-.wave-layer {
-  transform-origin: center center;
-  will-change: transform;
+.dot-wave {
+  fill: none;
+  stroke-linecap: round;
+  will-change: stroke-dashoffset, transform;
 }
 
-/* Fluid Independent Harmonic Motions */
-.wave-1 {
-  animation: waveMotion1 16s ease-in-out infinite alternate;
+/* Fluid Independent Harmonic Motions for Waves of Dots */
+.dw-stream-1 {
+  animation: dotStream1 22s linear infinite, dotFloat1 15s ease-in-out infinite alternate;
 }
 
-.wave-2 {
-  animation: waveMotion2 22s ease-in-out infinite alternate-reverse;
+.dw-stream-2 {
+  animation: dotStream2 26s linear infinite, dotFloat2 19s ease-in-out infinite alternate-reverse;
 }
 
-.wave-3 {
-  animation: waveMotion3 18s ease-in-out infinite alternate;
+.dw-stream-3 {
+  animation: dotStream3 24s linear infinite, dotFloat3 17s ease-in-out infinite alternate;
 }
 
-.wave-4 {
-  animation: waveMotion4 25s ease-in-out infinite alternate-reverse;
+.dw-stream-4 {
+  animation: dotStream4 30s linear infinite, dotFloat4 21s ease-in-out infinite alternate-reverse;
 }
 
 .wave-line {
-  filter: drop-shadow(0 0 10px rgba(0, 102, 255, 0.35));
+  filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.35));
 }
 
 .wave-line-pink {
-  filter: drop-shadow(0 0 10px rgba(255, 0, 127, 0.30));
+  filter: drop-shadow(0 0 8px rgba(255, 0, 127, 0.30));
 }
 
 .wave-line-coral {
-  filter: drop-shadow(0 0 10px rgba(255, 78, 80, 0.30));
+  filter: drop-shadow(0 0 8px rgba(255, 78, 80, 0.30));
 }
 
 .wave-line-teal {
-  filter: drop-shadow(0 0 10px rgba(5, 223, 114, 0.30));
+  filter: drop-shadow(0 0 8px rgba(5, 223, 114, 0.30));
 }
 
-@keyframes waveMotion1 {
-  0% {
-    transform: translate3d(-3%, -2%, 0) scaleY(1);
-  }
-  50% {
-    transform: translate3d(2%, 3%, 0) scaleY(1.06);
-  }
-  100% {
-    transform: translate3d(4%, -1%, 0) scaleY(0.96);
-  }
+/* Moving Dots Along Wave Trajectory */
+@keyframes dotStream1 {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 800; }
 }
 
-@keyframes waveMotion2 {
-  0% {
-    transform: translate3d(3%, 2%, 0) scaleY(0.97) rotate(-0.5deg);
-  }
-  50% {
-    transform: translate3d(-2%, -3%, 0) scaleY(1.05) rotate(0.5deg);
-  }
-  100% {
-    transform: translate3d(1%, 2%, 0) scaleY(1) rotate(-0.2deg);
-  }
+@keyframes dotStream2 {
+  from { stroke-dashoffset: 800; }
+  to { stroke-dashoffset: 0; }
 }
 
-@keyframes waveMotion3 {
-  0% {
-    transform: translate3d(-2%, 3%, 0) scaleY(1.04);
-  }
-  50% {
-    transform: translate3d(3%, -2%, 0) scaleY(0.94);
-  }
-  100% {
-    transform: translate3d(-1%, -1%, 0) scaleY(1.02);
-  }
+@keyframes dotStream3 {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 700; }
 }
 
-@keyframes waveMotion4 {
-  0% {
-    transform: translate3d(2%, -3%, 0);
-  }
-  50% {
-    transform: translate3d(-3%, 2%, 0);
-  }
-  100% {
-    transform: translate3d(1%, 1%, 0);
-  }
+@keyframes dotStream4 {
+  from { stroke-dashoffset: 600; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Undulating Wave Floats */
+@keyframes dotFloat1 {
+  0% { transform: translate3d(-2%, -15px, 0) scaleY(1); }
+  50% { transform: translate3d(2%, 20px, 0) scaleY(1.08); }
+  100% { transform: translate3d(3%, -10px, 0) scaleY(0.95); }
+}
+
+@keyframes dotFloat2 {
+  0% { transform: translate3d(2%, 15px, 0) scaleY(0.96); }
+  50% { transform: translate3d(-3%, -20px, 0) scaleY(1.05); }
+  100% { transform: translate3d(1%, 10px, 0) scaleY(1); }
+}
+
+@keyframes dotFloat3 {
+  0% { transform: translate3d(-1%, 20px, 0) scaleY(1.04); }
+  50% { transform: translate3d(3%, -15px, 0) scaleY(0.94); }
+  100% { transform: translate3d(2%, 5px, 0) scaleY(1.02); }
+}
+
+@keyframes dotFloat4 {
+  0% { transform: translate3d(2%, -10px, 0); }
+  50% { transform: translate3d(-2%, 15px, 0); }
+  100% { transform: translate3d(1%, -5px, 0); }
 }
 
 body.nav-open {
@@ -1048,7 +1047,7 @@ body.nav-open {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px 10px;
+  padding: 24px 24px 10px;
 }
 
 .project-badge {
@@ -1074,70 +1073,11 @@ body.nav-open {
   color: var(--text-dim);
 }
 
-/* 3D Visual Viewport inside Project Cards */
-.project-visual {
-  position: relative;
-  height: 160px;
-  margin: 0 16px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), var(--accent-soft));
-  border: 1px solid var(--border);
-}
 
-.project-visual canvas {
-  position: absolute;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-  pointer-events: none;
-}
-
-/* macOS Window Header on 3D Viewport */
-.project-visual::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 12px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #ff5f56;
-  box-shadow: 11px 0 0 #ffbd2e, 22px 0 0 #27c93f;
-  z-index: 2;
-  opacity: 0.85;
-}
-
-.project-visual::after {
-  content: "dev.viewport";
-  position: absolute;
-  top: 8px;
-  left: 48px;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.06em;
-  color: var(--accent-strong);
-  opacity: 0.75;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.visual-one::after {
-  content: "metrics.service // :3000";
-}
-
-.visual-two::after {
-  content: "avisa.app // browser";
-}
-
-.visual-three::after {
-  content: "git // ci-cd.pipeline";
-}
 
 /* Project Body */
 .project-body {
-  padding: 18px 20px 20px;
+  padding: 10px 24px 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1908,10 +1848,7 @@ body.nav-open {
   .project-topline {
     padding: 12px 14px 8px;
   }
-  .project-visual {
-    height: 145px;
-    margin: 0 12px;
-  }
+
   .project-body {
     padding: 14px 14px 16px;
     gap: 10px;
@@ -2150,10 +2087,10 @@ body.nav-open {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .wave-1,
-  .wave-2,
-  .wave-3,
-  .wave-4 {
+  .dw-stream-1,
+  .dw-stream-2,
+  .dw-stream-3,
+  .dw-stream-4 {
     animation: none !important;
   }
   .reveal {

@@ -70,7 +70,7 @@ const translations = {
         all: "Todos",
         webapps: "Web Apps",
         automation: "CI/CD & DevOps",
-        graphics: "3D & WebGL"
+        frontend: "Frontend & UI"
       },
       viewLive: "Ver demo",
       viewCode: "Ver código",
@@ -92,15 +92,15 @@ const translations = {
         },
         {
           id: "telemetry",
-          category: "graphics",
-          badge: "WebGL / 3D",
+          category: "frontend",
+          badge: "Frontend UI",
           year: "2024",
-          title: "Panel Interactivo Three.js",
-          description: "Visualizador interactivo con aceleración por hardware en WebGL y optimización para bajo consumo de recursos.",
-          role: "Desarrollo Gráfico y Frontend",
-          impact: "60 FPS estables y render dinámico",
-          tags: ["Three.js", "WebGL", "JavaScript ES6+", "Performance"],
-          liveUrl: "#hero",
+          title: "Dashboard de Telemetría & Rendimiento",
+          description: "Panel analítico interactivo con monitorización de métricas en tiempo real, arquitectura modular de componentes y alto rendimiento.",
+          role: "Frontend & Rendimiento",
+          impact: "60 FPS y renderizado instantáneo",
+          tags: ["JavaScript ES6+", "TypeScript", "Métricas", "Performance"],
+          liveUrl: "#skills",
           githubUrl: "https://github.com/jautur/portfolio"
         },
         {
@@ -126,7 +126,7 @@ const translations = {
         {
           name: "Frontend & UI",
           desc: "Desarrollo de interfaces reactivas, modernas y accesibles.",
-          skills: ["HTML5 Semántico", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Three.js / WebGL", "Responsive Web Design"]
+          skills: ["HTML5 Semántico", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Components & UI", "Responsive Web Design"]
         },
         {
           name: "Backend & APIs",
@@ -269,7 +269,7 @@ const translations = {
         all: "All",
         webapps: "Web Apps",
         automation: "CI/CD & DevOps",
-        graphics: "3D & WebGL"
+        frontend: "Frontend & UI"
       },
       viewLive: "Live Demo",
       viewCode: "View Code",
@@ -291,15 +291,15 @@ const translations = {
         },
         {
           id: "telemetry",
-          category: "graphics",
-          badge: "WebGL / 3D",
+          category: "frontend",
+          badge: "Frontend UI",
           year: "2024",
-          title: "Interactive Three.js Dashboard",
-          description: "Hardware-accelerated WebGL interactive visualization optimized for low memory usage and smooth 60 FPS.",
-          role: "Graphics & Frontend Development",
-          impact: "Rock-solid 60 FPS & dynamic pauses",
-          tags: ["Three.js", "WebGL", "JavaScript ES6+", "Performance"],
-          liveUrl: "#hero",
+          title: "Telemetry & Performance Dashboard",
+          description: "Interactive analytics dashboard with real-time telemetry monitoring, modular component architecture, and high performance.",
+          role: "Frontend & Performance",
+          impact: "Solid 60 FPS & instant rendering",
+          tags: ["JavaScript ES6+", "TypeScript", "Metrics", "Performance"],
+          liveUrl: "#skills",
           githubUrl: "https://github.com/jautur/portfolio"
         },
         {
@@ -325,7 +325,7 @@ const translations = {
         {
           name: "Frontend & UI",
           desc: "Developing modern, reactive, accessible user interfaces.",
-          skills: ["Semantic HTML5", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Three.js / WebGL", "Responsive Web Design"]
+          skills: ["Semantic HTML5", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Components & UI", "Responsive Web Design"]
         },
         {
           name: "Backend & APIs",
@@ -468,7 +468,7 @@ const translations = {
         all: "Tots",
         webapps: "Web Apps",
         automation: "CI/CD & DevOps",
-        graphics: "3D & WebGL"
+        frontend: "Frontend & UI"
       },
       viewLive: "Veure demo",
       viewCode: "Veure codi",
@@ -490,15 +490,15 @@ const translations = {
         },
         {
           id: "telemetry",
-          category: "graphics",
-          badge: "WebGL / 3D",
+          category: "frontend",
+          badge: "Frontend UI",
           year: "2024",
-          title: "Panell Interactiu Three.js",
-          description: "Visualitzador interactiu amb acceleració per maquinari en WebGL i optimització per a baix consum de recursos.",
-          role: "Desenvolupament Gràfic i Frontend",
-          impact: "60 FPS estables i render dinàmic",
-          tags: ["Three.js", "WebGL", "JavaScript ES6+", "Performance"],
-          liveUrl: "#hero",
+          title: "Panell de Telemetria & Rendiment",
+          description: "Panell analític interactiu amb monitoratge de mètriques en temps real, arquitectura modular de components i alt rendiment.",
+          role: "Frontend i Rendiment",
+          impact: "60 FPS i renderitzat instantani",
+          tags: ["JavaScript ES6+", "TypeScript", "Mètriques", "Performance"],
+          liveUrl: "#skills",
           githubUrl: "https://github.com/jautur/portfolio"
         },
         {
@@ -524,7 +524,7 @@ const translations = {
         {
           name: "Frontend & UI",
           desc: "Desenvolupament d'interfícies reactives, modernes i accessibles.",
-          skills: ["HTML5 Semàntic", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Three.js / WebGL", "Responsive Web Design"]
+          skills: ["HTML5 Semàntic", "CSS3 / Flexbox / Grid", "JavaScript (ES6+)", "TypeScript", "Angular", "Components & UI", "Responsive Web Design"]
         },
         {
           name: "Backend & APIs",
