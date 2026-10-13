@@ -107,7 +107,7 @@ body {
   pointer-events: none;
   z-index: 0;
   display: block;
-  opacity: 0.92;
+  opacity: 1;
   contain: strict;
   transform: translateZ(0);
 }

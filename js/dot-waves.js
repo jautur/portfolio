@@ -35,14 +35,22 @@
     return;
   }
 
-  // Paleta de colores adaptada: Fondo blanco hueso (#faf8f5), valles turquesa/cian (#00b4d8), crestas magenta/violeta (#d723b6)
-  const hexToRgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255);
+  // Paleta de colors: Gris carbó net i autèntic sobre fons blanc os (#faf8f5)
+  // Valle: Gris carbó fosc (#1e232a), Cresta: Gris carbó mitjà (#333a46)
+  const hexToRgb = (h) => {
+    const clean = h.replace('#', '');
+    return [
+      parseInt(clean.slice(0, 2), 16) / 255,
+      parseInt(clean.slice(2, 4), 16) / 255,
+      parseInt(clean.slice(4, 6), 16) / 255
+    ];
+  };
   
   const PALETAS = {
     bone: {
-      fondo: hexToRgb('faf8f5'),
-      valle: hexToRgb('000000'), // Puntos base negros
-      cresta: hexToRgb('ff3ac6') // Cresta rosa neón
+      fondo: hexToRgb('#faf8f5'),
+      valle: hexToRgb('#1e232a'), // Gris carbó fosc (R: 0.12, G: 0.14, B: 0.16)
+      cresta: hexToRgb('#333a46') // Gris carbó matisat (R: 0.20, G: 0.23, B: 0.27)
     }
   };
 
@@ -55,7 +63,7 @@
   const DMAX = 42.0;
 
   // ---------- Shaders ----------
-  // Vertex Shader para puntos
+  // Vertex Shader per a punts
   const VS_PUNTOS = `
 attribute vec3 aPos;
 uniform mat4 uVP;
@@ -104,13 +112,13 @@ void main(){
   float n = smoothstep(0.4, 1.75, cruda);
   float h = (cruda - 1.05) * 0.95;
 
-  // Interacción puntero
+  // Interacció amb el punter
   float r = distance(p, uPuntero);
   float m = uPunteroAmt * exp(-r * r * 0.32);
   h += m * (0.5 + 0.16 * sin(r * 4.2 - t * 5.0));
   float brillo = m * 0.55;
 
-  // Ondas por clics
+  // Ones per clics
   for (int i = 0; i < 4; i++) {
     float edad = t - uOndas[i].z;
     if (edad > 0.0 && edad < 7.0) {
@@ -127,25 +135,28 @@ void main(){
 
   float d = distance(mundo, uOjo);
   float luz = clamp(n + brillo, 0.0, 1.4);
-  vCol = mix(uValle, uCresta, pow(clamp(luz, 0.0, 1.0), 1.35)) * (0.7 + 0.9 * luz);
+  
+  // To gris carbó coherent i visible a tota la malla
+  vCol = mix(uValle, uCresta, clamp(luz, 0.0, 1.0));
 
-  float niebla = exp(-max(d - 5.0, 0.0) * 0.07);
-  float cerca = smoothstep(1.3, 3.2, d);
-  float titilar = 0.85 + 0.15 * sin(t * (1.5 + aPos.z * 3.0) + aPos.z * 40.0);
+  float niebla = exp(-max(d - 5.0, 0.0) * 0.06);
+  float cerca = smoothstep(1.2, 2.8, d);
+  float titilar = 0.9 + 0.1 * sin(t * (1.5 + aPos.z * 3.0) + aPos.z * 40.0);
   vec2 ndc = clip.xy / clip.w;
-  float vi = 1.0 - 0.25 * dot(ndc, ndc);
+  float vi = 1.0 - 0.2 * dot(ndc, ndc);
 
-  float tam = uTam * uProy / d * (0.75 + 0.9 * luz) * mix(1.0, 1.15, smoothstep(9.0, 2.5, d));
-  vA = niebla * cerca * (0.35 + 0.65 * clamp(luz, 0.0, 1.0)) * titilar * vi;
-  if (tam < 1.0) {
-    vA *= tam;
-    tam = 1.0;
+  float tam = uTam * uProy / d * (1.1 + 0.9 * luz) * mix(1.0, 1.2, smoothstep(9.0, 2.5, d));
+  // Opacitat clara i visible: gris carbó ben definit sobre fons clar
+  vA = niebla * cerca * (0.60 + 0.40 * clamp(luz, 0.0, 1.0)) * titilar * vi;
+  if (tam < 2.0) {
+    vA *= (tam / 2.0);
+    tam = 2.0;
   }
-  gl_PointSize = min(tam, 36.0);
+  gl_PointSize = min(tam, 48.0);
 }
 `;
 
-  // Fragment Shader para puntos con desvanecimiento radial suave
+  // Fragment Shader per a punts amb antialiasing suau i contrast net
   const FS_PUNTOS = `
 precision mediump float;
 varying vec3 vCol;
@@ -155,7 +166,7 @@ void main(){
   vec2 c = gl_PointCoord - 0.5;
   float r2 = dot(c, c) * 4.0;
   if (r2 > 1.0) discard;
-  float a = exp(-r2 * 2.8) * (1.0 - r2) * vA * 0.75;
+  float a = exp(-r2 * 2.2) * (1.0 - r2) * vA * 0.92;
   gl_FragColor = vec4(vCol, a);
 }
 `;
@@ -371,7 +382,7 @@ void main(){
     gl.uniform3fv(u.uOjo, c.ojo);
     gl.uniform1f(u.uT, t);
     gl.uniform1f(u.uProy, H / (2 * Math.tan(FOV / 2)));
-    gl.uniform1f(u.uTam, movil ? 0.032 : 0.026);
+    gl.uniform1f(u.uTam, movil ? 0.048 : 0.042);
     gl.uniform2f(u.uPuntero, puntero.x, puntero.z);
     gl.uniform1f(u.uPunteroAmt, puntero.amt);
     gl.uniform3fv(u.uOndas, ondas);
