@@ -145,14 +145,14 @@ void main(){
   vec2 ndc = clip.xy / clip.w;
   float vi = 1.0 - 0.2 * dot(ndc, ndc);
 
-  float tam = uTam * uProy / d * (0.8 + 0.8 * luz) * mix(1.0, 1.15, smoothstep(9.0, 2.5, d));
+  float tam = uTam * uProy / d * (1.1 + 0.9 * luz) * mix(1.0, 1.2, smoothstep(9.0, 2.5, d));
   // Opacitat clara i visible: gris carbó ben definit sobre fons clar
-  vA = niebla * cerca * (0.55 + 0.45 * clamp(luz, 0.0, 1.0)) * titilar * vi;
-  if (tam < 1.4) {
-    vA *= (tam / 1.4);
-    tam = 1.4;
+  vA = niebla * cerca * (0.60 + 0.40 * clamp(luz, 0.0, 1.0)) * titilar * vi;
+  if (tam < 2.0) {
+    vA *= (tam / 2.0);
+    tam = 2.0;
   }
-  gl_PointSize = min(tam, 38.0);
+  gl_PointSize = min(tam, 48.0);
 }
 `;
 
@@ -382,7 +382,7 @@ void main(){
     gl.uniform3fv(u.uOjo, c.ojo);
     gl.uniform1f(u.uT, t);
     gl.uniform1f(u.uProy, H / (2 * Math.tan(FOV / 2)));
-    gl.uniform1f(u.uTam, movil ? 0.038 : 0.032);
+    gl.uniform1f(u.uTam, movil ? 0.048 : 0.042);
     gl.uniform2f(u.uPuntero, puntero.x, puntero.z);
     gl.uniform1f(u.uPunteroAmt, puntero.amt);
     gl.uniform3fv(u.uOndas, ondas);
