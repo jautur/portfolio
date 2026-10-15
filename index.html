@@ -1,75 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jaume Tur — Desarrollador Web · Arquitectura Frontend · CI/CD</title>
-    <meta name="description" content="Portfolio profesional de Jaume Tur. Desarrollo web moderno, arquitecturas reactivas, optimización de rendimiento y automatización de despliegues.">
-    <meta name="author" content="Jaume Tur">
-    <meta name="theme-color" content="#faf8f5">
+    <meta
+      name="description"
+      content="Portfolio profesional de Jaume Tur. Desarrollo web moderno, arquitecturas reactivas, optimización de rendimiento y automatización de despliegues."
+    />
+    <meta name="author" content="Jaume Tur" />
+    <meta name="theme-color" content="#faf8f5" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://jautur.github.io/portfolio/">
+    <link rel="canonical" href="https://jautur.github.io/portfolio/" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jautur.github.io/portfolio/">
-    <meta property="og:title" content="Jaume Tur — Desarrollador Web · Arquitectura Frontend · CI/CD">
-    <meta property="og:description" content="Portfolio profesional de Jaume Tur. Soluciones web rápidas, robustas y orientadas a resultados.">
-    <meta property="og:locale" content="es_ES">
-    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jautur.github.io/portfolio/" />
+    <meta
+      property="og:title"
+      content="Jaume Tur — Desarrollador Web · Arquitectura Frontend · CI/CD"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio profesional de Jaume Tur. Soluciones web rápidas, robustas y orientadas a resultados."
+    />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jaume Tur — Desarrollador Web · Arquitectura Frontend · CI/CD">
-    <meta name="twitter:description" content="Portfolio profesional de Jaume Tur. Desarrollo web moderno, interfaces reactivas y CI/CD.">
-    <meta name="twitter:image" content="https://jautur.github.io/portfolio/assets/img/jt-logo-dark.png">
-    <meta property="og:image" content="https://jautur.github.io/portfolio/assets/img/jt-logo-dark.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Jaume Tur — Desarrollador Web · Arquitectura Frontend · CI/CD"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfolio profesional de Jaume Tur. Desarrollo web moderno, interfaces reactivas y CI/CD."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jautur.github.io/portfolio/assets/img/jt-logo-dark.png"
+    />
+    <meta
+      property="og:image"
+      content="https://jautur.github.io/portfolio/assets/img/jt-logo-dark.png"
+    />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicon-32.png"
+    />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
     <!-- Preload Primary Font for Zero Layout Shift -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2" as="font" type="font/woff2" crossorigin>
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css?v=3.4">
+    <link rel="stylesheet" href="css/styles.css?v=3.4" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://jautur.github.io/portfolio/#person",
-          "name": "Jaume Tur",
-          "url": "https://jautur.github.io/portfolio/",
-          "jobTitle": "Web Developer & Frontend Engineer",
-          "sameAs": [
-            "https://github.com/jautur",
-            "https://www.linkedin.com/in/jautur/",
-            "https://jautur.github.io/AVISA-objectiu/"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://jautur.github.io/portfolio/#website",
-          "url": "https://jautur.github.io/portfolio/",
-          "name": "Jaume Tur Portfolio",
-          "author": {
-            "@id": "https://jautur.github.io/portfolio/#person"
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://jautur.github.io/portfolio/#person",
+            "name": "Jaume Tur",
+            "url": "https://jautur.github.io/portfolio/",
+            "jobTitle": "Web Developer & Frontend Engineer",
+            "sameAs": [
+              "https://github.com/jautur",
+              "https://www.linkedin.com/in/jautur/",
+              "https://jautur.github.io/AVISA-objectiu/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://jautur.github.io/portfolio/#website",
+            "url": "https://jautur.github.io/portfolio/",
+            "name": "Jaume Tur Portfolio",
+            "author": {
+              "@id": "https://jautur.github.io/portfolio/#person"
+            }
           }
-        }
-      ]
-    }
+        ]
+      }
     </script>
   </head>
   <body>
@@ -77,7 +112,11 @@
     <a href="#main-content" class="skip-link">Saltar al contenido</a>
 
     <!-- Animated Wave of Dots Background (Ultra-optimized WebGL, Low-Power, Interactive) -->
-    <canvas id="bg-canvas" class="waves-bg-container" aria-hidden="true"></canvas>
+    <canvas
+      id="bg-canvas"
+      class="waves-bg-container"
+      aria-hidden="true"
+    ></canvas>
 
     <!-- Main Navigation Header -->
     <header class="header">
@@ -86,37 +125,89 @@
           <span class="brand-mark" aria-hidden="true">&lt;JT/&gt;</span>
           <span class="brand-text">
             <span class="brand-name">Jaume Tur</span>
-            <span class="status-indicator">
-              <span class="status-dot" aria-hidden="true"></span>
-              <span class="status-label" data-i18n="nav.availableStatus">Disponible para proyectos</span>
+            <span class="status-indicator" aria-hidden="true">
+              <span class="status-dot"></span>
+              <span class="status-label" data-i18n="nav.availableStatus"
+                >Disponible para proyectos</span
+              >
             </span>
           </span>
         </a>
 
         <!-- Desktop Navigation Links -->
         <nav class="nav-desktop" aria-label="Navegación principal">
-          <a href="#hero" class="nav-link active" data-i18n="nav.home">Inicio</a>
-          <a href="#sobre-mi" class="nav-link" data-i18n="nav.about">Sobre mí</a>
-          <a href="#proyectos" class="nav-link" data-i18n="nav.projects">Proyectos</a>
-          <a href="#skills" class="nav-link" data-i18n="nav.skills">Habilidades</a>
-          <a href="#proceso" class="nav-link" data-i18n="nav.process">Metodología</a>
-          <a href="#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a>
-          <a href="docs/CV_Jaume_tur.pdf" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-cv" data-i18n="nav.cv">CV ↗</a>
+          <a href="#hero" class="nav-link active" data-i18n="nav.home"
+            >Inicio</a
+          >
+          <a href="#sobre-mi" class="nav-link" data-i18n="nav.about"
+            >Sobre mí</a
+          >
+          <a href="#proyectos" class="nav-link" data-i18n="nav.projects"
+            >Proyectos</a
+          >
+          <a href="#skills" class="nav-link" data-i18n="nav.skills"
+            >Habilidades</a
+          >
+          <a href="#proceso" class="nav-link" data-i18n="nav.process"
+            >Metodología</a
+          >
+          <a href="#contacto" class="nav-link" data-i18n="nav.contact"
+            >Contacto</a
+          >
+          <a
+            href="docs/CV_Jaume_tur.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-link nav-link-cv"
+            data-i18n="nav.cv"
+            >CV ↗</a
+          >
         </nav>
 
         <!-- Navigation Controls: Language & Theme -->
         <div class="nav-controls">
           <!-- Language Segmented Selector -->
           <div class="lang-switch" role="group" aria-label="Selector de idioma">
-            <button type="button" id="lang-es" class="lang-btn active" aria-pressed="true" aria-label="ES — Español">ES</button>
+            <button
+              type="button"
+              id="lang-es"
+              class="lang-btn active"
+              aria-pressed="true"
+              aria-label="ES — Español"
+            >
+              ES
+            </button>
             <span class="lang-divider" aria-hidden="true">|</span>
-            <button type="button" id="lang-va" class="lang-btn" aria-pressed="false" aria-label="VA — Valencià">VA</button>
+            <button
+              type="button"
+              id="lang-va"
+              class="lang-btn"
+              aria-pressed="false"
+              aria-label="VA — Valencià"
+            >
+              VA
+            </button>
             <span class="lang-divider" aria-hidden="true">|</span>
-            <button type="button" id="lang-en" class="lang-btn" aria-pressed="false" aria-label="EN — English">EN</button>
+            <button
+              type="button"
+              id="lang-en"
+              class="lang-btn"
+              aria-pressed="false"
+              aria-label="EN — English"
+            >
+              EN
+            </button>
           </div>
 
           <!-- Mobile Hamburger Toggle -->
-          <button type="button" id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
+          <button
+            type="button"
+            id="mobile-menu-btn"
+            class="mobile-menu-btn"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+          >
             <span class="menu-icon" aria-hidden="true">
               <span></span>
               <span></span>
@@ -131,18 +222,34 @@
     <div id="mobile-drawer" class="mobile-drawer">
       <nav class="mobile-nav" aria-label="Navegación móvil">
         <a href="#hero" class="mobile-nav-link" data-i18n="nav.home">Inicio</a>
-        <a href="#sobre-mi" class="mobile-nav-link" data-i18n="nav.about">Sobre mí</a>
-        <a href="#proyectos" class="mobile-nav-link" data-i18n="nav.projects">Proyectos</a>
-        <a href="#skills" class="mobile-nav-link" data-i18n="nav.skills">Habilidades</a>
-        <a href="#proceso" class="mobile-nav-link" data-i18n="nav.process">Metodología</a>
-        <a href="#contacto" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a>
-        <a href="docs/CV_Jaume_tur.pdf" target="_blank" rel="noopener noreferrer" class="mobile-nav-link mobile-nav-link-cv" data-i18n="nav.cv">CV ↗</a>
+        <a href="#sobre-mi" class="mobile-nav-link" data-i18n="nav.about"
+          >Sobre mí</a
+        >
+        <a href="#proyectos" class="mobile-nav-link" data-i18n="nav.projects"
+          >Proyectos</a
+        >
+        <a href="#skills" class="mobile-nav-link" data-i18n="nav.skills"
+          >Habilidades</a
+        >
+        <a href="#proceso" class="mobile-nav-link" data-i18n="nav.process"
+          >Metodología</a
+        >
+        <a href="#contacto" class="mobile-nav-link" data-i18n="nav.contact"
+          >Contacto</a
+        >
+        <a
+          href="docs/CV_Jaume_tur.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-nav-link mobile-nav-link-cv"
+          data-i18n="nav.cv"
+          >CV ↗</a
+        >
       </nav>
     </div>
 
     <!-- Main Content Container -->
     <main id="main-content" class="container">
-
       <!-- ====================================================================
            1. HERO SECTION
            ==================================================================== -->
@@ -151,53 +258,105 @@
           <div class="hero-content">
             <div class="hero-eyebrow">
               <span class="hero-badge">&lt;developer&gt;</span>
-              <span class="hero-greeting" data-i18n="hero.greeting">Hola, soy Jaume Tur</span>
+              <span class="hero-greeting" data-i18n="hero.greeting"
+                >Hola, soy Jaume Tur</span
+              >
             </div>
 
             <h1 class="hero-headline">
               <span data-i18n="hero.headlinePrefix">Desarrollo </span>
-              <span class="hero-highlight" data-i18n="hero.headlineHighlight">Frontend</span>
-              <span data-i18n="hero.headlineSuffix"> &amp; Aplicaciones Web</span>
+              <span class="hero-highlight" data-i18n="hero.headlineHighlight"
+                >Frontend</span
+              >
+              <span data-i18n="hero.headlineSuffix">
+                &amp; Aplicaciones Web</span
+              >
             </h1>
 
             <p class="hero-description" data-i18n="hero.description">
-              Enfocado en crear interfaces limpias, accesibles y componentes modulares con Angular, TypeScript y buenas prácticas.
+              Enfocado en crear interfaces limpias, accesibles y componentes
+              modulares con Angular, TypeScript y buenas prácticas.
             </p>
 
             <div class="hero-actions">
-              <a href="#proyectos" class="btn btn-primary" data-i18n="hero.ctaProjects">Ver proyectos</a>
-              <a href="#contacto" class="btn btn-outline" data-i18n="hero.ctaContact">Contactar</a>
-              <a href="https://www.linkedin.com/in/jautur/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="hero.ctaLinkedIn">LinkedIn</a>
+              <a
+                href="#proyectos"
+                class="btn btn-primary"
+                data-i18n="hero.ctaProjects"
+                >Ver proyectos</a
+              >
+              <a
+                href="#contacto"
+                class="btn btn-outline"
+                data-i18n="hero.ctaContact"
+                >Contactar</a
+              >
+              <a
+                href="https://www.linkedin.com/in/jautur/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+                data-i18n="hero.ctaLinkedIn"
+                >LinkedIn</a
+              >
             </div>
           </div>
 
           <!-- Hero Developer CV Profile Card -->
-          <aside class="hero-panel tech-card cv-profile-card" aria-label="Ficha de perfil profesional">
+          <aside
+            class="hero-panel tech-card cv-profile-card"
+            aria-label="Ficha de perfil profesional"
+          >
             <div class="panel-header">
-              <span class="terminal-prompt" data-i18n="hero.cvCard.title">// curriculum.profile</span>
-              <span class="terminal-status"><span class="pulse-dot"></span><span data-i18n="hero.cvCard.status">DISPONIBLE</span></span>
+              <span class="terminal-prompt" data-i18n="hero.cvCard.title"
+                >// curriculum.profile</span
+              >
+              <span class="terminal-status"
+                ><span class="pulse-dot"></span
+                ><span data-i18n="hero.cvCard.status">DISPONIBLE</span></span
+              >
             </div>
 
             <div class="cv-data-list">
               <div class="cv-data-row">
-                <span class="cv-data-key" data-i18n="hero.cvCard.roleLabel">ROL</span>
-                <span class="cv-data-val" data-i18n="hero.cvCard.roleVal">Desarrollador Web / Frontend</span>
+                <span class="cv-data-key" data-i18n="hero.cvCard.roleLabel"
+                  >ROL</span
+                >
+                <span class="cv-data-val" data-i18n="hero.cvCard.roleVal"
+                  >Desarrollador Web / Frontend</span
+                >
               </div>
               <div class="cv-data-row">
-                <span class="cv-data-key" data-i18n="hero.cvCard.stackLabel">STACK</span>
-                <span class="cv-data-val" data-i18n="hero.cvCard.stackVal">Angular · TypeScript · Node.js</span>
+                <span class="cv-data-key" data-i18n="hero.cvCard.stackLabel"
+                  >STACK</span
+                >
+                <span class="cv-data-val" data-i18n="hero.cvCard.stackVal"
+                  >Angular · TypeScript · Node.js</span
+                >
               </div>
               <div class="cv-data-row">
-                <span class="cv-data-key" data-i18n="hero.cvCard.focusLabel">ENFOQUE</span>
-                <span class="cv-data-val" data-i18n="hero.cvCard.focusVal">Interfaces accesibles y código limpio</span>
+                <span class="cv-data-key" data-i18n="hero.cvCard.focusLabel"
+                  >ENFOQUE</span
+                >
+                <span class="cv-data-val" data-i18n="hero.cvCard.focusVal"
+                  >Interfaces accesibles y código limpio</span
+                >
               </div>
               <div class="cv-data-row">
-                <span class="cv-data-key" data-i18n="hero.cvCard.educationLabel">ESTUDIOS</span>
-                <span class="cv-data-val" data-i18n="hero.cvCard.educationVal">CFGS Desarrollo de Aplicaciones Web</span>
+                <span class="cv-data-key" data-i18n="hero.cvCard.educationLabel"
+                  >ESTUDIOS</span
+                >
+                <span class="cv-data-val" data-i18n="hero.cvCard.educationVal"
+                  >CFGS Desarrollo de Aplicaciones Web</span
+                >
               </div>
               <div class="cv-data-row">
-                <span class="cv-data-key" data-i18n="hero.cvCard.locationLabel">UBICACIÓN</span>
-                <span class="cv-data-val" data-i18n="hero.cvCard.locationVal">Valencia (Híbrido / Remoto)</span>
+                <span class="cv-data-key" data-i18n="hero.cvCard.locationLabel"
+                  >UBICACIÓN</span
+                >
+                <span class="cv-data-val" data-i18n="hero.cvCard.locationVal"
+                  >Valencia (Híbrido / Remoto)</span
+                >
               </div>
             </div>
 
@@ -218,21 +377,35 @@
       <section id="sobre-mi" class="section reveal">
         <div class="section-header">
           <span class="section-tag" data-i18n="about.tag">Sobre mí</span>
-          <h2 class="section-title" data-i18n="about.title">Perfil Profesional</h2>
+          <h2 class="section-title" data-i18n="about.title">
+            Perfil Profesional
+          </h2>
         </div>
 
         <div class="about-grid">
           <article class="about-card tech-card">
-            <h3 class="about-lead" data-i18n="about.lead">Desarrollador web con base sólida en desarrollo frontend moderno y buenas prácticas de ingeniería de software.</h3>
-            <p data-i18n="about.p1">Me centro en escribir código limpio, maquetación semántica accesible y flujos automatizados de prueba y despliegue continuo.</p>
+            <h3 class="about-lead" data-i18n="about.lead">
+              Desarrollador web con base sólida en desarrollo frontend moderno y
+              buenas prácticas de ingeniería de software.
+            </h3>
+            <p data-i18n="about.p1">
+              Me centro en escribir código limpio, maquetación semántica
+              accesible y flujos automatizados de prueba y despliegue continuo.
+            </p>
 
             <!-- Architecture Spotlight -->
             <div class="architecture-box">
               <div class="arch-header">
                 <span class="arch-tag">&lt;architecture /&gt;</span>
-                <h4 data-i18n="about.architectureTitle">Arquitectura: Disparador &amp; Ejecutor</h4>
+                <h4 data-i18n="about.architectureTitle">
+                  Arquitectura: Disparador &amp; Ejecutor
+                </h4>
               </div>
-              <p data-i18n="about.architectureDesc">Flujos basados en eventos donde disparadores (webhooks, git push) envían datos JSON a tareas de validación y despliegue automático.</p>
+              <p data-i18n="about.architectureDesc">
+                Flujos basados en eventos donde disparadores (webhooks, git
+                push) envían datos JSON a tareas de validación y despliegue
+                automático.
+              </p>
               <div class="arch-diagram" aria-hidden="true">
                 <span class="arch-node">[Evento Git]</span>
                 <span class="arch-arrow">──(JSON)──&gt;</span>
@@ -248,17 +421,27 @@
             <div class="pillar-card tech-card">
               <div class="pillar-num">01</div>
               <h4 data-i18n="about.pillars.cleanCodeTitle">Frontend Moderno</h4>
-              <p data-i18n="about.pillars.cleanCodeDesc">HTML5 semántico, CSS3 avanzado y aplicaciones modulares con Angular.</p>
+              <p data-i18n="about.pillars.cleanCodeDesc">
+                HTML5 semántico, CSS3 avanzado y aplicaciones modulares con
+                Angular.
+              </p>
             </div>
             <div class="pillar-card tech-card">
               <div class="pillar-num">02</div>
               <h4 data-i18n="about.pillars.perfTitle">Calidad &amp; Tipado</h4>
-              <p data-i18n="about.pillars.perfDesc">Tipado estricto con TypeScript, accesibilidad WCAG y rendimiento.</p>
+              <p data-i18n="about.pillars.perfDesc">
+                Tipado estricto con TypeScript, accesibilidad WCAG y
+                rendimiento.
+              </p>
             </div>
             <div class="pillar-card tech-card">
               <div class="pillar-num">03</div>
-              <h4 data-i18n="about.pillars.automationTitle">Integración Continua (CI/CD)</h4>
-              <p data-i18n="about.pillars.automationDesc">Pipelines en GitHub Actions para pruebas y publicación continua.</p>
+              <h4 data-i18n="about.pillars.automationTitle">
+                Integración Continua (CI/CD)
+              </h4>
+              <p data-i18n="about.pillars.automationDesc">
+                Pipelines en GitHub Actions para pruebas y publicación continua.
+              </p>
             </div>
           </div>
         </div>
@@ -271,21 +454,57 @@
         <div class="section-header">
           <div class="header-titles">
             <span class="section-tag" data-i18n="projects.tag">Proyectos</span>
-            <h2 class="section-title" data-i18n="projects.title">Proyectos destacados</h2>
-            <p class="section-subtitle" data-i18n="projects.subtitle">Trabajos prácticos desarrollados con foco en usabilidad, rendimiento y código estructurado.</p>
+            <h2 class="section-title" data-i18n="projects.title">
+              Proyectos destacados
+            </h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">
+              Trabajos prácticos desarrollados con foco en usabilidad,
+              rendimiento y código estructurado.
+            </p>
           </div>
 
           <!-- Category Filter Buttons -->
-          <div class="filter-group" role="group" aria-label="Filtrar proyectos por categoría">
-            <button type="button" class="filter-btn active" data-filter="all" data-i18n="projects.filters.all">Todos</button>
-            <button type="button" class="filter-btn" data-filter="webapps" data-i18n="projects.filters.webapps">Web Apps</button>
-            <button type="button" class="filter-btn" data-filter="automation" data-i18n="projects.filters.automation">CI/CD &amp; DevOps</button>
-            <button type="button" class="filter-btn" data-filter="frontend" data-i18n="projects.filters.frontend">Frontend &amp; UI</button>
+          <div
+            class="filter-group"
+            role="group"
+            aria-label="Filtrar proyectos por categoría"
+          >
+            <button
+              type="button"
+              class="filter-btn active"
+              data-filter="all"
+              data-i18n="projects.filters.all"
+            >
+              Todos
+            </button>
+            <button
+              type="button"
+              class="filter-btn"
+              data-filter="webapps"
+              data-i18n="projects.filters.webapps"
+            >
+              Web Apps
+            </button>
+            <button
+              type="button"
+              class="filter-btn"
+              data-filter="automation"
+              data-i18n="projects.filters.automation"
+            >
+              CI/CD &amp; DevOps
+            </button>
+            <button
+              type="button"
+              class="filter-btn"
+              data-filter="frontend"
+              data-i18n="projects.filters.frontend"
+            >
+              Frontend &amp; UI
+            </button>
           </div>
         </div>
 
         <div class="projects-grid">
-
           <!-- PROJECT 1: AVISA -->
           <article class="project-card tech-card" data-category="webapps">
             <div class="project-topline">
@@ -296,17 +515,26 @@
             <div class="project-body">
               <h3 class="project-title">AVISA — Gestión de Incidencias</h3>
               <p class="project-desc" data-i18n="projects.items.0.description">
-                Plataforma web para registro, comunicación y seguimiento de incidencias en tiempo real con diseño accesible y modular.
+                Plataforma web para registro, comunicación y seguimiento de
+                incidencias en tiempo real con diseño accesible y modular.
               </p>
 
               <div class="project-details">
                 <div class="detail-row">
-                  <span class="detail-label" data-i18n="projects.roleLabel">Rol:</span>
-                  <span class="detail-value" data-i18n="projects.items.0.role">Frontend y Despliegue</span>
+                  <span class="detail-label" data-i18n="projects.roleLabel"
+                    >Rol:</span
+                  >
+                  <span class="detail-value" data-i18n="projects.items.0.role"
+                    >Frontend y Despliegue</span
+                  >
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label" data-i18n="projects.impactLabel">Estado:</span>
-                  <span class="detail-value" data-i18n="projects.items.0.impact">En producción (GitHub Pages)</span>
+                  <span class="detail-label" data-i18n="projects.impactLabel"
+                    >Estado:</span
+                  >
+                  <span class="detail-value" data-i18n="projects.items.0.impact"
+                    >En producción (GitHub Pages)</span
+                  >
                 </div>
               </div>
 
@@ -318,17 +546,51 @@
               </div>
 
               <div class="project-links">
-                <a href="https://jautur.github.io/AVISA-objectiu/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" aria-label="Abrir demo AVISA">
+                <a
+                  href="https://jautur.github.io/AVISA-objectiu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-sm btn-primary"
+                  aria-label="Abrir demo AVISA"
+                >
                   <span data-i18n="projects.viewLive">Ver demo</span>
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </a>
-                <a href="https://github.com/jautur/AVISA" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="Ver código de AVISA en GitHub">
+                <a
+                  href="https://github.com/jautur/AVISA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-sm btn-outline"
+                  aria-label="Ver código de AVISA en GitHub"
+                >
                   <span data-i18n="projects.viewCode">Ver código</span>
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path>
                   </svg>
                 </a>
               </div>
@@ -343,19 +605,30 @@
             </div>
 
             <div class="project-body">
-              <h3 class="project-title" data-i18n="projects.items.1.title">Dashboard de Telemetría &amp; Rendimiento</h3>
+              <h3 class="project-title" data-i18n="projects.items.1.title">
+                Dashboard de Telemetría &amp; Rendimiento
+              </h3>
               <p class="project-desc" data-i18n="projects.items.1.description">
-                Panel analítico con monitorización de métricas en tiempo real, arquitectura modular de componentes y alto rendimiento.
+                Panel analítico con monitorización de métricas en tiempo real,
+                arquitectura modular de componentes y alto rendimiento.
               </p>
 
               <div class="project-details">
                 <div class="detail-row">
-                  <span class="detail-label" data-i18n="projects.roleLabel">Rol:</span>
-                  <span class="detail-value" data-i18n="projects.items.1.role">Frontend &amp; Rendimiento</span>
+                  <span class="detail-label" data-i18n="projects.roleLabel"
+                    >Rol:</span
+                  >
+                  <span class="detail-value" data-i18n="projects.items.1.role"
+                    >Frontend &amp; Rendimiento</span
+                  >
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label" data-i18n="projects.impactLabel">Estado:</span>
-                  <span class="detail-value" data-i18n="projects.items.1.impact">60 FPS y renderizado instantáneo</span>
+                  <span class="detail-label" data-i18n="projects.impactLabel"
+                    >Estado:</span
+                  >
+                  <span class="detail-value" data-i18n="projects.items.1.impact"
+                    >60 FPS y renderizado instantáneo</span
+                  >
                 </div>
               </div>
 
@@ -367,13 +640,35 @@
               </div>
 
               <div class="project-links">
-                <a href="#skills" class="btn btn-sm btn-primary" aria-label="Ver panel de métricas">
+                <a
+                  href="#skills"
+                  class="btn btn-sm btn-primary"
+                  aria-label="Ver panel de métricas"
+                >
                   <span data-i18n="projects.viewLive">Ver demo</span>
                 </a>
-                <a href="https://github.com/jautur/portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="Ver código del panel en GitHub">
+                <a
+                  href="https://github.com/jautur/portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-sm btn-outline"
+                  aria-label="Ver código del panel en GitHub"
+                >
                   <span data-i18n="projects.viewCode">Ver código</span>
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path>
                   </svg>
                 </a>
               </div>
@@ -390,17 +685,26 @@
             <div class="project-body">
               <h3 class="project-title">Pipeline CI/CD Automatizado</h3>
               <p class="project-desc" data-i18n="projects.items.2.description">
-                Flujo automatizado con GitHub Actions que valida sintaxis, estándares de código y publica despliegues continuos.
+                Flujo automatizado con GitHub Actions que valida sintaxis,
+                estándares de código y publica despliegues continuos.
               </p>
 
               <div class="project-details">
                 <div class="detail-row">
-                  <span class="detail-label" data-i18n="projects.roleLabel">Rol:</span>
-                  <span class="detail-value" data-i18n="projects.items.2.role">Arquitectura CI/CD</span>
+                  <span class="detail-label" data-i18n="projects.roleLabel"
+                    >Rol:</span
+                  >
+                  <span class="detail-value" data-i18n="projects.items.2.role"
+                    >Arquitectura CI/CD</span
+                  >
                 </div>
                 <div class="detail-row">
-                  <span class="detail-label" data-i18n="projects.impactLabel">Estado:</span>
-                  <span class="detail-value" data-i18n="projects.items.2.impact">Despliegues automáticos sin interrupción</span>
+                  <span class="detail-label" data-i18n="projects.impactLabel"
+                    >Estado:</span
+                  >
+                  <span class="detail-value" data-i18n="projects.items.2.impact"
+                    >Despliegues automáticos sin interrupción</span
+                  >
                 </div>
               </div>
 
@@ -412,19 +716,40 @@
               </div>
 
               <div class="project-links">
-                <a href="#proceso" class="btn btn-sm btn-primary" aria-label="Ver flujo de trabajo">
+                <a
+                  href="#proceso"
+                  class="btn btn-sm btn-primary"
+                  aria-label="Ver flujo de trabajo"
+                >
                   <span data-i18n="projects.viewLive">Ver demo</span>
                 </a>
-                <a href="https://github.com/jautur/portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="Ver configuración de CI/CD en GitHub">
+                <a
+                  href="https://github.com/jautur/portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-sm btn-outline"
+                  aria-label="Ver configuración de CI/CD en GitHub"
+                >
                   <span data-i18n="projects.viewCode">Ver código</span>
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path>
                   </svg>
                 </a>
               </div>
             </div>
           </article>
-
         </div>
       </section>
 
@@ -435,7 +760,10 @@
         <div class="section-header">
           <span class="section-tag" data-i18n="skills.tag">Habilidades</span>
           <h2 class="section-title" data-i18n="skills.title">Stack técnico</h2>
-          <p class="section-subtitle" data-i18n="skills.subtitle">Lenguajes, frameworks y herramientas que utilizo habitualmente en desarrollo.</p>
+          <p class="section-subtitle" data-i18n="skills.subtitle">
+            Lenguajes, frameworks y herramientas que utilizo habitualmente en
+            desarrollo.
+          </p>
         </div>
 
         <div class="skill-tag-groups">
@@ -489,33 +817,58 @@
       <section id="proceso" class="section reveal">
         <div class="section-header">
           <span class="section-tag" data-i18n="process.tag">Metodología</span>
-          <h2 class="section-title" data-i18n="process.title">Flujo de desarrollo</h2>
-          <p class="section-subtitle" data-i18n="process.subtitle">Un método de trabajo ordenado para entregar software fiable y mantenible.</p>
+          <h2 class="section-title" data-i18n="process.title">
+            Flujo de desarrollo
+          </h2>
+          <p class="section-subtitle" data-i18n="process.subtitle">
+            Un método de trabajo ordenado para entregar software fiable y
+            mantenible.
+          </p>
         </div>
 
         <div class="process-grid">
           <div class="process-step-card tech-card">
             <span class="step-num">01</span>
-            <h3 class="step-title" data-i18n="process.steps.0.title">Requisitos &amp; Arquitectura</h3>
-            <p class="step-desc" data-i18n="process.steps.0.desc">Definición del alcance técnico, estructura modular y selección del stack idóneo.</p>
+            <h3 class="step-title" data-i18n="process.steps.0.title">
+              Requisitos &amp; Arquitectura
+            </h3>
+            <p class="step-desc" data-i18n="process.steps.0.desc">
+              Definición del alcance técnico, estructura modular y selección del
+              stack idóneo.
+            </p>
           </div>
 
           <div class="process-step-card tech-card">
             <span class="step-num">02</span>
-            <h3 class="step-title" data-i18n="process.steps.1.title">Diseño &amp; Maquetación</h3>
-            <p class="step-desc" data-i18n="process.steps.1.desc">Estructura semántica, accesibilidad y diseño adaptado a todos los dispositivos.</p>
+            <h3 class="step-title" data-i18n="process.steps.1.title">
+              Diseño &amp; Maquetación
+            </h3>
+            <p class="step-desc" data-i18n="process.steps.1.desc">
+              Estructura semántica, accesibilidad y diseño adaptado a todos los
+              dispositivos.
+            </p>
           </div>
 
           <div class="process-step-card tech-card">
             <span class="step-num">03</span>
-            <h3 class="step-title" data-i18n="process.steps.2.title">Desarrollo Frontend</h3>
-            <p class="step-desc" data-i18n="process.steps.2.desc">Implementación con TypeScript, componentes reutilizables y código limpio.</p>
+            <h3 class="step-title" data-i18n="process.steps.2.title">
+              Desarrollo Frontend
+            </h3>
+            <p class="step-desc" data-i18n="process.steps.2.desc">
+              Implementación con TypeScript, componentes reutilizables y código
+              limpio.
+            </p>
           </div>
 
           <div class="process-step-card tech-card">
             <span class="step-num">04</span>
-            <h3 class="step-title" data-i18n="process.steps.3.title">Validación &amp; Despliegue</h3>
-            <p class="step-desc" data-i18n="process.steps.3.desc">Pruebas automáticas en GitHub Actions y publicación continua a producción.</p>
+            <h3 class="step-title" data-i18n="process.steps.3.title">
+              Validación &amp; Despliegue
+            </h3>
+            <p class="step-desc" data-i18n="process.steps.3.desc">
+              Pruebas automáticas en GitHub Actions y publicación continua a
+              producción.
+            </p>
           </div>
         </div>
       </section>
@@ -526,37 +879,93 @@
       <section id="contacto" class="section reveal">
         <div class="section-header">
           <span class="section-tag" data-i18n="contact.tag">Contacto</span>
-          <h2 class="section-title" data-i18n="contact.title">Contacto directo</h2>
-          <p class="section-subtitle" data-i18n="contact.subtitle">Disponible para ofertas de empleo, proyectos o colaboraciones técnicas.</p>
+          <h2 class="section-title" data-i18n="contact.title">
+            Contacto directo
+          </h2>
+          <p class="section-subtitle" data-i18n="contact.subtitle">
+            Disponible para ofertas de empleo, proyectos o colaboraciones
+            técnicas.
+          </p>
         </div>
 
         <div class="contact-grid">
           <!-- Contact Channels Info Card -->
-          <aside class="contact-info-card tech-card" aria-label="Canales de contacto directo">
+          <aside
+            class="contact-info-card tech-card"
+            aria-label="Canales de contacto directo"
+          >
             <h3 class="contact-card-title">Canales directos</h3>
 
             <!-- Email Channel -->
             <div class="channel-box">
-              <span class="channel-label" data-i18n="contact.emailLabel">Correo electrónico:</span>
+              <span class="channel-label" data-i18n="contact.emailLabel"
+                >Correo electrónico:</span
+              >
               <div class="channel-value-row">
-                <a href="mailto:jautursis@alu.edu.gva.es" class="channel-link">jautursis@alu.edu.gva.es</a>
-                <button type="button" id="copy-email-btn" class="copy-btn" data-email="jautursis@alu.edu.gva.es" aria-label="Copiar correo al portapapeles">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                <a href="mailto:jautursis@alu.edu.gva.es" class="channel-link"
+                  >jautursis@alu.edu.gva.es</a
+                >
+                <button
+                  type="button"
+                  id="copy-email-btn"
+                  class="copy-btn"
+                  data-email="jautursis@alu.edu.gva.es"
+                  aria-label="Copiar correo al portapapeles"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="9"
+                      y="9"
+                      width="13"
+                      height="13"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path
+                      d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                    ></path>
                   </svg>
-                  <span class="copy-tooltip" data-i18n="contact.emailCopy">Copiar email</span>
+                  <span class="copy-tooltip" data-i18n="contact.emailCopy"
+                    >Copiar email</span
+                  >
                 </button>
               </div>
             </div>
 
             <!-- GitHub Channel -->
             <div class="channel-box">
-              <span class="channel-label" data-i18n="contact.githubLabel">Perfil de GitHub:</span>
+              <span class="channel-label" data-i18n="contact.githubLabel"
+                >Perfil de GitHub:</span
+              >
               <div class="channel-value-row">
-                <a href="https://github.com/jautur" target="_blank" rel="noopener noreferrer" class="channel-link">
+                <a
+                  href="https://github.com/jautur"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="channel-link"
+                >
                   github.com/jautur
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
@@ -566,11 +975,29 @@
 
             <!-- LinkedIn Channel -->
             <div class="channel-box">
-              <span class="channel-label" data-i18n="contact.linkedinLabel">Perfil de LinkedIn:</span>
+              <span class="channel-label" data-i18n="contact.linkedinLabel"
+                >Perfil de LinkedIn:</span
+              >
               <div class="channel-value-row">
-                <a href="https://www.linkedin.com/in/jautur/" target="_blank" rel="noopener noreferrer" class="channel-link" aria-label="Visitar perfil de LinkedIn de Jaume Tur">
+                <a
+                  href="https://www.linkedin.com/in/jautur/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="channel-link"
+                  aria-label="Visitar perfil de LinkedIn de Jaume Tur"
+                >
                   linkedin.com/in/jautur
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
@@ -581,29 +1008,86 @@
 
           <!-- Interactive Contact Form -->
           <article class="contact-form-card tech-card">
-            <h3 class="form-card-title" data-i18n="contact.formTitle">Enviar mensaje</h3>
+            <h3 class="form-card-title" data-i18n="contact.formTitle">
+              Enviar mensaje
+            </h3>
 
             <form id="contact-form" class="contact-form" novalidate>
               <div class="form-group">
-                <label for="form-name" class="form-label" data-i18n="contact.nameLabel">Nombre</label>
-                <input type="text" id="form-name" name="name" class="form-input" placeholder="Tu nombre" data-i18n-placeholder="contact.namePlaceholder" required autocomplete="name">
+                <label
+                  for="form-name"
+                  class="form-label"
+                  data-i18n="contact.nameLabel"
+                  >Nombre</label
+                >
+                <input
+                  type="text"
+                  id="form-name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Tu nombre"
+                  data-i18n-placeholder="contact.namePlaceholder"
+                  required
+                  autocomplete="name"
+                />
               </div>
 
               <div class="form-group">
-                <label for="form-email" class="form-label" data-i18n="contact.emailInputLabel">Correo electrónico</label>
-                <input type="email" id="form-email" name="email" class="form-input" placeholder="nombre@ejemplo.com" data-i18n-placeholder="contact.emailPlaceholder" required autocomplete="email">
+                <label
+                  for="form-email"
+                  class="form-label"
+                  data-i18n="contact.emailInputLabel"
+                  >Correo electrónico</label
+                >
+                <input
+                  type="email"
+                  id="form-email"
+                  name="email"
+                  class="form-input"
+                  placeholder="nombre@ejemplo.com"
+                  data-i18n-placeholder="contact.emailPlaceholder"
+                  required
+                  autocomplete="email"
+                />
               </div>
 
               <div class="form-group">
-                <label for="form-message" class="form-label" data-i18n="contact.messageLabel">Mensaje</label>
-                <textarea id="form-message" name="message" class="form-textarea" rows="4" placeholder="Escribe brevemente tu propuesta o consulta..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+                <label
+                  for="form-message"
+                  class="form-label"
+                  data-i18n="contact.messageLabel"
+                  >Mensaje</label
+                >
+                <textarea
+                  id="form-message"
+                  name="message"
+                  class="form-textarea"
+                  rows="4"
+                  placeholder="Escribe brevemente tu propuesta o consulta..."
+                  data-i18n-placeholder="contact.messagePlaceholder"
+                  required
+                ></textarea>
               </div>
 
-              <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+              <div
+                id="form-feedback"
+                class="form-feedback"
+                aria-live="polite"
+              ></div>
 
               <button type="submit" class="btn btn-primary btn-submit">
                 <span data-i18n="contact.submitBtn">Enviar mensaje</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
                   <line x1="22" y1="2" x2="11" y2="13"></line>
                   <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                 </svg>
@@ -612,7 +1096,6 @@
           </article>
         </div>
       </section>
-
     </main>
 
     <!-- Footer -->
@@ -620,14 +1103,33 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <span class="footer-logo">&lt;JT/&gt;</span>
-          <p class="footer-copy" data-i18n="footer.copyright">© 2026 Jaume Tur. Portfolio &amp; CV.</p>
+          <p class="footer-copy" data-i18n="footer.copyright">
+            © 2026 Jaume Tur. Portfolio &amp; CV.
+          </p>
         </div>
 
-        <p class="footer-tech" data-i18n="footer.builtWith">Construido con HTML5, CSS3 y Vanilla JavaScript</p>
+        <p class="footer-tech" data-i18n="footer.builtWith">
+          Construido con HTML5, CSS3 y Vanilla JavaScript
+        </p>
 
-        <button type="button" id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+        <button
+          type="button"
+          id="back-to-top"
+          class="back-to-top"
+          aria-label="Volver arriba"
+        >
           <span data-i18n="footer.backToTop">Volver arriba</span>
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
             <polyline points="18 15 12 9 6 15"></polyline>
           </svg>
         </button>
