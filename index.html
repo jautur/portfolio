@@ -70,9 +70,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media = 'all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      />
+    </noscript>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css?v=3.4" />
@@ -110,13 +118,6 @@
   <body>
     <!-- Accessible Skip Link -->
     <a href="#main-content" class="skip-link">Saltar al contenido</a>
-
-    <!-- Animated Wave of Dots Background (Ultra-optimized WebGL, Low-Power, Interactive) -->
-    <canvas
-      id="bg-canvas"
-      class="waves-bg-container"
-      aria-hidden="true"
-    ></canvas>
 
     <!-- Main Navigation Header -->
     <header class="header">
@@ -1141,8 +1142,5 @@
 
     <!-- Core Interactive Application Script -->
     <script src="js/app.js?v=3.5" defer></script>
-
-    <!-- Ultra-lightweight WebGL Point-Wave Background -->
-    <script src="js/dot-waves.js?v=1.2" defer></script>
   </body>
 </html>

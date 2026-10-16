@@ -103,24 +103,6 @@ body {
     color var(--transition-normal);
 }
 
-/* ==========================================================================
-   2.1. ANIMATED WAVE OF LIGHT DOTS (WebGL Point-Wave Background)
-   Ultra-optimized, low-consumption WebGL canvas undulating field.
-   Capped DPR, reduced vertex count, passive pointer wave-bursts.
-   ========================================================================== */
-.waves-bg-container {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  display: block;
-  opacity: 1;
-  contain: strict;
-  transform: translateZ(0);
-}
-
 body.nav-open {
   overflow: hidden;
 }
